@@ -1,8 +1,18 @@
-# Default Project Layout for Joomla! 1.5
+# Sarnia Gives Website
 
+Source for Sarnia Gives. Includes template, IE6 notification and organization/volunteer/opportunities listings.
 
-## How to Use
+## Instructions
 
-1. create a fork of the repository
-2. clone to your local computer
-3. run `git submodules initialize --update` to setup your repository
+`git clone git@github.com:CCI-Studios/Sarnia-Gives.git sarnia-gives
+cd sarnia-gives
+git submodule init
+git submodule update`
+
+Copy `config/deploy/remote.rb` and save as staging or production to configure site specific settings
+
+type:
+`cap deploy:setup
+cap deploy:joomla:setup
+cap deploy`
+to setup the project on the server
