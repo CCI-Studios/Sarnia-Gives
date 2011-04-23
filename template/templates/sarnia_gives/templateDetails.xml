@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <install version="1.5" type="template">
-	<name>NAME</name>
+	<name>sarnia_gives</name>
 	<version>1.0.0</version>
 	<creationDate>DATE</creationDate>
 	<author>Jonathan Bennett</author>
