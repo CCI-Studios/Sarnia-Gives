@@ -51,6 +51,26 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		return $this->optionlist($config);
 	}
 	
+	public function organizationTypes($config = array()) {
+		$config = new KConfig($config);
+		$config->append(array(
+			'name' => 'type',
+		))->append(array(
+			'selected' => $config->{$config->name}
+		));
+		
+		$options = array();
+		
+		$options[] = $this->option(array('text'=>'- '.JText::_('Select').' -', 'value'=>''));
+		$options[] = $this->option(array('text'=>JText::_('Not-for-Profit'), 'value'=>'1'));
+		$options[] = $this->option(array('text'=>JText::_('Private Sector'), 'value'=>'2'));
+		$options[] = $this->option(array('text'=>JText::_('Registered Charity'), 'value'=>'3'));
+		$options[] = $this->option(array('text'=>JText::_('Public Sector'), 'value'=>'4'));
+		                                         
+		$config->options = $options;
+		return $this->optionlist($config);
+	}
+	
 	public function yesNo($config = array()) {
 		$config = new KConfig($config);
 		$config->append(array(
