@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_organizations` (
 	`gives_organization_id` SERIAL,
 	
 	# organization info
-	`name` 		VARCHAR(250) NOT NULL,
+	`title` 		VARCHAR(250) NOT NULL,
 	`address`	VARCHAR(250) NOT NULL,
 	`city`		VARCHAR(250) NOT NULL,
 	`province`	TINYINT(2) NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_organizations` (
 	`director`	VARCHAR(250) NOT NULL,
 	`contact`	VARCHAR(250) NOT NULL,
 	`contact_email`	VARCHAR(250) NOT NULL,
-	`title`		VARCHAR(250) NOT NULL,
+	`contact_title`	VARCHAR(250) NOT NULL,
 	
 	# organization info
 	`created` 	VARCHAR(250) NOT NULL,

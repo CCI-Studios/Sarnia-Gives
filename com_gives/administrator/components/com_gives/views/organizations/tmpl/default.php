@@ -7,7 +7,7 @@
 			<tr>
 				<th width="5">#</th>
 				<th width="15"></th>
-				<th><?=@helper('grid.sort', array('column'=>'name'))?></th>
+				<th><?=@helper('grid.sort', array('column'=>'title', 'title'=>'Name'))?></th>
 				
 				<th width="100"><?=@text('Joomla Account')?></th>
 				<th width="5"><?=@text('id')?></th>
@@ -29,7 +29,7 @@
 				<td><?=$i?></td>
 				<td><?=@helper('grid.checkbox', array('row'=>$organization))?></td>
 				<td><a href="<?=@route('view=organization&id='.$organization->id)?>">
-					<?=$organization->name?>
+					<?=$organization->title?>
 				</a></td>
 				<td align="center"><a href="index.php?option=com_users&amp;view=user&amp;task=edit&amp;cid[]=<?=$organization->user_id?>"><?=@text('Joomla Account')?></a></td>
 				<td align="center"><?=$organization->id?></td>

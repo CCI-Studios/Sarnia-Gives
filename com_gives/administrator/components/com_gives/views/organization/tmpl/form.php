@@ -7,8 +7,8 @@
 		<fieldset>
 			<legend><?= @text('Organization Details') ?></legend>
 			
-			<label for="field_name" class="mainlabel"><?=@text('Name')?>:</label>
-			<input type="text" name="name" id="field_name" value="<?=$organization->name?>" /><br/>
+			<label for="field_title" class="mainlabel"><?=@text('Name')?>:</label>
+			<input type="text" name="title" id="field_title" value="<?=$organization->title?>" /><br/>
 			
 			<label for="field_address" class="mainlabel"><?=@text('Address')?>:</label>
 			<input type="text" name="address" id="field_address" value="<?=$organization->address?>" /><br/>
@@ -43,18 +43,18 @@
 			<label for="field_contact_email" class="mainlabel"><?=@text('Contact Email')?>:</label>
 			<input type="text" name="contact_email" id="field_contact_email" value="<?=$organization->contact_email?>" /><br/>
 			
-			<label for="field_title" class="mainlabel"><?=@text('Title')?>:</label>
-			<input type="text" name="title" id="field_title" value="<?=$organization->title?>" /><br/>
+			<label for="field_contact_title" class="mainlabel"><?=@text('Contact Title')?>:</label>
+			<input type="text" name="contact_title" id="field_contact_title" value="<?=$organization->contact_title?>" /><br/>
 		</fieldset>
 		
 		<fieldset>
 			<legend><?=@text('Mission')?></legend>
-			<textarea name="mission" width="100%" rows="10"><?=$organization->mission?></textarea>
+			<textarea name="mission" style="width: 100%;" rows="10"><?=$organization->mission?></textarea>
 		</fieldset>
 		
 		<fieldset>
 			<legend><?=@text('Description')?></legend>
-			<textarea name="description" width="100%" rows="10"><?=$organization->description?></textarea>
+			<textarea name="description" style="width: 100%;" rows="10"><?=$organization->description?></textarea>
 		</fieldset>
 	</div>
 		
@@ -131,7 +131,7 @@
 			<input type="text" name="created" id="field_created" value="<?=$organization->created?>" /><br/>
 			
 			<label for="field_type" class="mainlabel"><?=@text('Type')?>:</label>
-			<input type="text" name="type" id="field_type" value="<?=$organization->type?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.organizationTypes')?><br/>
 			
 			<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter')?>:</label>
 			<input type="text" name="newsletter" id="field_newsletter" value="<?=$organization->newsletter?>" /><br/>
