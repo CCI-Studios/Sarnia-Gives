@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+    <name>Koowa - User</name>
+    <author>Jonathan Bennett</author>
+    <creationDate>April 2011</creationDate>
+    <copyright></copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail></authorEmail>
+    <authorUrl></authorUrl>
+    <version>0.7.0</version>
+    <description>User override plugin.</description>  
+    
+    <!--  Files -->
+    <files folder="plugins/content">
+        <filename plugin="user">user.php</filename>
+    </files>
+</install>

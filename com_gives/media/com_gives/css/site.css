@@ -1,0 +1,17 @@
+.column-group {
+}
+.column-group:after {
+	content: ".";
+	clear: both;
+	height: 0;
+	line-height: 0;
+    visibility: hidden;
+	width: 100%;
+}
+
+.column {
+	-moz-box-sizing: border-box; /* fixme */
+	float: left;
+	padding: 0 10px 0 0;
+	width: 50%;
+}

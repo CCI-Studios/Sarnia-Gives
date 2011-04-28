@@ -1,26 +1,48 @@
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/admin.css" />
 
-<table class="adminform" name="adminForm">
-	<thead>
-		<tr>
-			<th>adsf</th>
-			<th>adsf</th>
-		</tr>
-	</thead>
+<form action="<?=@route()?>" method="post">
+	<table class="adminlist">
+		<thead>
+			<tr>
+				<th width="5">#</th>
+				<th width="15"></th>
+				<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
+				
+				<th width="100"><?=@text('Organization')?></th>
+				<th width="5"><?=@text('id')?></th>
+			</tr>
+		</thead>
 	
-	<tfoot>
-		<tr>
-			<td colspan="99">
-				adfsdfsa
-			</td>
-		</tr>
-	</tfoot>
+		<tfoot>
+			<tr>
+				<td colspan="99" align="center">
+					<?=@helper('paginator.pagination', array('total'=>$total))?>
+				</td>
+			</tr>
+		</tfoot>
 	
-	<tbody>
-		<tr>
-			<td>adfadfa</td>
-			<td>a09213423</td>
-		</tr>
-	</tbody>
-</table>
+		<tbody>
+			<? $i = 1;
+			foreach ($opportunities as $opportunity): ?>
+			<tr>
+				<td><?=$i?></td>
+				<td><?=@helper('grid.checkbox', array('row'=>$opportunity))?></td>
+				<td><a href="<?=@route('view=opportunity&id='.$opportunity->id)?>">
+					<?=$opportunity->title?>
+				</a></td>
+				<td>&nbsp;</td>
+				<td align="center"><?=$opportunity->id?></td>
+			</tr>
+			<? $i++;
+			endforeach; ?>
+		
+			<?if (!count($opportunities)):?>
+			<tr>
+				<td colspan="99" align="center"><?=@text('No opportunity available.')?></td>
+			</tr>
+			<?endif;?>
+		</tbody>
+	
+	</table>
+</form>
