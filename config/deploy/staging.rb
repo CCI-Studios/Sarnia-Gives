@@ -7,4 +7,4 @@ role :app, "sarniagives.com"
 # directories
 set :deploy_to, "/home/sgives/subdomains/dev"
 set :public, "#{deploy_to}/public_html"
-set :extensions, %w[plg_ie6 public template]
+set :extensions, %w[com_gives plg_ie6 public template]
