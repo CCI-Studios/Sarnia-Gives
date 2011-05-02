@@ -1,6 +1,16 @@
 <style src="media://com_gives/css/site.css" />
 
-<h1 class="componentheading"><?= $organization->title ?></h1>
+<h1 class="componentheading">
+	<?= $organization->title ?>
+
+	<? if ($organization->canEdit()): ?>
+		<div class="right">
+			<small><a href="<?= @route('view=organization&layout=edit&id='.$organization->id)?>">
+				<img src="/images/M_images/edit.png" />
+			</a></small>
+		</div>
+	<? endif; ?>
+</h1>
 
 <div>
 	<h2><?= @text('Organization Details')?></h2>
@@ -24,5 +34,3 @@
 	<h2><?=@text('Description')?></h2>
 	<p><?=$organization->description?></p>
 </div>
-
-<p><a href="<?= @route('view=organization&layout=form&id='.$organization->id)?>">Edit</a></p>
