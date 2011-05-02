@@ -11,28 +11,38 @@ $dosef = shInitializePlugin( $lang, $shLangName, $shLangIso, $option);
 shRemoveFromGETVarsList('view');
 $slug = KFactory::tmp('lib.koowa.filter.slug');
 
+if (!isset($view))
+	$view = "";
+
 switch ($view) {
 	case 'organization':
-		$title[] = $view;
-	
 		$model	= KFactory::tmp('site::com.gives.model.organization');
-		if (isset($layout) && $layout === 'edit') { // organization/profile/update.html
-			$title[] = 'profile';
-			$title[] = 'update';
-			shRemoveFromGETVarsList('layout');``
-		} elseif (isset($layout) && $layout === 'new') { // organization/register.html
-			$title[] = 'register';
+		if (isset($layout) && $layout === 'edit' && isset($id)) {
+			$org = $model->set('id', $id)->getItem();
+			
+			$title[] = JText::_('organization');
+			$title[] = JText::_('edit');
+			$title[] = $id.'-'.$slug->sanitize($org->title);
+			
 			shRemoveFromGETVarsList('layout');
-		} elseif (isset($id)) {	// organization/title.html
-			$title[] = $slug->sanitize($model->set('id', $id)->getItem()->title);
 			shRemoveFromGETVarsList('id');
-		} else {
-			$title[] = 'profile';
+		} elseif (isset($layout) && $layout === 'new' ) {
+			$title[] = JText::_('organization');
+			$title[] = JText::_('register');
+			
+			shRemoveFromGETVarsList('layout');
+		} elseif (isset($id)) {
+			$org = $model->set('id', $id)->getItem();
+			
+			$title[] = JText::_('organization');
+			$title[] = $id.'-'.$slug->sanitize($org->title);
+			
+			shRemoveFromGETVarsList('id');
 		}
 		break;
 	case 'organizations':
 		// no options needed
-		$title[] = $view;
+		$title[] = JText::_('organizations');
 		break;
 	case 'volunteer':
 		$title[] = $view;
@@ -70,6 +80,11 @@ switch ($view) {
 			// nothing else
 		}
 		break;
+	case '':
+	default:
+		$title = "gives";
+		$title = "dashboard";
+		
 }
 
 shRemoveFromGETVarsList('option');

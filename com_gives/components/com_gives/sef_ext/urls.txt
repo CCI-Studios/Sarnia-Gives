@@ -1,17 +1,4 @@
 organizations.html					view=organizations
-organization/profile.html			view=organization
 organization/big-sisters.html		view=organization&id=x
 organization/register.html			view=organization&layout=form
-organization/profile/update.html	view=organization&layout=form&user_id=x
-                                    
-volunteers.html						view=volunteers
-volunteer/profile.html				view=volunteer
-// volunteer/big-sisters.html		view=volunteer&id=x
-volunteer/profile/update.html		view=volunteer&layout=form&id=x
-volunteer/register.html				view=volunteer&layout=form
-                                    
-opportunities.html					
-opportunity/profile.html			
-opportunity/id-title.html			
-opportunity/profile/update.html		
-opportunity/register.html
+organization/edit/big-sisters.html	view=organization&id=x&layout=form
