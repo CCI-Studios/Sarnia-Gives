@@ -135,6 +135,9 @@
 			
 			<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter')?>:</label>
 			<input type="text" name="newsletter" id="field_newsletter" value="<?=$organization->newsletter?>" /><br/>
+			
+			<label for="field_user_id" class="mainlabel"><?=@text('User ID')?>:</label>
+			<input type="text" name="user_id" id="field_user_id" value="<?=$organization->user_id?>" />
 		<?= $pane->endPanel() ?>
 		<?= $pane->endPane() ?>
 	</div>	
