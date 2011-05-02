@@ -4,5 +4,4 @@ defined('KOOWA') or die;
 
 
 
-echo KFactory::get('site::com.gives.dispatcher')
-	->dispatch(KRequest::get('get.view', 'cmd', 'organization'));
+echo KFactory::get('site::com.gives.dispatcher')->dispatch();
