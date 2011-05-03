@@ -13,19 +13,19 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		$options = array();
 		
 		$options[] = $this->option(array('text'=>'- '.JText::_('Select').' -', 'value'=>''));
-		$options[] = $this->option(array('text'=>JText::_('Ontario'), 'value'=>'1'));
-		$options[] = $this->option(array('text'=>JText::_('Alberta'), 'value'=>'2'));
-		$options[] = $this->option(array('text'=>JText::_('British Columbia'), 'value'=>'3'));
-		$options[] = $this->option(array('text'=>JText::_('Manitoba'), 'value'=>'4'));
-		$options[] = $this->option(array('text'=>JText::_('New Brunswick'), 'value'=>'5'));
-		$options[] = $this->option(array('text'=>JText::_('Newfoundland'), 'value'=>'6'));
-		$options[] = $this->option(array('text'=>JText::_('Nova Scotia'), 'value'=>'7'));
-		$options[] = $this->option(array('text'=>JText::_('Northwest Territories'), 'value'=>'8'));
-		$options[] = $this->option(array('text'=>JText::_('Nunavut'), 'value'=>'9'));
-		$options[] = $this->option(array('text'=>JText::_('Prince Edward Island'), 'value'=>'10'));
-		$options[] = $this->option(array('text'=>JText::_('Quebec'), 'value'=>'11'));
-		$options[] = $this->option(array('text'=>JText::_('Saskatchewan'), 'value'=>'12'));
-		$options[] = $this->option(array('text'=>JText::_('Yukon'), 'value'=>'13'));
+		$options[] = $this->option(array('text'=>JText::_('Ontario'), 'value'=>'Ontario'));
+		$options[] = $this->option(array('text'=>JText::_('Alberta'), 'value'=>'Alberta'));
+		$options[] = $this->option(array('text'=>JText::_('British Columbia'), 'value'=>'British Columbia'));
+		$options[] = $this->option(array('text'=>JText::_('Manitoba'), 'value'=>'Manitoba'));
+		$options[] = $this->option(array('text'=>JText::_('New Brunswick'), 'value'=>'New Brunswick'));
+		$options[] = $this->option(array('text'=>JText::_('Newfoundland'), 'value'=>'Newfoundland'));
+		$options[] = $this->option(array('text'=>JText::_('Nova Scotia'), 'value'=>'Nova Scotia'));
+		$options[] = $this->option(array('text'=>JText::_('Northwest Territories'), 'value'=>'Northwest Territories'));
+		$options[] = $this->option(array('text'=>JText::_('Nunavut'), 'value'=>'Nunavut'));
+		$options[] = $this->option(array('text'=>JText::_('Prince Edward Island'), 'value'=>'Prince Edward Island'));
+		$options[] = $this->option(array('text'=>JText::_('Quebec'), 'value'=>'Quebec'));
+		$options[] = $this->option(array('text'=>JText::_('Saskatchewan'), 'value'=>'Saskatchewan'));
+		$options[] = $this->option(array('text'=>JText::_('Yukon'), 'value'=>'Yukon'));
 		
 		$config->options = $options;
 		return $this->optionlist($config);

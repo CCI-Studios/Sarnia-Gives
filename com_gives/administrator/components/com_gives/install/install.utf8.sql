@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_volunteers` (
 	`last_name`		VARCHAR(250) NOT NULL,
 	`address`		VARCHAR(250) NOT NULL,
 	`city`			VARCHAR(250) NOT NULL,
-	`province`		TINYINT(2) NOT NULL,
+	`province`		VARCHAR(250) NOT NULL,
 	`postal`		VARCHAR(250) NOT NULL,
 	`phone`			VARCHAR(250) NOT NULL,
 	`email`			VARCHAR(250) NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_organizations` (
 	`title` 		VARCHAR(250) NOT NULL,
 	`address`		VARCHAR(250) NOT NULL,
 	`city`			VARCHAR(250) NOT NULL,
-	`province`		TINYINT(2) NOT NULL,
+	`province`		VARCHAR(250) NOT NULL,
 	`postal`		VARCHAR(250) NOT NULL,
 	`phone`			VARCHAR(250) NOT NULL,
 	`fax`			VARCHAR(250) NOT NULL,
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_opportunities` (
 	`end_date`	DATE NOT NULL,
 	`address`	VARCHAR(250) NOT NULL,
 	`city`		VARCHAR(250) NOT NULL,
-	`province`	TINYINT(1) NOT NULL,
+	`province`	VARCHAR(250) NOT NULL,
 	`postal`	VARCHAR(250) NOT NULL,
 	
 	# location info
