@@ -35,7 +35,8 @@
 			<?=@helper('admin::com.gives.template.helper.listbox.volunteerTypes')?><br/>
 			
 			<label for="field_required" class="mainlabel"><?=@text('Required')?>:</label>
-			<input type="checkbox" name="required" id="field_required" value="<?=$volunteer->required?>" /><br/>
+			<input type="hidden" name="required" value="0" />
+			<input type="checkbox" name="required" id="field_required" value="1" <?= ($volunteer->required)? 'checked="checked"':'';?> /><br/>
 			
 			<label for="field_agency" class="mainlabel"><?=@text('Agency')?>:</label>
 			<input type="text" name="agency" id="field_agency" value="<?=$volunteer->agency?>" /><br/>
@@ -77,128 +78,168 @@
 		
 		<?= $pane->startPanel('Location', 'location-pane')?>
 			<label for="field_brooke_alvinston" class="mainlabel"><?=@text('Brooke-Alvinston')?>:</label>
-			<input type="text" name="brooke_alvinston" id="field_brooke_alvinston" value="<?=$volunteer->brooke_alvinston?>" /><br/>
+			<input type="hidden" name="brooke_alvinston" value="0" />
+			<input type="checkbox" name="brooke_alvinston" id="field_brooke_alvinston" value="1" <?= ($volunteer->brooke_alvinston)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_lambton_shores" class="mainlabel"><?=@text('Lambton Shores')?>:</label>
-			<input type="text" name="lambton_shores" id="field_lambton_shores" value="<?=$volunteer->lambton_shores?>" /><br/>
+			<input type="hidden" name="lambton_shores" value="0" />
+			<input type="checkbox" name="lambton_shores" id="field_lambton_shores" value="1" <?= ($volunteer->lambton_shores)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_point_edward" class="mainlabel"><?=@text('Point Edward')?>:</label>
-			<input type="text" name="point_edward" id="field_point_edward" value="<?=$volunteer->point_edward?>" /><br/>
+			<input type="hidden" name="point_edward" value="0" />
+			<input type="checkbox" name="point_edward" id="field_point_edward" value="1" <?= ($volunteer->point_edward)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_sarnia" class="mainlabel"><?=@text('Sarnia')?>:</label>
-			<input type="text" name="sarnia" id="field_sarnia" value="<?=$volunteer->sarnia?>" /><br/>
+			<input type="hidden" name="sarnia" value="0" />
+			<input type="checkbox" name="sarnia" id="field_sarnia" value="1" <?= ($volunteer->sarnia)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_dawn_euphemia" class="mainlabel"><?=@text('Dawn-Euphemia')?>:</label>
-			<input type="text" name="dawn_euphemia" id="field_dawn_euphemia" value="<?=$volunteer->dawn_euphemia?>" /><br/>
+			<input type="hidden" name="dawn_euphemia" value="0" />
+			<input type="checkbox" name="dawn_euphemia" id="field_dawn_euphemia" value="1" <?= ($volunteer->dawn_euphemia)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_oil_springs" class="mainlabel"><?=@text('Oil Springs')?>:</label>
-			<input type="text" name="oil_springs" id="field_oil_springs" value="<?=$volunteer->oil_springs?>" /><br/>
+			<input type="hidden" name="oil_springs" value="0" />
+			<input type="checkbox" name="oil_springs" id="field_oil_springs" value="1" <?= ($volunteer->oil_springs)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_plympton_wyoming" class="mainlabel"><?=@text('Plympton Wyoming')?>:</label>
-			<input type="text" name="plympton_wyoming" id="field_plympton_wyoming" value="<?=$volunteer->plympton_wyoming?>" /><br/>
+			<input type="hidden" name="plympton_wyoming" value="0" />
+			<input type="checkbox" name="plympton_wyoming" id="field_plympton_wyoming" value="1" <?= ($volunteer->plympton_wyoming)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_enniskillen" class="mainlabel"><?=@text('Enniskillen')?>:</label>
-			<input type="text" name="enniskillen" id="field_enniskillen" value="<?=$volunteer->enniskillen?>" /><br/>
+			<input type="hidden" name="enniskillen" value="0" />
+			<input type="checkbox" name="enniskillen" id="field_enniskillen" value="1" <?= ($volunteer->enniskillen)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_petrolia" class="mainlabel"><?=@text('Petrolia')?>:</label>
-			<input type="text" name="petrolia" id="field_petrolia" value="<?=$volunteer->petrolia?>" /><br/>
+			<input type="hidden" name="petrolia" value="0" />
+			<input type="checkbox" name="petrolia" id="field_petrolia" value="1" <?= ($volunteer->petrolia)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_st_clair" class="mainlabel"><?=@text('St. Clair')?>:</label>
-			<input type="text" name="st_clair" id="field_st_clair" value="<?=$volunteer->st_clair?>" /><br/>
+			<input type="hidden" name="st_clair" value="0" />
+			<input type="checkbox" name="st_clair" id="field_st_clair" value="1" <?= ($volunteer->st_clair)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_location_flexible" class="mainlabel"><?=@text('Location Flexible')?>:</label>
-			<input type="checkbox" name="location_flexible" id="field_location_flexible" value="<?=$volunteer->location_flexible?>" /><br/>
+			<input type="hidden" name="location_flexible" value="0" />
+			<input type="checkbox" name="location_flexible" id="field_location_flexible" value="1" <?= ($volunteer->location_flexible)? 'checked="checked"':'';?> /><br/>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Areas of Interest', 'interests-pane') ?>
 			<label for="field_animals" class="mainlabel"><?=@text('Animals/Animal Services')?>:</label>
-			<input type="text" name="animals" id="field_animals" value="<?=$volunteer->animals?>" /><br/>
+			<input type="hidden" name="animals" value="0" />
+			<input type="checkbox" name="animals" id="field_animals" value="1" <?= ($volunteer->animals)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_community" class="mainlabel"><?=@text('Community Development')?>:</label>
-			<input type="text" name="community" id="field_community" value="<?=$volunteer->community?>" /><br/>
+			<input type="hidden" name="community" value="0" />
+			<input type="checkbox" name="community" id="field_community" value="1" <?= ($volunteer->community)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_health" class="mainlabel"><?=@text('Health & Wellness')?>:</label>
-			<input type="text" name="health" id="field_health" value="<?=$volunteer->health?>" /><br/>
+			<input type="hidden" name="health" value="0" />
+			<input type="checkbox" name="health" id="field_health" value="1" <?= ($volunteer->health)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_arts" class="mainlabel"><?=@text('Arts & Culture')?>:</label>
-			<input type="text" name="arts" id="field_arts" value="<?=$volunteer->arts?>" /><br/>
+			<input type="hidden" name="arts" value="0" />
+			<input type="checkbox" name="arts" id="field_arts" value="1" <?= ($volunteer->arts)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_emergency" class="mainlabel"><?=@text('Emergency/Crisis Services')?>:</label>
-			<input type="text" name="emergency" id="field_emergency" value="<?=$volunteer->emergency?>" /><br/>
+			<input type="hidden" name="emergency" value="0" />
+			<input type="checkbox" name="emergency" id="field_emergency" value="1" <?= ($volunteer->emergency)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_social_services" class="mainlabel"><?=@text('Social Services & Justice')?>:</label>
-			<input type="text" name="social_services" id="field_social_services" value="<?=$volunteer->social_services?>" /><br/>
+			<input type="hidden" name="social_services" value="0" />
+			<input type="checkbox" name="social_services" id="field_social_services" value="1" <?= ($volunteer->social_services)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_children" class="mainlabel"><?=@text('Children & Youth')?>:</label>
-			<input type="text" name="children" id="field_children" value="<?=$volunteer->children?>" /><br/>
+			<input type="hidden" name="children" value="0" />
+			<input type="checkbox" name="children" id="field_children" value="1" <?= ($volunteer->children)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_environment" class="mainlabel"><?=@text('Environment')?>:</label>
-			<input type="text" name="environment" id="field_environment" value="<?=$volunteer->environment?>" /><br/>
+			<input type="hidden" name="environment" value="0" />
+			<input type="checkbox" name="environment" id="field_environment" value="1" <?= ($volunteer->environment)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_special_events" class="mainlabel"><?=@text('Special Events')?>:</label>
-			<input type="text" name="special_events" id="field_special_events" value="<?=$volunteer->special_events?>" /><br/>
+			<input type="hidden" name="special_events" value="0" />
+			<input type="checkbox" name="special_events" id="field_special_events" value="1" <?= ($volunteer->special_events)? 'checked="checked"':''?> /><br/>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Skills', 'skills-pane') ?>
 			<label for="field_accounting" class="mainlabel"><?=@text('Accounting')?>:</label>
-			<input type="text" name="accounting" id="field_accounting" value="<?=$volunteer->accounting?>" /><br/>
+			<input type="hidden" name="accounting" value="0" />
+			<input type="checkbox" name="accounting" id="field_accounting" value="1" <?= ($volunteer->accounting)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_coaching" class="mainlabel"><?=@text('Coaching')?>:</label>
-			<input type="text" name="coaching" id="field_coaching" value="<?=$volunteer->coaching?>" /><br/>
+			<input type="hidden" name="coaching" value="0" />
+			<input type="checkbox" name="coaching" id="field_coaching" value="1" <?= ($volunteer->coaching)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_event_coordination" class="mainlabel"><?=@text('Event Coordination')?>:</label>
-			<input type="text" name="event_coordination" id="field_event_coordination" value="<?=$volunteer->event_coordination?>" /><br/>
+			<input type="hidden" name="event_coordination" value="0" />
+			<input type="checkbox" name="event_coordination" id="field_event_coordination" value="1" <?= ($volunteer->event_coordination)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_it" class="mainlabel"><?=@text('IT')?>:</label>
-			<input type="text" name="it" id="field_it" value="<?=$volunteer->it?>" /><br/>
+			<input type="hidden" name="it" value="0" />
+			<input type="checkbox" name="it" id="field_it" value="1" <?= ($volunteer->it)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_marketing" class="mainlabel"><?=@text('Marketing & Communications')?>:</label>
-			<input type="text" name="marketing" id="field_marketing" value="<?=$volunteer->marketing?>" /><br/>
+			<input type="hidden" name="marketing" value="0" />
+			<input type="checkbox" name="marketing" id="field_marketing" value="1" <?= ($volunteer->marketing)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_outreach" class="mainlabel"><?=@text('Outreach')?>:</label>
-			<input type="text" name="outreach" id="field_outreach" value="<?=$volunteer->outreach?>" /><br/>
+			<input type="hidden" name="outreach" value="0" />
+			<input type="checkbox" name="outreach" id="field_outreach" value="1" <?= ($volunteer->outreach)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_translation" class="mainlabel"><?=@text('Translation')?>:</label>
-			<input type="text" name="translation" id="field_translation" value="<?=$volunteer->translation?>" /><br/>
+			<input type="hidden" name="translation" value="0" />
+			<input type="checkbox" name="translation" id="field_translation" value="1" <?= ($volunteer->translation)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_bilingual" class="mainlabel"><?=@text('Bilingual (Eng/Fr)')?>:</label>
-			<input type="text" name="bilingual" id="field_bilingual" value="<?=$volunteer->bilingual?>" /><br/>
+			<input type="hidden" name="bilingual" value="0" />
+			<input type="checkbox" name="bilingual" id="field_bilingual" value="1" <?= ($volunteer->bilingual)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_counseling" class="mainlabel"><?=@text('Counseling')?>:</label>
-			<input type="text" name="counseling" id="field_counseling" value="<?=$volunteer->counseling?>" /><br/>
+			<input type="hidden" name="counseling" value="0" />
+			<input type="checkbox" name="counseling" id="field_counseling" value="1" <?= ($volunteer->counseling)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_fundraising" class="mainlabel"><?=@text('Fundraising')?>:</label>
-			<input type="text" name="fundraising" id="field_fundraising" value="<?=$volunteer->fundraising?>" /><br/>
+			<input type="hidden" name="fundraising" value="0" />
+			<input type="checkbox" name="fundraising" id="field_fundraising" value="1" <?= ($volunteer->fundraising)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_legal" class="mainlabel"><?=@text('Legal')?>:</label>
-			<input type="text" name="legal" id="field_legal" value="<?=$volunteer->legal?>" /><br/>
+			<input type="hidden" name="legal" value="0" />
+			<input type="checkbox" name="legal" id="field_legal" value="1" <?= ($volunteer->legal)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_medical" class="mainlabel"><?=@text('Medical Assistance')?>:</label>
-			<input type="text" name="medical" id="field_medical" value="<?=$volunteer->medical?>" /><br/>
+			<input type="hidden" name="medical" value="0" />
+			<input type="checkbox" name="medical" id="field_medical" value="1" <?= ($volunteer->medical)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_pr" class="mainlabel"><?=@text('PR')?>:</label>
-			<input type="text" name="pr" id="field_pr" value="<?=$volunteer->pr?>" /><br/>
+			<input type="hidden" name="pr" value="0" />
+			<input type="checkbox" name="pr" id="field_pr" value="1" <?= ($volunteer->pr)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_writing" class="mainlabel"><?=@text('Writing & Research')?>:</label>
-			<input type="text" name="writing" id="field_writing" value="<?=$volunteer->writing?>" /><br/>
+			<input type="hidden" name="writing" value="0" />
+			<input type="checkbox" name="writing" id="field_writing" value="1" <?= ($volunteer->writing)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_board_work" class="mainlabel"><?=@text('Board Work')?>:</label>
-			<input type="text" name="board_work" id="field_board_work" value="<?=$volunteer->board_work?>" /><br/>
+			<input type="hidden" name="board_work" value="0" />
+			<input type="checkbox" name="board_work" id="field_board_work" value="1" <?= ($volunteer->board_work)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_crisis" class="mainlabel"><?=@text('Crisis Intervention')?>:</label>
-			<input type="text" name="crisis" id="field_crisis" value="<?=$volunteer->crisis?>" /><br/>
+			<input type="hidden" name="crisis" value="0" />
+			<input type="checkbox" name="crisis" id="field_crisis" value="1" <?= ($volunteer->crisis)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_administration" class="mainlabel"><?=@text('General Administration')?>:</label>
-			<input type="text" name="administration" id="field_administration" value="<?=$volunteer->administration?>" /><br/>
+			<input type="hidden" name="administration" value="0" />
+			<input type="checkbox" name="administration" id="field_administration" value="1" <?= ($volunteer->administration)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_management" class="mainlabel"><?=@text('Management Consulting')?>:</label>
-			<input type="text" name="management" id="field_management" value="<?=$volunteer->management?>" /><br/>
+			<input type="hidden" name="management" value="0" />
+			<input type="checkbox" name="management" id="field_management" value="1" <?= ($volunteer->management)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_mentoring" class="mainlabel"><?=@text('Mentoring & Training')?>:</label>
-			<input type="text" name="mentoring" id="field_mentoring" value="<?=$volunteer->mentoring?>" /><br/>
+			<input type="hidden" name="mentoring" value="0" />
+			<input type="checkbox" name="mentoring" id="field_mentoring" value="1" <?= ($volunteer->mentoring)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_sports" class="mainlabel"><?=@text('Sports & Recreation')?>:</label>
-			<input type="text" name="sports" id="field_sports" value="<?=$volunteer->sports?>" /><br/>
+			<input type="hidden" name="sports" value="0" />
+			<input type="checkbox" name="sports" id="field_sports" value="1" <?= ($volunteer->sports)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_other" class="mainlabel"><?=@text('Other')?>:</label>
 			<input type="text" name="other" id="field_other" value="<?=$volunteer->other?>" /><br/>
@@ -229,10 +270,15 @@
 		
 		<?= $pane->startPanel('Misc', 'misc-panel') ?>
 			<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter Signup')?>:</label>
-			<input type="text" name="newsletter" id="field_newsletter" value="<?=$volunteer->newsletter?>" /><br/>
+			<input type="hidden" name="newsetter" value="0" />
+			<input type="checkbox" name="newsletter" id="field_newsletter" value="1" <?= ($volunteer->newsletter)? 'checked="checked"':''?> /><br/>
 			
 			<label for="field_search" class="mainlabel"><?=@text('Include in Search')?>:</label>
-			<input type="text" name="search" id="field_search" value="<?=$volunteer->search?>" /><br/>
+			<input type="hidden" name="search" value="0" />
+			<input type="checkbox" name="search" id="field_search" value="1" <?= ($volunteer->search)? 'checked="checked"':''?> /><br/>
+			
+			<label for="field_user_id" class="mainlabel"><?=@text('User ID')?>:</label>
+			<input type="text" name="user_id" id="field_user_id" value="<?=$volunteer->user_id?>" /><br/>
 		<?= $pane->endPanel() ?>
 		<?= $pane->endPane() ?>
 	</div>	

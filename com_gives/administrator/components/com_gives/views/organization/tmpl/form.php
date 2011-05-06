@@ -94,7 +94,8 @@
 			<input type="text" name="st_clair" id="field_st_clair" value="<?=$organization->st_clair?>" /><br/>
 			
 			<label for="field_location_flexible" class="mainlabel"><?=@text('Location Flexible')?>:</label>
-			<input type="checkbox" name="location_flexible" id="field_location_flexible" value="<?=$organization->location_flexible?>" /><br/>
+			<input type="hidden" name="location_flexible" value="0" />
+			<input type="checkbox" name="location_flexible" id="field_location_flexible" value="1" <?= ($organization->location_flexible)? 'checked="checked"':''?> /><br/>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Interests', 'interests-pane')?>
