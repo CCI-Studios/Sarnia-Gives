@@ -11,8 +11,8 @@ class ComGivesViewOpportunitiesJson extends KViewJson
 			$items = $model->getList()->toArray();
 			$data = array();
 			
-			foreach ($items as $row) {
-				$data[] = array_filter($row);
+			foreach ($items as $index=>$row) {
+				$data[$index] = array_filter($row);
 			}
             
 			$this->output = json_encode($data);
