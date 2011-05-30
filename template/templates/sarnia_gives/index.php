@@ -80,7 +80,7 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 
 	<!-- load scripts -->
 	<?php if ($testing): ?>
-		<script src="/templates/<?= $this->template ?>/js/libs/mootools-1.1.1.js"></script>
+		<script src="/templates/<?= $this->template ?>/js/libs/jquery-1.6.1.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/columns.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/dropmenu.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/html5.js"></script>
@@ -91,8 +91,8 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 				g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
 				s.parentNode.insertBefore(g,s)}(document,"script"));
 	  </script>
-		<script src="//ajax.googleapis.com/ajax/libs/mootools/1.1.1/mootools-yui-compressed.js"></script>
-		<script>window.MooTools || document.write('<script src="/templates/<?= $this->template; ?>/js/libs/mootools-1.1.1.min.js">\x3c/script>')</script>
+		<script src="///ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/templates/<?= $this->template; ?>/js/libs/jquery-1.6.1.min.js">\x3c/script>')</script>
 		<script src="/templates/<?= $this->template ?>/js/scripts.min.js"></script>
 	<?php endif; ?>
 </body>
