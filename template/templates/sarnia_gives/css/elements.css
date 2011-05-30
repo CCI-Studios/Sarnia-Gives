@@ -4,7 +4,12 @@ select,
 input,
 textarea {
   color: #444;
+  /* off black */
+
   font-family: Helvetica, Arial, sans-serif;
+}
+body {
+  background: #ffffff url(../images/body_bg.png) repeat-x;
 }
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
 h1,
