@@ -2,11 +2,11 @@
 <install version="1.5" type="template">
 	<name>sarnia_gives</name>
 	<version>1.0.0</version>
-	<creationDate>DATE</creationDate>
+	<creationDate>May 30, 2011</creationDate>
 	<author>Jonathan Bennett</author>
 	<authorEmail>jbennett@ccistudios.com</authorEmail>
 	<authorUrl>http://www.ccistudios.com</authorUrl>
-	<copyright>Copyright 2010 - ccistudios.com</copyright>
+	<copyright>Copyright 2011 - ccistudios.com</copyright>
 	<license>GNU GPLv3</license>
 	<description>
 		<![CDATA[
@@ -27,11 +27,17 @@
 		<folder>resources</folder>
 	</files>
 
-	<positions>
+	<positions>	  
+	    <position>bottom</position>
+	    <position>bottom_menu</position>
+	    <position>footer</position>
+	    <position>header</position>  
 		<position>hidden</position>
+		<position>sidebar</position>
+		<position>scroll</position>
+		<position>top</position>
 	</positions>
 
 	<params>
 	</params>
-
 </install>

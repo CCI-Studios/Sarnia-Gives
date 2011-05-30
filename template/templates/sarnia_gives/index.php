@@ -55,23 +55,69 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 <body class="<?= $menu ?>">
 
 	<div id="wrapper">
-		<header>
-			<jdoc:include type="modules" name ="header" style="xhtml" />
-		</header>
-
-		<div id="main">
-			<aside>
-				<jdoc:include type="modules" name="left" style="xhtml" />
-			</aside>
-
-			<article>
-				<jdoc:include type="component" />
-			</article>
+		<div id="top">
+		    <jdoc:include type="modules" name="top" style="xhtml" />
+		    
+		    <div class="clear"></div>
 		</div>
-
-		<footer>
-			<jdoc:include type="modules" name="footer" style="xhtml" />
-		</footer>
+		
+		<div id="header">
+		    <jdoc:include type="modules" name="header" style="xhtml" />
+		    
+		    <div class="clear"></div>
+		</div>
+		
+		<div id="body"><div>
+		    <div id="component">
+		        <jdoc:include type="component" />
+		        
+		        <div class="clear"></div>
+		    </div>
+		    
+		    <div id="sidebar">
+		        <jdoc:include type="modules" name="sidebar" />
+		        
+		        <div class="clear"></div>
+		    </div>
+		    
+		    <div class="clear"></div>
+		</div></div>
+		
+		<div id="scroll">
+		    <jdoc:include type="modules" name="scroll" style="xhtml" />
+		
+		    <div class="clear"></div>
+		</div>
+		
+		<div id="bottom">
+		    <jdoc:include type="modules" name="bottom" style="xhtml" />
+		    
+		    <div class="clear"></div>
+		</div>
+		
+		<div id="footer">
+		    <jdoc:include type="modules" name="footer" style="xhtml" />
+		    
+		    <div class="clear"></div>
+		</div>
+		
+		<div id="bottom_menu">
+		    <jdoc:include type="modules" name="bottom_menu" style="xhtml" />
+		    
+		    <div class="clear"></div>
+		</div>
+		
+		<div>
+		    <div class="left">
+		        &copy; <?php echo date('Y') ?> Sarnia Gives. All Rights Reserved.
+		    </div>
+		    <div class="right">
+		        Site by <a href="http://www.ccistudios.com" target="_blank">CCI Studios</a>
+		    </div>
+		    
+		    <div class="clear"></div>
+		</div>
+		    
 	</div>
 
 	<div class="hidden">
