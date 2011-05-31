@@ -8,6 +8,9 @@
 .right {
   float: right;
 }
+.hidden {
+  display: none;
+}
 /* These selection declarations have to be separate
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink! */
