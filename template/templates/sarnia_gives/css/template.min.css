@@ -233,6 +233,13 @@ textarea {
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
+@font-face {
+  font-family: 'FuturaMd';
+  src: url('ftramd.eot');
+  src: url('ftramd.eot?#iefix') format('embedded-opentype'), url('ftramd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /* elements */
 body,
 select,
@@ -241,7 +248,7 @@ textarea {
   color: #444;
   /* off black */
 
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: FutraMd, Helvetica, Arial, sans-serif;
 }
 body {
   background: #ffffff url(../images/body_bg.png) repeat-x;
