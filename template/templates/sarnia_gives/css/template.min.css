@@ -444,6 +444,21 @@ textarea {
 }
 /* modules */
 /* hmenu */
+.moduletable_hmenu ul {
+  list-style: none;
+  text-align: center;
+}
+.moduletable_hmenu li {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0 0 0 30px;
+  text-transform: uppercase;
+  zoom: 1;
+  *display: inline;
+}
+.moduletable_hmenu li:first-child {
+  padding-left: 0;
+}
 /* /hmenu */
 /* vmenu */
 /* /vmenu *//* styles */
