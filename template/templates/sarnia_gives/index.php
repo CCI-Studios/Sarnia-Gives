@@ -84,7 +84,11 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		</div></div>
 		
 		<div id="scroll">
-		    <jdoc:include type="modules" name="scroll" style="xhtml" />
+		    <div class="inner"> 
+		        <jdoc:include type="modules" name="scroll" style="xhtml" />
+		    </div>
+		    <div class="arrow-left"></div>
+		    <div class="arrow-right"></div>
 		
 		    <div class="clear"></div>
 		</div>
@@ -111,7 +115,6 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		    
 		    <div class="clear"></div>
 		</div>
-		    
 	</div>
 
 	<div class="hidden">

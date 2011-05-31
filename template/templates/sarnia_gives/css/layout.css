@@ -36,6 +36,11 @@
   background: url(../images/divider-horizontal.png) top repeat-x;
   margin: 20px 0;
   padding-top: 20px;
+  position: relative;
+}
+#scroll .inner {
+  height: 150px;
+  overflow: hidden;
 }
 #bottom {
   background: url(../images/divider-horizontal.png) top repeat-x;
