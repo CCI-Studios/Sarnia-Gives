@@ -461,7 +461,13 @@ textarea {
 }
 /* /hmenu */
 /* vmenu */
-/* /vmenu *//* styles */
+/* /vmenu */
+#top .moduletable_hmenu {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+/* styles */
 .clr, .clear {
   clear: both;
 }

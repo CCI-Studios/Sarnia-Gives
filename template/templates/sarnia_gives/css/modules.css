@@ -14,3 +14,11 @@
 .moduletable_hmenu li:first-child {
   padding-left: 0;
 }
+/* /hmenu */
+/* vmenu */
+/* /vmenu */
+#top .moduletable_hmenu {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
