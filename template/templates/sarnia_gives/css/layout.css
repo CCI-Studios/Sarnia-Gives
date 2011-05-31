@@ -41,6 +41,8 @@
 #scroll .inner {
   height: 150px;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 #bottom {
   background: url(../images/divider-horizontal.png) top repeat-x;

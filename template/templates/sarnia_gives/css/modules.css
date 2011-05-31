@@ -62,6 +62,7 @@
 }
 #scroll .arrow-left, #scroll .arrow-right {
   background: url(../images/arrows.png) no-repeat;
+  cursor: pointer;
   height: 26px;
   left: -20px;
   position: absolute;

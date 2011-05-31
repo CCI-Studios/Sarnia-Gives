@@ -430,6 +430,8 @@ textarea {
 #scroll .inner {
   height: 150px;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 #bottom {
   background: url(../images/divider-horizontal.png) top repeat-x;
@@ -505,6 +507,7 @@ textarea {
 }
 #scroll .arrow-left, #scroll .arrow-right {
   background: url(../images/arrows.png) no-repeat;
+  cursor: pointer;
   height: 26px;
   left: -20px;
   position: absolute;
