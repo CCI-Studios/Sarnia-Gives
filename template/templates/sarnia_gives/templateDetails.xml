@@ -29,7 +29,6 @@
 
 	<positions>	  
 	    <position>bottom</position>
-	    <position>bottom_menu</position>
 	    <position>footer</position>
 	    <position>header</position>  
 		<position>hidden</position>

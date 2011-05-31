@@ -101,12 +101,6 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		    <div class="clear"></div>
 		</div>
 		
-		<div id="bottom_menu">
-		    <jdoc:include type="modules" name="bottom_menu" style="xhtml" />
-		    
-		    <div class="clear"></div>
-		</div>
-		
 		<div>
 		    <div class="left">
 		        &copy; <?php echo date('Y') ?> Sarnia Gives. All Rights Reserved.
