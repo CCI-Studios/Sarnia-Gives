@@ -436,15 +436,6 @@ textarea {
   margin: 25px 0 13px;
   padding-bottom: 16px;
 }
-/* temp */
-#scroll {
-  min-height: 100px;
-  background-color: pink;
-}
-#bottom {
-  min-height: 100px;
-  background-color: orange;
-}
 /* modules */
 /* hmenu */
 .moduletable_hmenu ul {
