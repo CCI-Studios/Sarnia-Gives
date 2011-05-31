@@ -437,6 +437,13 @@ textarea {
   padding-bottom: 16px;
 }
 /* modules */
+.moduletable h3 {
+  background: url(../images/h1_bg.png) left no-repeat;
+  font-size: 22px;
+  line-height: 35px;
+  margin: 0 0 0.7em -35px;
+  padding-left: 35px;
+}
 /* hmenu */
 .moduletable_hmenu ul {
   list-style: none;
@@ -499,13 +506,6 @@ textarea {
 }
 #bottom .moduletable:first-child {
   border-left: none;
-}
-#bottom .moduletable h3 {
-  background: url(../images/h1_bg.png) left no-repeat;
-  font-size: 22px;
-  line-height: 35px;
-  margin: 0 0 0.7em -35px;
-  padding-left: 35px;
 }
 /* styles */
 .clr, .clear {
