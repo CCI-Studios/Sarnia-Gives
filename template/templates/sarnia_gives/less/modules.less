@@ -8,6 +8,7 @@
 
 .moduletable_hmenu ul {
 	list-style: none;
+	margin: 0;
 	text-align: center;
 }
 
@@ -21,6 +22,16 @@
 	*display: inline;
 }
 .moduletable_hmenu li:first-child { padding-left: 0; }
+
+.moduletable_hmenu li > a,
+.moduletable_hmenu li > span {
+	display: block;
+}
+
+.moduletable_hmenu li > a:hover,
+.moduletable_hmenu li > span:hover {
+	text-decoration: none;
+}
 /* /hmenu */
 
 
@@ -33,4 +44,36 @@
 	bottom: 0;
 	position: absolute;
 	right: 0;
+}
+
+#top .moduletable_hmenu li > a,
+#top .moduletable_hmenu li > span {
+	color: #4d4d4d;
+	padding-top: 20px;
+}
+
+#top .moduletable_hmenu li > a:hover,
+#top .moduletable_hmenu li > span:hover {
+	background: url(../images/menu_li_bg_hover.png) top no-repeat;
+	color: #5f167b;
+}
+
+#footer .moduletable_hmenu li {
+	background: url(../images/footer_menu_li_bg.png) 10px no-repeat;
+	padding-left: 22px;
+}
+#footer .moduletable_hmenu li:first-child {
+	background: none;
+	padding-left: 0;
+}
+
+#footer .moduletable_hmenu li > a,
+#footer .moduletable_hmenu li > span {
+	color: #a7a9ac;
+	font-size: 12px;
+}
+#footer .moduletable_hmenu li > a:hover,
+#footer .moduletable_hmenu li > span:hover {
+	color: #5f167b;
+}
 }
