@@ -260,14 +260,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  color: #4d4d4d;
+  margin: 0.3em 0 0.7em;
+}
+h1 {
+  background: url(../images/h1_bg.png) left center no-repeat;
+  font-size: 22px;
+  margin-left: -40px;
+  padding-left: 40px;
 }
 a, a:active, a:visited {
-  color: #607890;
+  color: #5f167b;
   text-decoration: none;
 }
 a:hover {
-  color: #036;
   text-decoration: underline;
 }
 p,
@@ -407,8 +413,8 @@ textarea {
 }
 #component {
   float: left;
-  padding-left: 10px;
-  width: 610px;
+  padding-left: 40px;
+  width: 580px;
 }
 #sidebar {
   float: left;
