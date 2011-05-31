@@ -1,11 +1,18 @@
 /* layout */
 #wrapper {
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 25px 10px;
   width: 940px;
+}
+#top {
+  margin: 0 0 15px;
+  position: relative;
 }
 #header {
   margin-bottom: 28px;
+}
+#header img {
+  display: block;
 }
 #body {
   background: url(../images/divider-horizontal.png) top repeat-x;
@@ -48,8 +55,4 @@
 #bottom {
   min-height: 100px;
   background-color: orange;
-}
-#footer {
-  min-height: 100px;
-  background-color: silver;
 }
