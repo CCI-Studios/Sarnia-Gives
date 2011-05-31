@@ -53,3 +53,19 @@
 #footer .moduletable_hmenu li > a:hover, #footer .moduletable_hmenu li > span:hover {
   color: #5f167b;
 }
+#bottom .moduletable {
+  border-left: 2px solid #f2f2f2;
+  float: left;
+  padding: 0 35px 0 44px;
+  width: 232px;
+}
+#bottom .moduletable:first-child {
+  border-left: none;
+}
+#bottom .moduletable h3 {
+  background: url(../images/h1_bg.png) left no-repeat;
+  font-size: 22px;
+  line-height: 35px;
+  margin: 0 0 0.7em -35px;
+  padding-left: 35px;
+}
