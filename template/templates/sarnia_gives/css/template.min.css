@@ -412,24 +412,6 @@ textarea {
   padding-bottom: 16px;
 }
 /* temp */
-#wrapper {
-  background-color: purple;
-}
-#top {
-  min-height: 100px;
-  background-color: red;
-}
-#header {
-  min-height: 100px;
-  background-color: green;
-}
-#component {
-  min-height: 100px;
-  background-color: yellow;
-}
-#sidebar {
-  min-height: 100px;
-}
 #scroll {
   min-height: 100px;
   background-color: pink;
