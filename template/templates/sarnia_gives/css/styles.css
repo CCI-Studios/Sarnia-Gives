@@ -8,6 +8,12 @@
 .right {
   float: right;
 }
+img.right {
+  margin: 0 0 10px 10px;
+}
+img.left {
+  margin: 0 10px 10px 0;
+}
 .hidden {
   display: none;
 }
