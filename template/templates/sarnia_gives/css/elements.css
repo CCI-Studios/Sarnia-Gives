@@ -6,7 +6,7 @@ textarea {
   color: #4d4d4d;
   /* off black */
 
-  font-family: FutraMd, Helvetica, Arial, sans-serif;
+  font-family: "futura-pt-1", "futura-pt-2", Helvetica, Arial, sans-serif;
 }
 body {
   background: #ffffff url(../images/body_bg.png) repeat-x;
