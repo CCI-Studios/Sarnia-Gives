@@ -56,6 +56,14 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 
 	<div id="wrapper">
 		<div id="top">
+		    <div class="moduletable login">
+		        <?php if (JFactory::getUser()->guest == 1): ?>
+                    <a href="index.php?option=com_user&amp;view=login">Login</a>
+		        <?php else: ?>
+		            <a href="index.php?option=com_user&amp;view=login">Logout</a>
+		        <?php endif; ?>
+		    </div>
+		    
 		    <jdoc:include type="modules" name="top" style="xhtml" />
 		    
 		    <div class="clear"></div>

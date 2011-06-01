@@ -416,6 +416,9 @@ textarea {
   padding-left: 40px;
   width: 580px;
 }
+#component.wide {
+  width: 900px;
+}
 #sidebar {
   float: left;
   padding-left: 20px;
@@ -489,6 +492,17 @@ textarea {
 #top .moduletable_hmenu li > a:hover, #top .moduletable_hmenu li > span:hover {
   background: url(../images/menu_li_bg_hover.png) top no-repeat;
   color: #5f167b;
+}
+#top .login {
+  background: url(../images/login_bg.png) left no-repeat;
+  line-height: 20px;
+  padding-left: 35px;
+  position: absolute;
+  right: 0;
+  top: -15px;
+}
+#top .login a {
+  color: #4e4e4e;
 }
 #footer .moduletable_hmenu li {
   background: url(../images/footer_menu_li_bg.png) 10px no-repeat;
