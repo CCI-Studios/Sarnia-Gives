@@ -68,21 +68,24 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		</div>
 		
 		<div id="body"><div>
-		    <div id="component">
+		    <div id="component" class="<?php echo ($this->countModules('sidebar'))? '':'wide'; ?>">
 		        <jdoc:include type="component" />
 		        
 		        <div class="clear"></div>
 		    </div>
 		    
+		    <?php if ($this->countModules('sidebar')): ?>
 		    <div id="sidebar">
-		        <jdoc:include type="modules" name="sidebar" />
+		        <jdoc:include type="modules" name="sidebar" style="xhtml" />
 		        
 		        <div class="clear"></div>
 		    </div>
+		    <?php endif; ?>
 		    
 		    <div class="clear"></div>
 		</div></div>
 		
+		<?php if ($this->countModules('scroll')): ?>
 		<div id="scroll">
 		    <div class="inner"> 
 		        <jdoc:include type="modules" name="scroll" style="xhtml" />
@@ -92,12 +95,15 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		
 		    <div class="clear"></div>
 		</div>
+		<?php endif; ?>
 		
+		<?php if ($this->countModules('bottom')): ?>
 		<div id="bottom">
 		    <jdoc:include type="modules" name="bottom" style="xhtml" />
 		    
 		    <div class="clear"></div>
 		</div>
+		<?php endif; ?>
 		
 		<div id="footer">
 		    <jdoc:include type="modules" name="footer" style="xhtml" />

@@ -27,6 +27,9 @@
   padding-left: 40px;
   width: 580px;
 }
+#component.wide {
+  width: 900px;
+}
 #sidebar {
   float: left;
   padding-left: 20px;
