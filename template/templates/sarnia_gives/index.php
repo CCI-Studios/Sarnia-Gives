@@ -62,7 +62,7 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		        <?php if (JFactory::getUser()->guest == 1): ?>
                     <a href="index.php?option=com_user&amp;view=login">Login</a>
 		        <?php else: ?>
-		            <a href="index.php?option=com_user&amp;task=logout">Logout</a>
+		            <a href="index.php?option=com_user&amp;task=logout&amp;return=Lw==">Logout</a>
 		        <?php endif; ?>
 		    </div>
 		    
