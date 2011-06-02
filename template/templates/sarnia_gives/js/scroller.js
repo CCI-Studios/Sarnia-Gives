@@ -5,7 +5,7 @@ jQuery(function ($) {
 	spacer = 320;
 	transition = 'swing';
 
-	images = $('#scroll .inner').find('.moduletable');
+	images = $('#scroll .inner').children();
 	images.each(function (index, image) {
 		$(image).css({
 			padding: 0,
@@ -16,35 +16,39 @@ jQuery(function ($) {
 	
 	update = function (amount) {
 		clearTimeout(timeout);
-		images.css('display', 'block');
-		if (amount > 0) {
-			$(images[current]).css('display', 'none');
-		} else {
-			if (current - 1 >= 0) {
-				$(images[current - 1]).css('display', 'none');
-			} else {
-				$(images[images.length - 1]).css('display', 'none');
-			}
-		}
 		
+		prev = current;
 		current += amount;
-		if (current === images.length) {
-			current = 0
-		}
-		if (current === -1) {
-			current = images.length - 1;
-		}
+		next = current + amount + 1;
+		
+		while (current >= images.length)
+			current -= images.length;
+		while (next >= images.length)
+			next -= images.length;
+			
+		while (current < 0)
+			current += images.length;
+		while (next < 0)
+			next += images.length;
+			
+		images.css('display', function (index) {
+			if (amount > 0 && index === prev ||
+				amount < 0 && index === next) {
+				console.log('hide: ' + next);
+				return 'none';
+			}
+			return 'block';
+		});
+		
 		
 		images.each(function (index, image) {
-			if (index >= current) {
-				$(image).stop(false, true).animate({
-					left: ((index - current - 1) * spacer)
-				}, duration, transition);
-			} else {
-				$(image).stop(false, true).animate({
-					left: ((index - current - 1 + images.length) * spacer)
-				}, duration, transition);
-			}
+			diff = index - current - 1;
+			if (diff < -1) // allow one space offscreen
+				diff += images.length;
+			
+			$(image).stop(false, true).animate({
+				left: (diff * spacer)
+			}, duration, transition);
 		});
 		
 		timeout = setTimeout(function () {
