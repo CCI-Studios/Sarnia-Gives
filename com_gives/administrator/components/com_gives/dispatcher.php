@@ -4,7 +4,9 @@ class ComGivesDispatcher extends ComDefaultDispatcher {
      
     protected function _initialize(KConfig $config)
     {
-		$config->append(array('controller_default' => 'volunteers'));
+		$config->append(array(
+		    'controller' => 'volunteers'
+		));
         parent::_initialize($config);
     }
 }
