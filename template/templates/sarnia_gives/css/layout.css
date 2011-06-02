@@ -22,12 +22,15 @@
 #body > div {
   background: url(../images/divider-vertical.png) 630px repeat-y;
 }
+#body.wide > div {
+  background: none;
+}
 #component {
   float: left;
   padding-left: 40px;
   width: 580px;
 }
-#component.wide {
+#body.wide #component {
   width: 900px;
 }
 #sidebar {

@@ -77,8 +77,8 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		    <div class="clear"></div>
 		</div>
 		
-		<div id="body"><div>
-		    <div id="component" class="<?php echo ($this->countModules('sidebar'))? '':'wide'; ?>">
+		<div id="body" class="<?php echo ($this->countModules('sidebar'))? '':'wide'; ?>"><div>
+		    <div id="component">
 		        <jdoc:include type="component" />
 		        
 		        <div class="clear"></div>
