@@ -32,6 +32,10 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 	<?= ($testing)? '':  '<meta http-equiv="X-UA-Compatible" contents="IE=edge,chrome=1">' ?>
 
  	<jdoc:include type="head" />
+ 	
+ 	<?php if ($testing): ?>
+ 	     <meta name="robots" content="noindex, nofollow" /> 
+    <?php endif; ?>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="/templates/<?= $this->template ?>/resources/favicon.ico">
