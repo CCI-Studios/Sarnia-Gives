@@ -34,7 +34,6 @@ jQuery(function ($) {
 		images.css('display', function (index) {
 			if (amount > 0 && index === prev ||
 				amount < 0 && index === next) {
-				console.log('hide: ' + next);
 				return 'none';
 			}
 			return 'block';
