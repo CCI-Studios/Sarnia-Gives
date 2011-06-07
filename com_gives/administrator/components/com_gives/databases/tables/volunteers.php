@@ -37,6 +37,11 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
        {
            $mailer = JFactory::getMailer();
            $config = JFactory::getConfig();
+	public function afterInsert(KDatabaseRowInterface $row)
+	{
+		$data = $row->getData();
+		$this->_emailUser($data['first_name'], $data['email'], $data['password']);
+	}
 
            $mailer->setSender(array(
                $config->getValue('config.mailfrom'),
