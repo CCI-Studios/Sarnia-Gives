@@ -6,6 +6,9 @@ jQuery(function ($) {
 	transition = 'swing';
 
 	images = $('#scroll .inner').children();
+	if (images.length < 4)
+		return;
+	
 	images.each(function (index, image) {
 		$(image).css({
 			padding: 0,
