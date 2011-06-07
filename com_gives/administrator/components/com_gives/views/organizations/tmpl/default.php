@@ -1,7 +1,7 @@
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/admin.css" />
 
-<form action="<?=@route()?>" method="post">
+<form action="<?=@route()?>" method="get" class="-koowa-grid">
 	<table class="adminlist">
 		<thead>
 			<tr>
