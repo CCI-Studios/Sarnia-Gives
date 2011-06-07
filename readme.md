@@ -21,3 +21,10 @@ After renaming your template, to add html overrides enter:
 `git submodule add git@github.com:CCI-Studios/Joomla-1.5-Template-Overrides.git template/NAME/html
 git init
 git update`
+
+Extra Extensions
+ - sh404SEF
+ - Advanced Module Manager
+ - JCE
+ - Akeeba Backup
+ - Updateman
