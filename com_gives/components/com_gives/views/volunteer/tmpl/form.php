@@ -5,8 +5,11 @@
     <?= @text('Create new account')?>
 </h1>
 
-<p>You can customize your profile after you create an account.</p>
+<? if ($description) {
+	echo $description;
+} ?>
 
+<div style="margin: 1em 0;">
 <form action="<?= @route('id='.$volunteer->id) ?>" method="post" class="-koowa-form">
     <input type="hidden" name="action" value="save" />
     
@@ -38,7 +41,6 @@
     <dl>
         <dt>&nbsp;</dt>
         <dd><input type="submit" value="Create Account" /></dd>
-    </dl>
-    
+    </dl>    
 </form>
-
+</div>
