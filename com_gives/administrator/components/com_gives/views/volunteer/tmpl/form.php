@@ -2,7 +2,7 @@
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/form.css" />
 
-<form action="<?=@route('id='.$volunteer->id)?>" method="post" class="adminform" name="adminForm" id="mainform">
+<form action="<?=@route('id='.$volunteer->id)?>" method="post" class="-koowa-form">
 	<div style="float: left; width: 50%">
 		<fieldset>
 			<legend><?= @text('Volunteer Details') ?></legend>
