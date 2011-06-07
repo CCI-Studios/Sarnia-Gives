@@ -6,7 +6,7 @@
 		<thead>
 			<tr>
 				<th width="5">#</th>
-				<th width="15"></th>
+				<th width="5" align="center"><?=@helper('grid.checkall');?> </th>
 				<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
 				
 				<th width="100"><?=@text('Organization')?></th>
