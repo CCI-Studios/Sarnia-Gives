@@ -1,0 +1,5 @@
+<root>
+	<params>
+		<param type="text" name="volunteer_redirect" label="Volunteer Registration Redirect" />
+	</params>
+</root>

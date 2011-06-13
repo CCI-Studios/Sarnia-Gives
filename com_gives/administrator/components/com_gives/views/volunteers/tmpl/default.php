@@ -1,5 +1,7 @@
+<?= @helper('behavior.modal') ?>
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/admin.css" />
+<script src="media://lib_koowa/css/koowa.css" />
 
 <form action="<?=@route()?>" method="get" class="-koowa-form">
 	<table class="adminlist">

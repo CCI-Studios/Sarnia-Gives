@@ -21,9 +21,11 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
     public function afterSave(KCommandContext $context)
     {
         $action = $this->getModel()->getState()->isUnique() ? 'edit' : 'add';
-        
+        $params = JComponentHelper::getParams('com_gives');
+
+
         if ($action === 'add') {
-            $this->setRedirect('/thank-you.html');
+            $this->setRedirect($params->get('volunteer_redirect', '/'));
         } else {
             $this->setRedirect('/profile.html');
         }
