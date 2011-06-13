@@ -7,7 +7,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
     {
         $caller = $context->caller->getIdentifier()->name;
         
-        if ($caller == 'volunteer')
+        if ($caller == 'volunteer' || $caller == 'organization')
             return true;
         return parent::_beforeAdd($context);
     }
