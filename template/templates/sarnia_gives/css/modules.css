@@ -118,6 +118,7 @@
 #scroll .arrow-left, #scroll .arrow-right {
   background: url(../images/arrows.png) no-repeat;
   cursor: pointer;
+  display: none;
   height: 26px;
   left: -20px;
   position: absolute;
@@ -128,9 +129,6 @@
 #scroll .arrow-right {
   background-position: 0 -26px;
   left: 934px;
-}
-.no-js #scroll .arrow-left, .no-js #scroll .arrow-right {
-  display: none;
 }
 #scroll .moduletable {
   float: left;
