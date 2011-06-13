@@ -20,8 +20,9 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 	{
 		$affected = parent::insert($row);
 		
-		if ($affected > 0)
+		if ($affected > 0) {
 			$this->afterInsert($row);
+		}
 		
 		return $affected;
 	}
@@ -45,7 +46,9 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 		$mailer->addRecipient($email);
 		$mailer->setSubject('Account Registration');
 		$mailer->setBody(
-			"<p>Hello {$name},</p>".
+			"<p>
+				<img src=\"http://dev.sarniagives.com/images/stories/default/logo.png\" style=\"float: right; margin: 0 0 10px 10px;\" alt=\"Sarnia Gives\" />
+				Hello {$name},</p>".
 			"<p>Thank you for registering as a volunteer for Sarnia Gives!</p>".
 			"<p>You can access your account <a href=\"http://sarniagives.com/login\">here</a></p>".
 			"<p>Your temporary password is: <b>{$password}</b></p>".
