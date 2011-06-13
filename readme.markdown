@@ -28,3 +28,4 @@ Extra Extensions
  - JCE
  - Akeeba Backup
  - Updateman
+ - mod_jf_twitter
