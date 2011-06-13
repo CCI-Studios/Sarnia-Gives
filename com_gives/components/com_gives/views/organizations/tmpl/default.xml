@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Organizations Directory">
+		<message><![CDATA[
+			View an alphabetical list of organizations.
+		]]></message>		
+	</layout>
+</metadata>
