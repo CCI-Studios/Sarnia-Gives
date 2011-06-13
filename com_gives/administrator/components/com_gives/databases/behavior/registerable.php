@@ -38,8 +38,6 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 
 		$user = $this->_createUser($name, $post->email, $post->password);
 		
-		var_dump($user);
-		
 		if	($user->getErrors()) {
 			/* FIXME echo save errors */
 			return false;
@@ -76,7 +74,7 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		$user->gid = $acl->get_group_id('', $level, 'ARO');
 		
 		$user->registerDate = date('Y-m-d H:i:s');
-		//$user->save();
+		$user->save();
 		
 		return $user;
 	}
