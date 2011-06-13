@@ -1,22 +1,6 @@
-.column-group {
+.search_letters  { }
+.search_letters li {
+	display: inline;
+	padding: 0 5px
 }
-.column-group:after {
-	content: ".";
-	clear: both;
-	height: 0;
-	line-height: 0;
-    visibility: hidden;
-	width: 100%;
-}
-
-.column {
-	-moz-box-sizing: border-box; /* fixme */
-	float: left;
-	padding: 0 10px 0 0;
-	width: 50%;
-}
-
-
-
-.left { float: left; }
-.right { float: right; }
+.search_letters a.active { color: red; }
