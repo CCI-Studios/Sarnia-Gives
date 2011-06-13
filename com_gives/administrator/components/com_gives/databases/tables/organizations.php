@@ -10,7 +10,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 		));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg)
+		   'behaviors'	=> array($reg, 'admin::com.gives.database.behavior.editable')
 		));
         
         parent::_initialize($config);
