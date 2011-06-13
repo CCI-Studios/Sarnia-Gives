@@ -1,12 +1,14 @@
+<?= @helper('behavior.modal') ?>
 <script src="media://lib_koowa/js/koowa.js" />
-<style src="media://com_default/css/admin.css" />
+<style src="media://com_default/css/form.css" />
+<script src="media://lib_koowa/css/koowa.css" />
 
 <form action="<?=@route()?>" method="get" class="-koowa-grid">
 	<table class="adminlist">
 		<thead>
 			<tr>
 				<th width="5">#</th>
-				<th width="15" align="center"><?=@helper('grid.checkall');?> </th>
+				<th width="15" align="center">&nbsp;</th>
 				<th><?=@helper('grid.sort', array('column'=>'title', 'title'=>'Name'))?></th>
 				
 				<th width="100"><?=@text('Joomla Account')?></th>
