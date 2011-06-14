@@ -27,7 +27,7 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
         if ($action === 'add') {
             $this->setRedirect($params->get('volunteer_redirect', '/'));
         } else {
-            $this->setRedirect('/profile.html');
+            $this->setRedirect('index.php?option=com_gives&view=profile');
         }
     }
 }

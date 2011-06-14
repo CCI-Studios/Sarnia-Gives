@@ -16,6 +16,6 @@ KFactory::map('site::com.gives.database.table.volunteers',
 KFactory::map('site::com.gives.database.row.volunteer',
 	'admin::com.gives.database.row.volunteer');
 
-/* behaviors */
+/* controller behaviors */
 KFactory::map('site::com.default.controller.behavior.editable',
 	'admin::com.default.controller.behavior.editable');

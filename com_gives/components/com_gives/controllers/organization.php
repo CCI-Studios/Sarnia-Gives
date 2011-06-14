@@ -27,7 +27,7 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
         if ($action === 'add') {
             $this->setRedirect($params->get('organization_register_redirect', '/'));
         } else {
-            $this->setRedirect('/profile.html');
+            $this->setRedirect('index.php?option=com_gives&view=profile');
         }
     }
 }
