@@ -38,5 +38,6 @@
 	</positions>
 
 	<params>
+		<param type="text" name="login_id" label="Login Menu id" description="Item id of the login menu item" />
 	</params>
 </install>
