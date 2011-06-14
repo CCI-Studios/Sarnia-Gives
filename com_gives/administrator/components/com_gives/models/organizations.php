@@ -8,7 +8,8 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		parent::__construct($config);
 		
 		$this->_state
-			->insert('letter_name', 'word');
+			->insert('letter_name', 'word')
+			->insert('user_id', 'int');
 	}
 	
 	public function getLetters() 
@@ -36,6 +37,10 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		if ($state->letter_name) {
 			$query->where('tbl.title', 'LIKE', $state->letter_name.'%');
 		}	
+		
+		if (is_numeric($state->user_id)) {
+			$query->where('user_id', '=', $state->user_id);
+		}
 		
 		parent::_buildQueryWhere($query);
 	}
