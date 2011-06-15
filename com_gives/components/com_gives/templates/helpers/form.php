@@ -8,11 +8,11 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 		$config = new KConfig($config);
 		$config->append(array(
 			'name'	=> '',
-			'value'	=> '',
 			'class'	=> '',
 		))->append(array(
 			'id'	=> $config->name.'_field',
 			'title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
+			'value' => $config->{$config->name},
 		));
 		
 		return "<dl>
@@ -26,11 +26,11 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 		$config = new KConfig($config);
 		$config->append(array(
 			'name'	=> '',
-			'value'	=> '',
 			'klass'	=> '',
 		))->append(array(
 			'id'	=> $config->name.'_field',
 			'title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
+			'value' => $config->{$config->name},
 		));
 		
 		return "<dl>
