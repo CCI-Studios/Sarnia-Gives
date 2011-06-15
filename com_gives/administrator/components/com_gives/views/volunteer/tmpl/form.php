@@ -35,8 +35,7 @@
 			<?=@helper('admin::com.gives.template.helper.listbox.volunteerTypes')?><br/>
 			
 			<label for="field_required" class="mainlabel"><?=@text('Required')?>:</label>
-			<input type="hidden" name="required" value="0" />
-			<input type="checkbox" name="required" id="field_required" value="1" <?= ($volunteer->required)? 'checked="checked"':'';?> /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'required'))?><br/>
 			
 			<label for="field_agency" class="mainlabel"><?=@text('Agency')?>:</label>
 			<input type="text" name="agency" id="field_agency" value="<?=$volunteer->agency?>" /><br/>
@@ -52,25 +51,25 @@
 		<?= $pane->startPane('content-pane') ?>
 		<?= $pane->startPanel('Availability', 'availability-pane')?>
 			<label for="field_monday" class="mainlabel"><?=@text('Monday')?>:</label>
-			<input type="text" name="monday" id="field_monday" value="<?=$volunteer->monday?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'monday'))?><br/>
 		
 			<label for="field_tuesday" class="mainlabel"><?=@text('Tuesday')?>:</label>
-			<input type="text" name="tuesday" id="field_tuesday" value="<?=$volunteer->tuesday?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'tueday'))?><br/>
 		
 			<label for="field_wednesday" class="mainlabel"><?=@text('Wednesday')?>:</label>
-			<input type="text" name="wednesday" id="field_wednesday" value="<?=$volunteer->wednesday?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'wednesday'))?><br/>
 		
 			<label for="field_thursday" class="mainlabel"><?=@text('Thursday')?>:</label>
-			<input type="text" name="thursday" id="field_thursday" value="<?=$volunteer->thursday?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'thursday'))?><br/>
 		
 			<label for="field_friday" class="mainlabel"><?=@text('Friday')?>:</label>
-			<input type="text" name="friday" id="field_friday" value="<?=$volunteer->friday?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'friday'))?><br/>
 		
 			<label for="field_saturday" class="mainlabel"><?=@text('Saturday')?>:</label>
-			<input type="text" name="saturday" id="field_saturday" value="<?=$volunteer->saturday?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'saturday'))?><br/>
 		
 			<label for="field_sunday" class="mainlabel"><?=@text('Sunday')?>:</label>
-			<input type="text" name="sunday" id="field_sunday" value="<?=$volunteer->sunday?>" /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'sunday'))?><br/>
 		
 			<label for="field_time_flexible" class="mainlabel"><?=@text('Time Flexible')?>:</label>
 			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'time_flexible'))?><br/>
@@ -112,12 +111,10 @@
 		
 		<?= $pane->startPanel('Misc', 'misc-panel') ?>
 			<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter Signup')?>:</label>
-			<input type="hidden" name="newsetter" value="0" />
-			<input type="checkbox" name="newsletter" id="field_newsletter" value="1" <?= ($volunteer->newsletter)? 'checked="checked"':''?> /><br/>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'newsletter'))?><br/>
 			
-			<label for="field_search" class="mainlabel"><?=@text('Include in Search')?>:</label>
-			<input type="hidden" name="search" value="0" />
-			<input type="checkbox" name="search" id="field_search" value="1" <?= ($volunteer->search)? 'checked="checked"':''?> /><br/>
+			<label for="field_search" class="mainlabel"><?=@text('Include in emergency volunteer list')?>:</label>
+			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'search'))?><br/>
 			
 			<label for="field_user_id" class="mainlabel"><?=@text('User ID')?>:</label>
 			<input type="text" name="user_id" id="field_user_id" value="<?=$volunteer->user_id?>" /><br/>
