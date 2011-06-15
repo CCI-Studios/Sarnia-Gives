@@ -10,7 +10,7 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 		));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg)
+		   'behaviors'	=> array($reg, 'admin::com.gives.database.behavior.editable')
 		));
 		
 		parent::_initialize($config);
@@ -32,7 +32,6 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 		$data = $row->getData();
 		$this->_emailUser($data['first_name'], $data['email'], $data['password']);
 	}
-	
 	
 	protected function _emailUser($name, $email, $password)
 	{	
