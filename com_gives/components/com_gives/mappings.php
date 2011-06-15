@@ -19,3 +19,7 @@ KFactory::map('site::com.gives.database.row.volunteer',
 /* controller behaviors */
 KFactory::map('site::com.default.controller.behavior.editable',
 	'admin::com.default.controller.behavior.editable');
+	
+/* template helpers */
+KFactory::map('site::com.gives.template.helper.listbox',
+	'admin::com.gives.template.helper.listbox');
