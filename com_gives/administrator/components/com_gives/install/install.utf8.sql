@@ -74,29 +74,10 @@ CREATE TABLE IF NOT EXISTS `#__gives_organizations` (
 	`mission`	TEXT NOT NULL,
 	`description` TEXT NOT NULL,
 	
-	# location info
-	`brooke_alvinston`	TINYINT(1) NOT NULL,
-	`lambton_shores`	TINYINT(1) NOT NULL,
-	`point_edward`		TINYINT(1) NOT NULL,
-	`sarnia`			TINYINT(1) NOT NULL,
-	`dawn_euphemia`		TINYINT(1) NOT NULL,
-	`oil_springs`		TINYINT(1) NOT NULL,
-	`plympton_wyoming`	TINYINT(1) NOT NULL,
-	`enniskillen`		TINYINT(1) NOT NULL,
-	`petrolia`			TINYINT(1) NOT NULL,
-	`st_clair`			TINYINT(1) NOT NULL,
-	`location_flexible`	TINYINT(1) NOT NULL,
-	
-	# interests
-	`animals`			TINYINT(1) NOT NULL,
-	`community`			TINYINT(1) NOT NULL,
-	`health`			TINYINT(1) NOT NULL,
-	`arts`				TINYINT(1) NOT NULL,
-	`emergency`			TINYINT(1) NOT NULL,
-	`social_services`	TINYINT(1) NOT NULL,
-	`children`			TINYINT(1) NOT NULL,
-	`environment`		TINYINT(1) NOT NULL,
-	`special_events`	TINYINT(1) NOT NULL,
+	# search 
+	`interests`		TEXT NOT NULL,
+	`skills`		TEXT NOT NULL,
+	`locations`		TEXT NOT NULL,
 	
 	# misc
 	`newsletter`		TINYINT(1) NOT NULL,
