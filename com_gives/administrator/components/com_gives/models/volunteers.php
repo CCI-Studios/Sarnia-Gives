@@ -2,6 +2,8 @@
 
 class ComGivesModelVolunteers extends ComDefaultModelDefault
 {
+	protected $_me;
+	
 	
 	public function __construct(KConfig $config)
 	{
@@ -22,4 +24,23 @@ class ComGivesModelVolunteers extends ComDefaultModelDefault
 		parent::_buildQueryWhere($query);
 	}
 	
+	public function getMe()
+	{
+		if (!isset($this->_me)) {
+			$user = KFactory::get('lib.joomla.user');
+			
+			$table = $this->getTable();
+			$query = $table->getDatabase()->getQuery();
+			
+			$query->select(array('tbl.*', 'user.*'))
+				->from('users AS user')
+				->join('LEFT', 'gives_volunteers AS tbl', 'user.id = tbl.user_id')
+				->where('user.id', '=', $user->id)
+				->limit(1);
+
+			$this->_me = $table->select($query, KDatabase::FETCH_ROW);
+		}
+		
+		return $this->_me;
+	}
 }
