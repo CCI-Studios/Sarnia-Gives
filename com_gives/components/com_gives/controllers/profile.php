@@ -16,7 +16,7 @@ class ComGivesControllerProfile extends ComDefaultControllerDefault
 				->set('user_id', $user->id)->getList();
 		if (count($row) == 1) {
 			KFactory::get('lib.joomla.application')
-				->redirect("index.php?option=com_gives&view=volunteer&layout=profile&id=".$row->current()->id);
+				->redirect("index.php?option=com_gives&view=volunteer&id=".$row->current()->id);
 			return true;
 		}
 		
