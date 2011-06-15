@@ -1,9 +1,19 @@
 <h1 class="componentheading">Opportunities</h1>
 
-<? foreach ($opportunities as $opportunity): ?>
-	<?= @template('site::com.gives.view.opportunity._item', array('opportunity'=>$opportunity)) ?>
-<? endforeach; ?>
+<p>Do another <a href="<?= @route('view=opportunities&layout=search') ?>">search</a>, or look on the <a href="#">map</a>.</p>
 
-<? if (!count($opportunities)): ?>
-    <p><?= @text('There are currently no opportunities available.'); ?>
-<? endif; ?>
+<ul>
+	<? foreach ($opportunities as $opportunity): ?>
+	<li>
+		<a href="#">
+			<?= $opportunity->title ?>
+		</a>
+	</li>
+	<? endforeach; ?>
+
+	<? if (!count($opportunities)): ?>
+	<li>
+		<?= @text('There are currently no opportunities available.'); ?>
+	</li>
+	<? endif; ?>
+</ul>
