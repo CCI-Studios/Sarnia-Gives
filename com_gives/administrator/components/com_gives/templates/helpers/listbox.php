@@ -96,7 +96,7 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 			'name'		=> 'interests',
 			'attribs' 	=> array(
 				'multiple'=>'multiple',
-				'style'=>'width: 300px; margin: 0 0 0.5em',
+				'style'=>'width: 100%;',
 			),
 		))->append(array(
 			'selected'	=> $config->{$config->name},
@@ -127,7 +127,7 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 			'name'		=> 'locations',
 			'attribs' 	=> array(
 				'multiple'=>'multiple',
-				'style'=>'width: 300px; margin: 0 0 0.5em',
+				'style'=>'width: 100%;',
 			),
 		))->append(array(
 			'selected'	=> $config->{$config->name},
@@ -160,7 +160,7 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 			'name'		=> 'skills',
 			'attribs' 	=> array(
 				'multiple'=>'multiple',
-				'style'=>'width: 300px; margin: 0 0 0.5em',
+				'style'=>'width: 100%;',
 			),
 		))->append(array(
 			'selected'	=> $config->{$config->name},
