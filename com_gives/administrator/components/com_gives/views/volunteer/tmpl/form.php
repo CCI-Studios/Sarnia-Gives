@@ -75,15 +75,16 @@
 			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'time_flexible'))?><br/>
 		<?= $pane->endPanel() ?>
 		
-		<?= $pane->startPanel('Preference Settings', 'preference-pane') ?>
-			<label class="mainlabel"><?= @text('Location')?></label>
-			<?= @helper('listbox.locations', array('selected'=>$volunteer->locations)); ?><br/>
+		<?= $pane->startPanel('Locations', 'locations-pane') ?>
+			<?= @helper('listbox.locations', array('selected'=>$volunteer->locations)); ?>
+		<?= $pane->endPanel() ?>
 		
-			<label class="mainlabel"><?= @text('Interests')?></label>
-			<?= @helper('listbox.interests', array('selected'=>$volunteer->interests)); ?><br/>
+		<?= $pane->startPanel('Interests', 'interests-pane') ?>
+			<?= @helper('listbox.interests', array('selected'=>$volunteer->interests)); ?>
+		<?= $pane->endPanel() ?>
 		
-			<label class="mainlabel"><?= @text('skills')?></label>
-			<?= @helper('listbox.skills', array('selected'=>$volunteer->skills)); ?><br/>
+		<?= $pane->startPanel('Skills', 'skills-pane') ?>
+			<?= @helper('listbox.skills', array('selected'=>$volunteer->skills)); ?>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Previous Volunteer Experience', 'experience-pane') ?>
