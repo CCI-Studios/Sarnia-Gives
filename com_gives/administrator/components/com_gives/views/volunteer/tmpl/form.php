@@ -76,14 +76,14 @@
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Preference Settings', 'preference-pane') ?>
-		<label class="mainlabel"><?= @text('Location')?></label>
-		<?= @helper('listbox.locations', array('selected'=>$volunteer->locations)); ?><br/>
+			<label class="mainlabel"><?= @text('Location')?></label>
+			<?= @helper('listbox.locations', array('selected'=>$volunteer->locations)); ?><br/>
 		
-		<label class="mainlabel"><?= @text('Interests')?></label>
-		<?= @helper('listbox.interests', array('selected'=>$volunteer->interests)); ?><br/>
+			<label class="mainlabel"><?= @text('Interests')?></label>
+			<?= @helper('listbox.interests', array('selected'=>$volunteer->interests)); ?><br/>
 		
-		<label class="mainlabel"><?= @text('skills')?></label>
-		<?= @helper('listbox.skills', array('selected'=>$volunteer->skills)); ?><br/>
+			<label class="mainlabel"><?= @text('skills')?></label>
+			<?= @helper('listbox.skills', array('selected'=>$volunteer->skills)); ?><br/>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Previous Volunteer Experience', 'experience-pane') ?>
