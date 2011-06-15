@@ -4,7 +4,7 @@
 	<p><?= $volunteer->firstname .' '. $volunteer->last_name ?></p>
 	
 	<? if ($edit_button): ?>
-		<p><a href="<?= @route('view=volunteer&layout=form&id='.$volunteer->id) ?>">
+		<p><a href="<?= @route('view=volunteer&layout=edit&id='.$volunteer->id) ?>">
 			<?= @text('Edit Profile') ?>
 		</a></p>
 	<? endif; ?>
