@@ -6,28 +6,37 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
     {
         parent::__construct($config);
         
-        $this->registerCallback('after.save', array($this, 'afterSave'));
+		$this->registerCallback(array('before.edit', 'before.apply', 'before.save'), array($this, 'checkPermission'));
     }
     
-    protected  function _initialize(KConfig $config)
-    {
-        $config->append(array(
-            'behaviors' => array('site::com.default.controller.behavior.editable')
-        ));
-        
-        parent::_initialize($config);
-    }
-    
-    public function afterSave(KCommandContext $context)
-    {
-        $action = $this->getModel()->getState()->isUnique() ? 'edit' : 'add';
-        $params = JComponentHelper::getParams('com_gives');
-
-
-        if ($action === 'add') {
-            $this->setRedirect($params->get('volunteer_redirect', '/'));
-        } else {
-            $this->setRedirect('index.php?option=com_gives&view=profile');
-        }
-    }
+	public function checkPermission() {
+		$me = KFactory::get('user');
+		$vol = $this->getModel()->getItem();
+		
+		return $me->id === $vol->user_id;	
+	}
+	
+	protected function _actionRead(KCommandContext $context)
+	{
+		$request = $this->getRequest();
+		$row	 = parent::_actionRead($context);
+		
+		if (!isset($request->id))
+			$request->id = KFactory::get('lib.joomla.user')->id;
+			
+		$me = $this->getModel()->getMe();
+			
+		if ($me->id && $me->id !== $row->user_id) {
+			if ($request->layout == 'form')
+				$message = "You cannot edit other volunteers profile.";
+			else 
+				$message = "You cannot view other volunteers profiles.";
+				
+			KFactory::get('lib.joomla.application')
+				->redirect(JRoute::_('/'), JText::_($message), 'error');
+			return $row;
+		}
+		
+		return $row;
+	}
 }
