@@ -12,6 +12,7 @@
 		<? endif; ?>
 	</h1>
 
+	<? if (count($volunteer->interests)): ?>
 	<div class="half"><div>
 		<h2>My Interests</h2>
 	
@@ -19,7 +20,9 @@
 			<li><?= $interest; ?></li>
 		<? endforeach; ?></ul>
 	</div></div>
+	<? endif; ?>
 
+	<? if (count($volunteer->skill)): ?>
 	<div class="half"><div>
 		<h2>My Skills</h2>
 	
@@ -27,6 +30,7 @@
 			<li><?= $skill; ?></li>
 		<? endforeach; ?></ul>
 	</div></div>
+	<? endif; ?>
 	
 	<h2 class="clear">My Opportunities</h2>
 	<?= KFactory::get('site::com.gives.controller.opportunities')
@@ -34,5 +38,6 @@
 		->set('skills', $volunteer->skills)
 		->set('locations', $volunteer->locations)
 		->layout('widget')
+		->limit(5)
 		->display(); ?>
 </div>
