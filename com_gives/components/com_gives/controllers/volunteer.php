@@ -6,13 +6,24 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
     {
         parent::__construct($config);
         
-		$this->registerCallback(array('before.edit', 'before.apply', 'before.save'), array($this, 'checkPermission'));
+		$this->registerCallback(
+			array('before.edit', 'before.apply', 'before.save'), 
+			array($this, 'checkPermission'));
     }
     
+	protected  function _initialize(KConfig $config)
+    {
+        $config->append(array(
+            'behaviors' => array('site::com.default.controller.behavior.editable')
+        ));
+
+        parent::_initialize($config);
+    }
+
 	public function checkPermission() {
-		$me = KFactory::get('user');
+		$me = $this->getModel()->getMe();
 		$vol = $this->getModel()->getItem();
-		
+
 		return $me->id === $vol->user_id;	
 	}
 	
