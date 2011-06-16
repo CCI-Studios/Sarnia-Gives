@@ -8,6 +8,7 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 		parent::__construct($config);
 		
 		$this->_state
+			->insert('organization_id', 'int')
 			->insert('locations', 'raw')
 			->insert('skills', 'raw')
 			->insert('interests', 'raw')
@@ -23,6 +24,10 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 			$op = 'OR';
 		} else {
 			$op = 'AND';
+		}
+		
+		if (is_numeric($state->organization_id)) {
+			$query->where('tbl.gives_organization_id', '=', $state->organization_id);
 		}
 		
 		if (count($state->locations)) {
