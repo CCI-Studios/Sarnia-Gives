@@ -81,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_organizations` (
 	
 	# misc
 	`newsletter`		TINYINT(1) NOT NULL,
+  	`enabled` tinyint(1) NOT NULL default '0',
 	
 	`user_id`			INT(11) NOT NULL
 		
@@ -113,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_opportunities` (
 	`min_age`			TINYINT(1) NOT NULL,
 	`other`				VARCHAR(250) NOT NULL,
 	
-	`enabled`			TINYINT(1) NOT NULL,
+	`enabled` tinyint(1) NOT NULL default '0',
 
 	`gives_organization_id` BIGINT(20) NOT NULL
 ) ENGINE = InnoDB;
