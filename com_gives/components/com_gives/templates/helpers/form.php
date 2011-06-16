@@ -29,12 +29,12 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			'klass'	=> '',
 		))->append(array(
 			'id'	=> $config->name.'_field',
-			'title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
+			'_title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
 			'value' => $config->{$config->name},
-		));
+		));		
 		
 		return "<dl>
-			<dt><label for=\"{$config->id}\">{$config->title}:</label></dt>
+			<dt><label for=\"{$config->id}\">{$config->_title}:</label></dt>
 			<dd><input 
 					type=\"text\" 
 					name=\"{$config->name}\" 
@@ -71,7 +71,7 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 	{
 		$config = new KConfig($config);
 		$config->append(array(
-			'title' => 'Submit',
+			'_title' => 'Submit',
 			'klass'	=> '',
 		));
 		
@@ -79,7 +79,7 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			<dt>&nbsp;</dt>
 			<dd><input type=\"submit\"
 					class=\"{$config->klass}\" 
-					value=\"{$config->title}\" /></dd>
+					value=\"{$config->_title}\" /></dd>
 		</dl>";
 	}
 	
