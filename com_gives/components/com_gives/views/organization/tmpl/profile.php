@@ -12,15 +12,20 @@
 		<? endif; ?>
 	</h1>
 	
-	<? if (isset($organization->mission)): ?>
+	<? if($organization->mission): ?>
+	<h2>Out Mission</h2>
+	<?= $organization->mission ?>
+	<? endif; ?>
+	
+	<? if (count($organization->interests)): ?>
 		<h2>Our Interests</h2>
 		
-		<ul><? foreach($organization->interests as $skill): ?>
+		<ul><? foreach($organization->interests as $interest): ?>
 			<li><?= $interest; ?></li>
 		<? endforeach; ?></ul>
 	<? endif; ?>
 	
-	<? if (isset($organization->skills)): ?>
+	<? if (count($organization->skills)): ?>
 		<h2>Our Skills</h2>
 		
 		<ul><? foreach($organization->skills as $skill): ?>
@@ -29,5 +34,10 @@
 	<? endif; ?>
 	
 	<h2>Our Opportunities</h2>
-	<p><strong>INSERT OPPORTUNITIES SEARCH HERE</strong></p>
+	<?= KFactory::get('site::com.gives.controller.opportunities')
+		->set('organization_id', $organization->id)
+		->layout('widget')
+		->display(); ?>
+	
+	<p>Click <a href="<?= @route('view=opportunity&layout=form&org_id='.$organization->id); ?>">here</a> to create a new opportunity</p>
 </div>

@@ -13,29 +13,30 @@
 		<? endif; ?>
 	</h1>
 
-	<div>
-		<div class="contact_info">
-			<h2><?= @text('Contact Info')?></h2>
-		
-			<div class="column">
-				<?=$organization->address?><br/>
-				<?=$organization->city?><br/>
-				<?=$organization->province?><br/>
-			</div>
-			<div class="column">
-				<?=$organization->phone?><br/>
-				<?=$organization->fax?><br/>
-				<a href="mailto:<?=$organization->email?>"><?=$organization->email?></a><br/>
-			</div>
+	<div class="contact_info">
+		<h2><?= @text('Contact Info')?></h2>
+	
+		<div class="column">
+			<?=$organization->address?><br/>
+			<?=$organization->city?><br/>
+			<?=$organization->province?><br/>
 		</div>
-	
-		<h2><?= @text('Our Mission')?></h2>
-		<p><?=$organization->mission?></p>
-	
-		<h2><?=@text('Description')?></h2>
-		<p><?=$organization->description?></p>
+		<div class="column">
+			<?=$organization->phone?><br/>
+			<?=$organization->fax?><br/>
+			<a href="mailto:<?=$organization->email?>"><?=$organization->email?></a><br/>
+		</div>
 	</div>
-	
-	<div>
-		<p>ADD OPPORTUNITIES</p>
+
+	<h2><?= @text('Our Mission')?></h2>
+	<p><?=$organization->mission?></p>
+
+	<h2><?=@text('Description')?></h2>
+	<p><?=$organization->description?></p>
+
+	<h2>Our Opportunities</h2>
+	<?= KFactory::get('site::com.gives.controller.opportunities')
+		->set('organization_id', $organization->id)
+		->layout('widget')
+		->display(); ?>
 </div>
