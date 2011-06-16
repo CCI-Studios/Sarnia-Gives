@@ -30,7 +30,11 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 	public function afterInsert(KDatabaseRowInterface $row)
 	{
 		$data = $row->getData();
-		$this->_emailUser($data['title'], $data['first_name'], $data['email'], $data['password']);
+		
+		$params = &JComponentHelper::getParams('com_gives');
+		if ($params->get('send_emails')) {
+			$this->_emailUser($data['title'], $data['first_name'], $data['email'], $data['password']);
+		}
 	}
 	
 	protected function _emailUser($title, $name, $email, $password)

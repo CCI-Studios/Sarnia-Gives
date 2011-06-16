@@ -1,6 +1,8 @@
 <root>
 	<params>
-		<param type="text" name="volunteer_redirect" label="Volunteer Registration Redirect" />
-		<param type="text" name="organization_register_redirect" label="Volunteer Registration Redirect" />
+		<param type="list" name="send_emails" label="Send Emails" default="1">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
 	</params>
 </root>
