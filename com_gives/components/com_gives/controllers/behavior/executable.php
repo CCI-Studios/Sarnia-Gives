@@ -12,7 +12,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
         return parent::_beforeAdd($context);
     }
 
-	protected function _beforeSave(KCommandContext $context)
+	protected function _beforeEdit(KCommandContext $context)
 	{
 		$caller = $context->caller->getIdentifier()->name;
 
@@ -23,7 +23,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
 			return $me->id == $row->user_id;
 		}
 		
-		return parent::_beforeSave($context);
+		return parent::_beforeEdit($context);
 	}
 
 }
