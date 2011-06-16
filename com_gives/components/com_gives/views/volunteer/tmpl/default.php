@@ -28,6 +28,6 @@
 		<? endforeach; ?></ul>
 	</div></div>
 	
-	<h2>My Opportunities</h2>
+	<h2 class="clear">My Opportunities</h2>
 	<p><strong>INSERT OPPORTUNITIES SEARCH HERE</strong></p>
 </div>
