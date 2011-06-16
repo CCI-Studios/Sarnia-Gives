@@ -9,6 +9,9 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 		$this->registerCallback(
 			array('before.edit', 'before.apply', 'before.save'), 
 			array($this, 'checkPermission'));
+		$this->registerCallback(
+			array('after.save'),
+			array($this, 'afterSave'));
     }
     
 	protected  function _initialize(KConfig $config)
@@ -49,5 +52,11 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 		}
 		
 		return $row;
+	}
+	
+	public function afterSave(KCommandContext $context)
+	{
+		$this->setRedirect('index.php?option=com_gives&view=volunteer&id='. $context->result->id);
+		return true;
 	}
 }
