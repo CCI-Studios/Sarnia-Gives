@@ -1,7 +1,23 @@
-edit profile
+<style src="media://com_gives/css/sites.css" />
 
-<form action="<?= @route('view=volunteer&id='.$volunteer->id)?>" method="post">
+<div class="com_gives">
+	<h1>Edit Your Profile</h1>
 	
-	<?= @helper('form.text', array('name'=>'email'))?>
+	<p>Update your search settings below:</p>
+
+	<form action="<?= @route('id='.$volunteer->id)?>" method="post">
+		<input type="hidden" name="action" value="save" />
 	
-</form>
+		<h2>Your Interests</h2>
+		<?= @helper('listbox.interests')?>
+		
+		<h2>Your Skills</h2>
+		<?= @helper('listbox.skills')?>
+		
+		<h2>Your Locations</h2>
+		<?= @helper('listbox.locations')?>
+	
+	
+		<p><input type="submit" value="Save" /></p>
+	</form>
+</div>

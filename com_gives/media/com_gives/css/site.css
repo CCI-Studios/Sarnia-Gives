@@ -10,5 +10,13 @@
 	float: left;
 	width: 33%;
 }
-
 .com_gives .box > div { padding: 0 10px; }
+
+.com_gives .half {
+	float: left;
+	width: 50%;
+}
+
+.com_gives .edit {
+	font-size: 60%;
+}
