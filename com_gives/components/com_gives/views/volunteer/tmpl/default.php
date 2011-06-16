@@ -29,5 +29,10 @@
 	</div></div>
 	
 	<h2 class="clear">My Opportunities</h2>
-	<p><strong>INSERT OPPORTUNITIES SEARCH HERE</strong></p>
+	<?= KFactory::get('site::com.gives.controller.opportunities')
+		->set('interests', $volunteer->interest)
+		->set('skills', $volunteer->skills)
+		->set('locations', $volunteer->locations)
+		->layout('widget')
+		->display(); ?>
 </div>
