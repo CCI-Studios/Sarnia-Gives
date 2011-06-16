@@ -6,14 +6,27 @@ class ComGivesViewOrganizationHtml extends ComGivesViewHtml
 	public function display()
 	{
 		$params = &JComponentHelper::getParams('com_gives');
+		$this->assign('params', $params);
 		
-		$this->assign('show_page_title', $params->get('show_page_title'));
-		$this->assign('page_title', $params->get('page_title'));
+		$row = $this->getModel()->getItem();
+		$me = $this->getModel()->getMe();
 		
 		if ($params->get('description')) {
 			$this->assign('description', '<p>'.
 				str_replace(array("\r\n", "\r", "\n"), '</p><p>', $params->get('description'))
 			.'</p>');
+		}
+		
+		if ($this->layout !== 'form') {
+			if ($me->id === $row->user_id) {
+				$this->assign('edit_button', true);
+			} else {
+				$this->assign('edit_button', false);
+			}
+			
+			$this->assign('title', sprintf("%s's Profile", $row->title));
+		} else {
+			$this->assign('title', sprintf("%s's Settings", $row->title));
 		}
 		
 		return parent::display();
