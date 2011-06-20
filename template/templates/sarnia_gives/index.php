@@ -78,7 +78,6 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		</div>
 		
 		<div id="header">
-		    <jdoc:include type="message" />
 		    <jdoc:include type="modules" name="header" style="xhtml" />
 		    
 		    <div class="clear"></div>
@@ -86,6 +85,7 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		
 		<div id="body" class="<?php echo ($this->countModules('sidebar'))? '':'wide'; ?>"><div>
 		    <div id="component">
+						<jdoc:include type="message" />
 		        <jdoc:include type="component" />
 		        
 		        <div class="clear"></div>
