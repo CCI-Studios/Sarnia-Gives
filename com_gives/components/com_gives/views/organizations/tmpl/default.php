@@ -1,3 +1,5 @@
+<?= @helper('behavior.mootools') ?>
+<script src="media://com_gives/js/koowa.js" />
 <style src="media://com_gives/css/site.css" />
 
 <h1 class="componentheading">Organizations</h1>
@@ -25,3 +27,5 @@
 	</li>
 <? endforeach; ?>
 </ul>
+
+<?= @helper('paginator.pagination', array('total'=>$total)) ?>
