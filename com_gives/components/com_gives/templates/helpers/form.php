@@ -7,16 +7,16 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 	{
 		$config = new KConfig($config);
 		$config->append(array(
-			'name'	=> '',
-			'class'	=> '',
+			'_name'	=> '',
+			'klass'	=> '',
 		))->append(array(
-			'id'	=> $config->name.'_field',
+			'_id'	=> $config->name.'_field',
 			'title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
 			'value' => $config->{$config->name},
 		));
 		
 		return "<dl>
-			<dt><label for=\"{$config->id}\">{$name}:</label></dt>
+			<dt><label for=\"{$config->_id}\">{$name}:</label></dt>
 			<dd><input type=\"\" /></dd>
 		</dl>";
 	}
@@ -28,17 +28,17 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			'name'	=> '',
 			'klass'	=> '',
 		))->append(array(
-			'id'	=> $config->name.'_field',
+			'_id'	=> $config->name.'_field',
 			'_title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
 			'value' => $config->{$config->name},
 		));		
 		
 		return "<dl>
-			<dt><label for=\"{$config->id}\">{$config->_title}:</label></dt>
+			<dt><label for=\"{$config->_id}\">{$config->_title}:</label></dt>
 			<dd><input 
 					type=\"text\" 
 					name=\"{$config->name}\" 
-					id=\"{$config->id}\" 
+					id=\"{$config->_id}\" 
 					class=\"{$config->klass}\" 
 					value=\"{$config->value}\" />
 			</dd>
@@ -49,10 +49,10 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 	{
 		$config = new KConfig($config);
 		$config->append(array(
-			'name'	=> 'password',
+			'_name'	=> 'password',
 			'klass'	=> '',
 		))->append(array(
-			'id'	=> $config->name.'_field',
+			'_id'	=> $config->name.'_field',
 			'title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
 		));
 		
@@ -61,7 +61,7 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			<dd><input 
 					type=\"password\" 
 					name=\"{$config->name}\" 
-					id=\"{$config->id}\" 
+					id=\"{$config->_id}\" 
 					class=\"{$config->klass}\" />
 			</dd>
 		</dl>";
