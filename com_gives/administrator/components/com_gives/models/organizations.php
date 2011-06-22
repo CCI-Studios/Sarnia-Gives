@@ -9,6 +9,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		parent::__construct($config);
 		
 		$this->_state
+			->insert('draft', 'boolean', false)
 			->insert('letter_name', 'word')
 			->insert('user_id', 'int');
 	}
@@ -34,16 +35,22 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 	protected function _buildQueryWhere(KDatabaseQuery $query)
 	{
 		$state = $this->_state;
+		$app = KFactory::get('lib.joomla.application');
+	
+		if ($app->getName() == 'site' && isset($state->draft)) {
+			$query->where('tbl.enabled', '=', 1);
+		}
 		
 		if ($state->letter_name) {
 			$query->where('tbl.title', 'LIKE', $state->letter_name.'%');
-		}	
-		
+		}
+
 		if (is_numeric($state->user_id)) {
 			$query->where('user_id', '=', $state->user_id);
 		}
 		
 		parent::_buildQueryWhere($query);
+		
 	}
 	
 	public function getMe()

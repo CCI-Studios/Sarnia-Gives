@@ -8,10 +8,11 @@
 		<thead>
 			<tr>
 				<th width="5">#</th>
-				<th width="15" align="center">&nbsp;</th>
+				<th width="15"><?= @helper('grid.checkall') ?></th>
 				<th><?=@helper('grid.sort', array('column'=>'title', 'title'=>'Name'))?></th>
 				
 				<th width="100"><?=@text('Joomla Account')?></th>
+				<th width="25">Enabled</th>
 				<th width="5"><?=@text('id')?></th>
 			</tr>
 		</thead>
@@ -34,6 +35,7 @@
 					<?=$organization->title?>
 				</a></td>
 				<td align="center"><a href="index.php?option=com_users&amp;view=user&amp;task=edit&amp;cid[]=<?=$organization->user_id?>"><?=@text('Joomla Account')?></a></td>
+				<td align="center"><?= @helper('grid.enable', array('row'=>$organization))?>
 				<td align="center"><?=$organization->id?></td>
 			</tr>
 			<? $i++;

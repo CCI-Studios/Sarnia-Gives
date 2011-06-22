@@ -12,4 +12,16 @@ class ComGivesViewHtml extends ComDefaultViewHtml {
 		
 		parent::__construct($config);
 	}
+	
+	public function display()
+	{
+		if (KInflector::isPlural($this->getName())) {
+			$this->getToolbar()
+				->prepend('disable')
+				->prepend('enable');
+		}
+		
+		echo parent::display();
+	}
+	
 }
