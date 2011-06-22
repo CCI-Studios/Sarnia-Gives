@@ -48,14 +48,17 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		<link rel="stylesheet" href="/templates/<?= $this->template ?>/css/template.min.css">
 	<?php endif; ?>
 
-	<!-- load modernizer, all other at bottom -->
+	<!-- load frameworks, all other at bottom -->
 	<?php if ($testing): ?>
 		<script src="/templates/<?= $this->template ?>/js/libs/modernizr-1.7.js"></script>
+		<script src="/templates/<?= $this->template ?>/js/libs/jquery-1.6.1.js"></script>
 	<?php else: ?>
 		<script src="/templates/<?= $this->template ?>/js/libs/modernizr-1.7.min.js"></script>
+		<script src="///ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/templates/<?= $this->template; ?>/js/libs/jquery-1.6.1.min.js">\x3c/script>')</script>
 	<?php endif; ?>
 	<script type="text/javascript" src="http://use.typekit.com/oql5jqb.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body class="<?= $menu ?>">
@@ -146,7 +149,6 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 
 	<!-- load scripts -->
 	<?php if ($testing): ?>
-		<script src="/templates/<?= $this->template ?>/js/libs/jquery-1.6.1.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/columns.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/dropmenu.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/html5.js"></script>
@@ -158,8 +160,6 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 				g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
 				s.parentNode.insertBefore(g,s)}(document,"script"));
 	  </script>
-		<script src="///ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="/templates/<?= $this->template; ?>/js/libs/jquery-1.6.1.min.js">\x3c/script>')</script>
 		<script src="/templates/<?= $this->template ?>/js/scripts.min.js"></script>
 	<?php endif; ?>
 </body>
