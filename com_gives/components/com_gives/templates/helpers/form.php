@@ -49,7 +49,7 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 	{
 		$config = new KConfig($config);
 		$config->append(array(
-			'_name'	=> 'password',
+			'name'	=> 'password',
 			'klass'	=> '',
 		))->append(array(
 			'_id'	=> $config->name.'_field',
