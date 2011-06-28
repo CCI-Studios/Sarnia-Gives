@@ -233,14 +233,7 @@ textarea {
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
-@font-face {
-  font-family: 'FuturaMd';
-  src: url('ftramd.eot');
-  src: url('ftramd.eot?#iefix') format('embedded-opentype'), url('ftramd.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-/* elements */
+/* fonts *//* elements */
 body,
 select,
 input,
@@ -248,7 +241,8 @@ textarea {
   color: #4d4d4d;
   /* off black */
 
-  font-family: FutraMd, Helvetica, Arial, sans-serif;
+  font-family: "futura-pt-1", "futura-pt-2", Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 body {
   background: #ffffff url(../images/body_bg.png) repeat-x;
@@ -269,6 +263,9 @@ h1 {
   margin-left: -40px;
   padding-left: 40px;
 }
+h2 {
+  font-size: 18px;
+}
 a, a:active, a:visited {
   color: #5f167b;
   text-decoration: none;
@@ -287,6 +284,9 @@ ol:first-child,
 ul:first-child,
 table:first-child {
   margin: 1em 0;
+}
+ol, ul {
+  margin-left: 1.5em;
 }
 /* forms */
 /* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
@@ -396,6 +396,7 @@ textarea {
 #top {
   margin: 0 0 15px;
   position: relative;
+  zoom: 1;
 }
 #header {
   margin-bottom: 28px;
@@ -411,12 +412,15 @@ textarea {
 #body > div {
   background: url(../images/divider-vertical.png) 630px repeat-y;
 }
+#body.wide > div {
+  background: none;
+}
 #component {
   float: left;
   padding-left: 40px;
   width: 580px;
 }
-#component.wide {
+#body.wide #component {
   width: 900px;
 }
 #sidebar {
@@ -460,21 +464,47 @@ textarea {
   margin: 0;
   text-align: center;
 }
-.moduletable_hmenu li {
+.moduletable_hmenu > ul > li {
   display: inline-block;
   font-size: 14px;
-  padding: 0 0 0 30px;
+  margin: 0 0 0 30px;
+  position: relative;
   text-transform: uppercase;
   zoom: 1;
   *display: inline;
 }
-.moduletable_hmenu li:first-child {
+.moduletable_hmenu > ul > li:first-child {
   padding-left: 0;
 }
 .moduletable_hmenu li > a, .moduletable_hmenu li > span {
   display: block;
 }
-.moduletable_hmenu li > a:hover, .moduletable_hmenu li > span:hover {
+.moduletable_hmenu > ul > li > a:hover, .moduletable_hmenu > ul > li > span:hover {
+  text-decoration: none;
+}
+.moduletable_hmenu ul ul {
+  background: #8b8b8b;
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 100%;
+}
+.moduletable_hmenu ul li:hover ul {
+  display: block;
+}
+.moduletable_hmenu ul li:last-child ul {
+  left: auto;
+  right: 0;
+}
+.moduletable_hmenu ul ul li {
+  display: block;
+  padding: 3px 10px 5px;
+  white-space: nowrap;
+}
+.moduletable_hmenu ul ul li:first-child {
+  padding-top: 10px;
+}
+.moduletable_hmenu ul ul li > a, .moduletable_hmenu ul ul li > span {
   text-decoration: none;
 }
 /* /hmenu */
@@ -485,13 +515,24 @@ textarea {
   position: absolute;
   right: 0;
 }
-#top .moduletable_hmenu li > a, #top .moduletable_hmenu li > span {
-  color: #4d4d4d;
+#top .moduletable_hmenu > ul > li {
   padding-top: 20px;
 }
-#top .moduletable_hmenu li > a:hover, #top .moduletable_hmenu li > span:hover {
+#top .moduletable_hmenu > ul > li:hover {
   background: url(../images/menu_li_bg_hover.png) top no-repeat;
+}
+#top .moduletable_hmenu li > a, #top .moduletable_hmenu li > span {
+  color: #4d4d4d;
+}
+#top .moduletable_hmenu li > a:hover, #top .moduletable_hmenu li > span:hover {
   color: #5f167b;
+}
+#top .moduletable_hmenu ul ul li {
+  background: #efefef;
+  border-bottom: 1px solid white;
+}
+#top .moduletable_hmenu ul ul li:hover {
+  border-bottom: 1px solid #5f167b;
 }
 #top .login {
   background: url(../images/login_bg.png) left no-repeat;
@@ -504,8 +545,15 @@ textarea {
 #top .login a {
   color: #4e4e4e;
 }
+#sidebar .moduletable {
+  margin: 1em 0 0 35px;
+}
+#sidebar .moduletable:first-child {
+  margin-top: 0;
+}
 #footer .moduletable_hmenu li {
   background: url(../images/footer_menu_li_bg.png) 10px no-repeat;
+  margin: 0;
   padding-left: 22px;
 }
 #footer .moduletable_hmenu li:first-child {
@@ -522,6 +570,7 @@ textarea {
 #scroll .arrow-left, #scroll .arrow-right {
   background: url(../images/arrows.png) no-repeat;
   cursor: pointer;
+  display: none;
   height: 26px;
   left: -20px;
   position: absolute;
@@ -532,9 +581,6 @@ textarea {
 #scroll .arrow-right {
   background-position: 0 -26px;
   left: 934px;
-}
-.no-js #scroll .arrow-left, .no-js #scroll .arrow-right {
-  display: none;
 }
 #scroll .moduletable {
   float: left;
@@ -564,6 +610,23 @@ textarea {
 }
 #bottom .moduletable:first-child {
   border-left: none;
+}
+#system-message ul {
+  margin: 0;
+  list-style: none;
+}
+#system-message dt.error, #system-message dd.error {
+  background: #ffcece;
+  border: 1px solid #df8f8f;
+  color: #665252;
+  padding: 10px 10px 0;
+}
+#system-message dt.error {
+  border-bottom: none;
+}
+#system-message dd.error {
+  border-top: none;
+  padding-bottom: 10px;
 }
 /* styles */
 .clr, .clear {
