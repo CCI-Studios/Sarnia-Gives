@@ -48,7 +48,7 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		<link rel="stylesheet" href="/templates/<?= $this->template ?>/css/template.min.css">
 	<?php endif; ?>
 
-	<!-- load frameworks, all other at bottom -->
+	<!-- load frameworks first, all other at bottom -->
 	<?php if ($testing): ?>
 		<script src="/templates/<?= $this->template ?>/js/libs/modernizr-1.7.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/libs/jquery-1.6.1.js"></script>
@@ -57,6 +57,7 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		<script src="///ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="/templates/<?= $this->template; ?>/js/libs/jquery-1.6.1.min.js">\x3c/script>')</script>
 	<?php endif; ?>
+	<script> jQuery.noConflict(); </script>
 	<script type="text/javascript" src="http://use.typekit.com/oql5jqb.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
