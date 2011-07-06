@@ -106,6 +106,8 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		    <div class="clear"></div>
 		</div></div>
 		
+		<div class="hr"></div>
+		
 		<?php if ($this->countModules('scroll')): ?>
 		<div id="scroll">
 		    <div class="inner"> 
@@ -118,6 +120,11 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		</div>
 		<?php endif; ?>
 		
+		<?php if ($this->countModules('scroll') && 
+							($this->countModules('bottom') || $this->countModules('footer'))):?>
+			<div class="hr"></div>
+		<?php endif; ?>
+		
 		<?php if ($this->countModules('bottom')): ?>
 		<div id="bottom">
 		    <jdoc:include type="modules" name="bottom" style="xhtml" />
@@ -126,13 +133,17 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		</div>
 		<?php endif; ?>
 		
+		<?php if ($this->countModules('footer')): ?>
 		<div id="footer">
 		    <jdoc:include type="modules" name="footer" style="xhtml" />
 		    
 		    <div class="clear"></div>
 		</div>
+		<?php endif; ?>
 		
-		<div>
+		<div class="hr"></div>
+		
+		<div id="copyright">
 		    <div class="left">
 		        &copy; <?php echo date('Y') ?> Sarnia Gives. All Rights Reserved.
 		    </div>
