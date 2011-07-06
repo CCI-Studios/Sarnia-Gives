@@ -15,10 +15,10 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			'value' => $config->{$config->name},
 		));
 		
-		return "<dl>
-			<dt><label for=\"{$config->_id}\">{$name}:</label></dt>
-			<dd><input type=\"\" /></dd>
-		</dl>";
+		return "<div class=\"field\">
+			<div><label for=\"{$config->_id}\">{$name}:</label></div>
+			<div><input type=\"\" /></div>
+		</div>";
 	}
 	
 	public function text($config = array())
@@ -33,16 +33,16 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			'value' => $config->{$config->name},
 		));		
 		
-		return "<dl>
-			<dt><label for=\"{$config->_id}\">{$config->_title}:</label></dt>
-			<dd><input 
+		return "<div class=\"field\">
+			<div><label for=\"{$config->_id}\">{$config->_title}:</label></div>
+			<div><input 
 					type=\"text\" 
 					name=\"{$config->name}\" 
 					id=\"{$config->_id}\" 
 					class=\"{$config->klass}\" 
 					value=\"{$config->value}\" />
-			</dd>
-		</dl>";
+			</div>
+		</div>";
 	}
 	
 	public function password($config = array())
@@ -56,15 +56,15 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			'title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
 		));
 		
-		return "<dl>
-			<dt><label for=\"{$config->id}\">{$config->title}:</label></dt>
-			<dd><input 
+		return "<div class=\"field\">
+			<div><label for=\"{$config->id}\">{$config->title}:</label></div>
+			<div><input 
 					type=\"password\" 
 					name=\"{$config->name}\" 
 					id=\"{$config->_id}\" 
 					class=\"{$config->klass}\" />
-			</dd>
-		</dl>";
+			</div>
+		</div>";
 	}
 	
 	public function submit($config = array())
@@ -75,12 +75,12 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			'klass'	=> '',
 		));
 		
-		return "<dl>
-			<dt>&nbsp;</dt>
-			<dd><input type=\"submit\"
+		return "<div class=\"field\">
+			<div>&nbsp;</div>
+			<div><input type=\"submit\"
 					class=\"{$config->klass}\" 
-					value=\"{$config->_title}\" /></dd>
-		</dl>";
+					value=\"{$config->_title}\" /></div>
+		</div>";
 	}
 	
 	
