@@ -70,9 +70,9 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		        <?php if (JFactory::getUser()->guest == 1): ?>
                     <a href="index.php?option=com_user&amp;view=login<?php 
 						echo ($this->params->get('login_id'))? '&amp;Itemid='.$this->params->get('login_id'):'';
-					?>">Login</a>
+					?>">Login</a> | <a href="index.php?option=com_content&amp;view=article&amp;id=11&amp;Itemid=24">Register</a>
 		        <?php else: ?>
-		            <a href="index.php?option=com_user&amp;task=logout&amp;return=Lw==">Logout</a>
+		            <a href="index.php?option=com_user&amp;task=logout&amp;return=Lw==">Logout</a> | <a href="#">Profile</a>
 		        <?php endif; ?>
 		    </div>
 		    
