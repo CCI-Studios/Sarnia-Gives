@@ -4,6 +4,7 @@
 	<h1><?= @text('Search for Opportunities') ?></h1>
 
 	<p>Select your interests below to search for volunteer opportunities. Alternativly, you can seach for locations near you using the <a href="#">map</a>.</p>
+	<p><?= $params->get('description')?></p>
 
 	<form action="<?= @route('') ?>" method="get">
 		<input type="hidden" name="layout" value="default">
