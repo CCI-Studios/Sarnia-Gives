@@ -60,10 +60,10 @@ jQuery(function ($) {
 	
 	
 	$('#scroll .arrow-left').css('display', 'block').click(function (e) {
-		update(1);
+		update(-1);
 	});
 	$('#scroll .arrow-right').css('display', 'block').click(function (e) {
-		update(-1);
+		update(1);
 	});
 	
 	current = -1;
