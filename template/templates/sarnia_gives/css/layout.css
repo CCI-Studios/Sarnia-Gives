@@ -16,7 +16,6 @@
   display: block;
 }
 #body {
-  background: url(../images/divider-horizontal.png) top repeat-x;
   margin: 28px 0 20px;
   padding-top: 20px;
 }
@@ -40,9 +39,7 @@
   width: 300px;
 }
 #scroll {
-  background: url(../images/divider-horizontal.png) top repeat-x;
   margin: 20px 0;
-  padding-top: 20px;
   position: relative;
 }
 #scroll .inner {
@@ -52,12 +49,12 @@
   width: 100%;
 }
 #bottom {
-  background: url(../images/divider-horizontal.png) top repeat-x;
-  margin: 20px 0 25px;
-  padding-top: 20px;
+  background: url(../images/bottom_bg.png) repeat-y;
+  margin: 20px 0;
 }
 #footer {
-  background: url(../images/divider-horizontal.png) bottom repeat-x;
   margin: 25px 0 13px;
-  padding-bottom: 16px;
+}
+#copyright {
+  margin: 10px 0;
 }

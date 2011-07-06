@@ -2,6 +2,7 @@
 .moduletable h3 {
   background: url(../images/h1_bg.png) left no-repeat;
   font-size: 22px;
+  font-weight: 300;
   line-height: 35px;
   margin: 0 0 0.7em -35px;
   padding-left: 35px;
@@ -142,7 +143,7 @@
 #scroll .moduletable h3 {
   background: #a7a9ac;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 40px;
   margin: 0;
   padding: 0 13px;
@@ -151,13 +152,9 @@
   background-color: #7f3f98;
 }
 #bottom .moduletable {
-  border-left: 2px solid #f2f2f2;
   float: left;
   padding: 0 35px 0 44px;
-  width: 232px;
-}
-#bottom .moduletable:first-child {
-  border-left: none;
+  width: 233px;
 }
 #system-message ul {
   margin: 0;

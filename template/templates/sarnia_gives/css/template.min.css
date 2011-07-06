@@ -266,6 +266,10 @@ h1 {
 h2 {
   font-size: 18px;
 }
+h3 {
+  font-size: 15px;
+  text-decoration: underline;
+}
 a, a:active, a:visited {
   color: #5f167b;
   text-decoration: none;

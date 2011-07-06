@@ -44,11 +44,14 @@ dl.tabs {
   float: left;
   width: 80%;
 }
-.tabs .open {
-  text-decoration: underline;
+.tabs dt {
+  margin: 5px 0;
+}
+.tabs dt.open {
+  border-bottom: 1px solid #A7A9AC;
+  margin-bottom: 4px;
 }
 .tabs + .current dd {
-  border-left: 1px solid #A7A9AC;
   margin-left: 10px;
   padding-left: 10px;
 }

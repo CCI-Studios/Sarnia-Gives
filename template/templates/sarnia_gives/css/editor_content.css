@@ -2,3 +2,9 @@
 .purple {
   color: #5f167b;
 }
+.hr {
+  background: url("../images/divider-horizontal.png") repeat-x scroll center bottom transparent;
+  display: block;
+  height: 1px;
+  width: 100%;
+}
