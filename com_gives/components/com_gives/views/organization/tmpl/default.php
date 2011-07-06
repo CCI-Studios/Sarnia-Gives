@@ -18,12 +18,11 @@
 	
 		<div class="column">
 			<?=$organization->address?><br/>
-			<?=$organization->city?><br/>
-			<?=$organization->province?><br/>
-		</div>
-		<div class="column">
-			<?=$organization->phone?><br/>
-			<?=$organization->fax?><br/>
+			<?=$organization->city?>, <?=$organization->province?><br/>
+			<?=$organization->postal?><br/><br/>
+			
+			<?= ($organization->phone)? @text('Phone') .': '. $organization->phone.'<br/>':'' ?>
+			<?= ($organization->fax)? @text('Fax') .': '. $organization->fax.'<br/>':'' ?>
 			<a href="mailto:<?=$organization->email?>"><?=$organization->email?></a><br/>
 		</div>
 	</div>

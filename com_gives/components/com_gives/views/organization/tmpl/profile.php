@@ -2,7 +2,7 @@
 
 <div class="com_gives">
 	<h1>
-		<?= $title ?> Profile
+		<?= $title ?>
 		<? if ($edit_button): ?>
 		<span class="edit">
 			<a href="<?= @route('view=organization&layout=edit&id='.$organization->id) ?>">
@@ -39,5 +39,7 @@
 		->layout('widget')
 		->display(); ?>
 	
-	<p>Click <a href="<?= @route('view=opportunity&layout=form&org_id='.$organization->id); ?>">here</a> to create a new opportunity</p>
+	<form action="<?= @route('view=opportunity&layout=form&org_id='.$organization->id) ?>" method="get">
+		<p><input type="submit" value="Create Opportunity" /></p> 
+	</form>
 </div>
