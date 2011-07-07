@@ -13,7 +13,7 @@
 
 	<? if (!count($opportunities)): ?>
 	<li>
-		<?= @text('There are currently no opportunities available.'); ?>
+		<?= @text('There are currently no opportunities available that match your requirements.'); ?>
 	</li>
 	<? endif; ?>
 </ul>
