@@ -31,26 +31,6 @@
 	padding: 5px;
 }
 
-/* pagination */
-.-koowa-pagination {}
-.-koowa-pagination .limit {
-	display: none;
-}
-.-koowa-pagination .pages {
-	list-style: none;
-	margin: 0;
-	text-align: center;
-}
-.-koowa-pagination .pages  li {
-	background: none;
-	display: inline;
-	padding: 0 5px;
-}
-.-koowa-pagination .count {
-	text-align: center;
-}
-/* end pagination */
-
 /* tabs */
 .tabs {
 	float: left;
