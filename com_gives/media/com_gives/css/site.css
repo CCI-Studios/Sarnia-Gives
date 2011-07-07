@@ -1,9 +1,12 @@
+/* search letters */
 .search_letters  { }
 .search_letters li {
+	background: none;
 	display: inline;
 	padding: 0 5px
 }
-.search_letters a.active { color: red; }
+.search_letters a.active { text-decoration: underline; }
+/* end search letters */
 
 
 .com_gives .box {
@@ -39,6 +42,7 @@
 	text-align: center;
 }
 .-koowa-pagination .pages  li {
+	background: none;
 	display: inline;
 	padding: 0 5px;
 }
