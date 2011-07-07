@@ -38,27 +38,3 @@ input[type=password], select, textarea {
 	padding: 4px 5px;
 	width: 300px;
 }
-
-dl.tabs {
-	float: left;
-	width: 20%;
-}
-
-.tabs + .current {
-	float: left;
-	width: 80%;
-}
-
-.tabs dt {
-	margin: 5px 0;
-}
-
-.tabs dt.open {
-	border-bottom: 1px solid #A7A9AC; 
-	margin-bottom: 4px;
-}
-
-.tabs + .current dd {
-	margin-left: 10px;
-	padding-left: 10px;
-}
