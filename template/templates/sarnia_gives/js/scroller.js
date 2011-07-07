@@ -1,5 +1,6 @@
 jQuery(function ($) {
-	var images, left, right, update, current, timeout, spacer, delay, duration, transition;
+	var images, update, current, timeout, spacer, delay, duration, transition;
+	
 	delay = 4000;
 	duration = 1000;
 	spacer = 320;
@@ -69,5 +70,5 @@ jQuery(function ($) {
 	current = -1;
 	timeout = setTimeout(function () {
 		update(1);
-	}, delay)
+	}, delay*2)
 });
