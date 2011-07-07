@@ -20,14 +20,6 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
     
     public function afterSave(KCommandContext $context)
     {
-        $action = $this->getModel()->getState()->isUnique() ? 'edit' : 'add';
-        $params = JComponentHelper::getParams('com_gives');
-
-
-        if ($action === 'add') {
-            $this->setRedirect($params->get('organization_register_redirect', '/'));
-        } else {
-            $this->setRedirect('index.php?option=com_gives&view=profile');
-        }
+		$this->setRedirect(JRoute::_('index.php?option=com_gives&view=profile'));
     }
 }
