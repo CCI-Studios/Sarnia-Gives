@@ -4,21 +4,8 @@
 
 <h1 class="componentheading">Organizations</h1>
 
-<ul class="search_letters">	
-	<? foreach($letters as $letter) : ?>
-	<? $class = ($state->letter_name == $letter) ? 'class="active" ' : ''; ?>
-	<li>
-		<a href="<?= @route('letter_name='.$letter) ?>" <?= $class ?>>
-			<?= $letter; ?>
-		</a>
-	</li>
-	<? endforeach; ?>
-	<li>
-		<a href="<?= @route('letter_name=') ?>">
-			<?= @text('Reset'); ?>
-		</a>
-	</li>
-</ul>
+<?= @template('site::com.gives.views.list.search_letters', 
+	array('letters' => $letters)); ?>
 
 <ul class="organization">
 <? foreach ($organizations as $organization): ?>
