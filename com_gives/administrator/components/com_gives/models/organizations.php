@@ -25,7 +25,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 			->from('gives_organizations AS tbl')
 			->order('letter_name');
 		
-		$this->_buildQueryWhere($query);
+		// $this->_buildQueryWhere($query);
 			
 		$query->columns[] = 'LEFT(tbl.title, 1) AS letter_name';
 
