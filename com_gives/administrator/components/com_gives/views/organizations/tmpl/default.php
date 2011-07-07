@@ -9,7 +9,7 @@
 			<tr>
 				<th width="5">#</th>
 				<th width="15"><?= @helper('grid.checkall') ?></th>
-				<th><?=@helper('grid.sort', array('column'=>'title', 'title'=>'Name'))?></th>
+				<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
 				
 				<th width="100"><?=@text('Joomla Account')?></th>
 				<th width="25">Enabled</th>

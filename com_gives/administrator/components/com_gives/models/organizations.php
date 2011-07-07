@@ -11,7 +11,9 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		$this->_state
 			->insert('draft', 'boolean', false)
 			->insert('letter_name', 'word')
-			->insert('user_id', 'int');
+			->insert('user_id', 'int')
+			->remove('sort')
+			->insert('sort', 'cmd', 'title');
 	}
 	
 	public function getLetters() 
