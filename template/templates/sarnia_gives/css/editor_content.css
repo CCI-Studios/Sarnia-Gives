@@ -1,10 +1,11 @@
 /* editor content */
 .purple {
-  color: #5f167b;
+	color: #5f167b;
 }
+
 .hr {
-  background: url("../images/divider-horizontal.png") repeat-x scroll center bottom transparent;
-  display: block;
-  height: 1px;
-  width: 100%;
+	background: url("../images/divider-horizontal.png") bottom repeat-x;
+	display: block;
+	height: 1px;
+	width: 100%;
 }
