@@ -16,8 +16,8 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 		));
 		
 		return "<div class=\"field\">
-			<div><label for=\"{$config->_id}\">{$name}:</label></div>
-			<div><input type=\"\" /></div>
+			<div class=\"label\"><label for=\"{$config->_id}\">{$name}:</label></div>
+			<div class=\"input\"><input type=\"\" /></div>
 		</div>";
 	}
 	
@@ -34,8 +34,8 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 		));		
 		
 		return "<div class=\"field\">
-			<div><label for=\"{$config->_id}\">{$config->_title}:</label></div>
-			<div><input 
+			<div class=\"label\"><label for=\"{$config->_id}\">{$config->_title}:</label></div>
+			<div class=\"input\"><input 
 					type=\"text\" 
 					name=\"{$config->name}\" 
 					id=\"{$config->_id}\" 
@@ -57,8 +57,8 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 		));
 		
 		return "<div class=\"field\">
-			<div><label for=\"{$config->id}\">{$config->title}:</label></div>
-			<div><input 
+			<div class=\"label\"><label for=\"{$config->id}\">{$config->title}:</label></div>
+			<div class=\"input\"><input 
 					type=\"password\" 
 					name=\"{$config->name}\" 
 					id=\"{$config->_id}\" 
@@ -76,8 +76,8 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 		));
 		
 		return "<div class=\"field\">
-			<div>&nbsp;</div>
-			<div><input type=\"submit\"
+			<div class=\"label\">&nbsp;</div>
+			<div class=\"input\"><input type=\"submit\"
 					class=\"{$config->klass}\" 
 					value=\"{$config->_title}\" /></div>
 		</div>";

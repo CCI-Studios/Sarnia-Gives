@@ -13,8 +13,8 @@
 			<?= @helper('form.text', array('name'=>'address')) ?>
 			<?= @helper('form.text', array('name'=>'city')) ?>
 			<div class="field">
-				<div><label for=""><?= @text('Province') ?>:</label></div>
-				<div><?= @helper('site::com.gives.template.helper.listbox.provinces', array()) ?></div>
+				<div class="label"><label for=""><?= @text('Province') ?>:</label></div>
+				<div class="input"><?= @helper('site::com.gives.template.helper.listbox.provinces', array()) ?></div>
 			</div>
 			<?= @helper('form.text', array('name'=>'postal')) ?>
 			<?= @helper('form.text', array('name'=>'phone')) ?>
@@ -30,8 +30,8 @@
 			<?= @helper('form.text', array('name'=>'contact_email')) ?>
 			<?= @helper('form.text', array('name'=>'contact_title')) ?>
 			<div class="field">
-				<div><label for=""><?= @text('Organization Type') ?>:</label></div>
-				<div><?= @helper('site::com.gives.template.helper.listbox.organizationTypes', array()) ?></div>
+				<div class="label"><label for=""><?= @text('Organization Type') ?>:</label></div>
+				<div class="input"><?= @helper('site::com.gives.template.helper.listbox.organizationTypes', array()) ?></div>
 			</div>
 			<div class="clear"></div>
 		<?= @helper('tabs.endPanel') ?>
