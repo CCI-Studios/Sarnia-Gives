@@ -16,26 +16,24 @@ legend {
 	text-transform: uppercase;
 }
 
-form {
-	dt {
-		clear: both;
-		float: left;
-		margin-bottom: 2px;
-		text-align: right;
-		width: 25%;
-	}
+form .label {
+	clear: both;
+	float: left;
+	margin-bottom: 2px;
+	text-align: right;
+	width: 25%;
+}
 
- 	dd {
-		float: left;
-		margin: 0 0 15px;
-		width: 75%;
+form .input {
+	float: left;
+	margin: 0 0 15px;
+	width: 75%;
+}
 
-		small {
-			color: #AAA;
-			display: block;
-			font-size: 11px;
-		}
-	}
+form .input small {
+	color: #AAA;
+	display: block;
+	font-size: 11px;
 }
 
 label {
