@@ -7,6 +7,12 @@
   margin: 0 0 0.7em -35px;
   padding-left: 35px;
 }
+.moduletable h3 a {
+  color: white;
+}
+.moduletable h3 a:hover {
+  text-decoration: none;
+}
 /* menus */
 .moduletable_hmenu li, .moduletable_vmenu li {
   background: none;
