@@ -1,7 +1,7 @@
 jQuery(function ($) {
 	var images, update, current, timeout, spacer, delay, duration, transition;
 	
-	delay = 4000;
+	delay = 6000;
 	duration = 1000;
 	spacer = 320;
 	transition = 'swing';
