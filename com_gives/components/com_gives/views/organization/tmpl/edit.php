@@ -55,6 +55,12 @@
 		<?= @helper('tabs.startPanel', array('title'=>'Locations')) ?>
 			<?= @helper('listbox.locations')?>
 		<?= @helper('tabs.endPanel') ?>
+		
+		<?= @helper('tabs.startPanel', array('title'=>'Password')) ?>
+			<?= @helper('form.password', array('name'=>'password')) ?>
+			<?= @helper('form.password', array('name'=>'confirm')) ?>
+		<?= @helper('tabs.endPanel') ?>
+		
 		<?= @helper('tabs.endPane')?>
 	
 		
