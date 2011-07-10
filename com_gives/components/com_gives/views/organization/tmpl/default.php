@@ -4,7 +4,7 @@
 	<h1 class="componentheading">
 		<?= $organization->title ?>
 
-		<? if ($organization->canEdit()): ?>
+		<? if ($organization->isEditable() && $organization->canEdit()): ?>
 			<div class="right">
 				<small><a href="<?= @route('view=organization&layout=edit&id='.$organization->id)?>">
 					<img src="/images/M_images/edit.png" />
