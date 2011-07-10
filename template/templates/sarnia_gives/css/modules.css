@@ -16,6 +16,7 @@
 .moduletable_hmenu li,
 .moduletable_vmenu li {
 	background: none;
+	padding: 0;
 }
 
 /* hmenu */
@@ -54,9 +55,11 @@
 .moduletable_hmenu ul ul {
   background: #8b8b8b;
   display: none;
-  left: 0;
+  left: 50%;
+	margin-left: -97px;
   position: absolute;
   top: 100%;
+	width: 195px;
 }
 .moduletable_hmenu ul li:hover ul { display: block; }
 .moduletable_hmenu ul li:last-child ul {
@@ -170,6 +173,7 @@
 	font-size: 18px;
 	line-height: 40px;
 	margin: 0;
+	padding: 0 0 0 20px;
 }
 #scroll .moduletable:hover h3 { background-color: #7f3f98; }
 #scroll .moduletable a { display: block; }
@@ -196,6 +200,7 @@
 .-koowa-pagination .limit, .pagination .limit {
 	display: none;
 }
+
 .-koowa-pagination .pages, .pagination .pages {
 	list-style: none;
 	margin: 0;
@@ -206,7 +211,8 @@
 	display: inline;
 	padding: 0 5px;
 }
-.-koowa-pagination .count, .pagination .count {
+.-koowa-pagination .count, .pagination .results {
+	display: none;
 	text-align: center;
 }
 /* end pagination */
