@@ -22,7 +22,7 @@
    
 		<?= @helper('tabs.startPane') ?>
 			<?= @helper('tabs.startPanel', array('title'=>'Opportunity Details')) ?>
-				<?= @helper('form.text', array('name'=>'address')) ?>
+				<?= @helper('form.text', array('name'=>'title')) ?>
 				<?= @helper('form.text', array('name'=>'city')) ?>
 				<div class="field">
 					<div class="label"><label for=""><?= @text('Province') ?>:</label></div>
@@ -31,8 +31,6 @@
 				<?= @helper('form.text', array('name'=>'postal')) ?>
 				<?= @helper('form.text', array('name'=>'phone')) ?>
 				<?= @helper('form.text', array('name'=>'fax')) ?>
-				<?= @helper('form.text', array('name'=>'email')) ?>
-				<?= @helper('form.text', array('name'=>'website')) ?>
 			<?= @helper('tabs.endPanel') ?>
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Interests')) ?>

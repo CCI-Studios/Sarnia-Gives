@@ -31,7 +31,7 @@
 				<td><a href="<?=@route('view=opportunity&id='.$opportunity->id)?>">
 					<?=$opportunity->title?>
 				</a></td>
-				<td>&nbsp;</td>
+				<td><?= $opportunity->organization_id ?></td>
 				<td align="center"><?=$opportunity->id?></td>
 			</tr>
 			<? $i++;

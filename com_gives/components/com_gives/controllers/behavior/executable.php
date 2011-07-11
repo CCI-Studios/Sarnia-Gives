@@ -12,7 +12,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
 			$caller = 'opportunity')
             return true;
 
-        return parent::_beforeAdd($context);
+        return parent::canAdd($context);
     }
 
 	public function canEdit()
@@ -20,15 +20,23 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
 		$caller = $this->_mixer->getIdentifier()->name;
 
 		if ($caller == 'volunteer' || 
-			$caller == 'organization') {
+			$caller == 'organization' ||
+			$caller == 'opportunity') {
 			
-			$me = $this->getModel()->getMe();
+			$me = KFactory::get('lib.joomla.user');
 			$row = $this->getModel()->getItem();
+			
+			if ($caller == 'opportunity') {
+				$model = KFactory::get('site::com.gives.model.organization');
+				$org = $model->set('id', $row->gives_organization_id)->getItem();
+				
+				return $me->id === $org->user_id;
+			}
 			
 			return $me->id == $row->user_id;
 		}
 		
-		return parent::_beforeEdit($context);
+		return parent::canEdit($context);
 	}
 
 }
