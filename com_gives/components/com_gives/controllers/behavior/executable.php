@@ -3,20 +3,25 @@
 class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorExecutable
 {
     
-    protected function _beforeAdd(KCommandContext $context)
+    public function canAdd()
     {
-        $caller = $context->caller->getIdentifier()->name;
-        
-        if ($caller == 'volunteer' || $caller == 'organization' || $caller = 'opportunity')
+		$caller = $this->_mixer->getIdentifier()->name;
+	
+		if ($caller == 'volunteer' || 
+			$caller == 'organization' || 
+			$caller = 'opportunity')
             return true;
+
         return parent::_beforeAdd($context);
     }
 
-	protected function _beforeEdit(KCommandContext $context)
+	public function scanEdit()
 	{
-		$caller = $context->caller->getIdentifier()->name;
+		$caller = $this->_mixer->getIdentifier()->name;
 
-		if ($caller == 'volunteer' || $caller == 'organization') {
+		if ($caller == 'volunteer' || 
+			$caller == 'organization') {
+			
 			$me = $this->getModel()->getMe();
 			$row = $this->getModel()->getItem();
 			
