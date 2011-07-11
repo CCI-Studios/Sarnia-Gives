@@ -22,3 +22,25 @@
 		});
 	});
 }(this, this.document));
+
+
+(function (window, document) {
+	window.addEvent('domready', function () {
+		var images = $$('img.rollover');
+		
+		images.each(function (image) {
+			var over, normal;
+			normal = image.src;
+			over = normal.replace('_normal', '_over');
+			
+			image.addEvents({
+				mouseenter: function() {
+					image.src = over;
+				},
+				mouseleave: function() {
+					image.src = normal;
+				}
+			})
+		});
+	});
+}(this, this.document));
