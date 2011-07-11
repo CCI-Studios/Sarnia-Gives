@@ -6,7 +6,7 @@ class ComGivesControllerToolbarDashboard extends ComDefaultControllerToolbarDefa
 	public function getCommands()
 	{
 		$this->addModal(array(
-			'href'	=> 'index.php?option=com_config&cotroller=component&component=com_gives',
+			'href'	=> 'index.php?option=com_config&controller=component&component=com_gives',
 			'icon'	=> 'icon-32-config',
 			'label'	=> 'Parameters',
 		));
