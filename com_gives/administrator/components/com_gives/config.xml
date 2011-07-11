@@ -4,5 +4,6 @@
 			<option value="1">Yes</option>
 			<option value="0">No</option>
 		</param>
+		<param type="text" name="email_list" label="Email List" description="List of admin email address to send notifications to." />
 	</params>
 </root>
