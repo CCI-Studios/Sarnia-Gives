@@ -106,7 +106,7 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		
 		$options = array();
 		
-		$options[] = $this->option(array('text'=>"Animals/Animal Services", 'value'=>"Animals/Animal Services"));
+		$options[] = $this->option(array('text'=>"Animals/Animal Services", 'value'=>"Animals"));
 		$options[] = $this->option(array('text'=>"Community Development", 'value'=>"Community Development"));
 		$options[] = $this->option(array('text'=>"Health &amp; Wellness", 'value'=>"Health & Wellness"));
 		$options[] = $this->option(array('text'=>"Arts &amp; Culture", 'value'=>"Arts & Culture"));
