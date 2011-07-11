@@ -31,3 +31,17 @@ Extra Extensions
  - Akeeba Backup
  - Updateman
  - mod_jf_twitter
+
+TODO
+- map
+- search
+- search results
+- volunteer sign up
+- volunteer profile
+- volunteer saved search
+- organization copy opp settings
+- enable password
+- add text size
+- add social media
+- add opportunity description
+- 
