@@ -15,7 +15,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
         return parent::_beforeAdd($context);
     }
 
-	public function scanEdit()
+	public function canEdit()
 	{
 		$caller = $this->_mixer->getIdentifier()->name;
 
