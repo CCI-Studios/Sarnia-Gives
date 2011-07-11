@@ -1,7 +1,16 @@
 <style src="media://com_gives/css/site.css" />
 
 <div class="com_gives">
-	<h1>Edit Your Profile</h1>
+	<h1>
+		Edit Your Profile
+		<? if ($edit): ?>
+		<span class="edit">
+			<a href="<?= @route('view=organization&id='.$organization->id) ?>">
+				<?= 'Back' ?>
+			</a>
+		</span>
+		<? endif; ?>
+	</h1>
 	
 	<p>Update your search settings below:</p>
 
