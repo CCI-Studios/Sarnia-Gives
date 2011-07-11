@@ -4,12 +4,12 @@
 	<h1 class="componentheading">
 		<?= $organization->title ?>
 
-		<? if ($organization->isEditable() && $organization->canEdit()): ?>
-			<div class="right">
-				<small><a href="<?= @route('view=organization&layout=edit&id='.$organization->id)?>">
-					<img src="/images/M_images/edit.png" />
-				</a></small>
-			</div>
+		<? if ($edit): ?>
+		<span class="edit">
+			<a href="<?= @route('view=organization&layout=edit&id='.$organization->id) ?>">
+				<?= @text('Edit Profile') ?>
+			</a>
+		</span>
 		<? endif; ?>
 	</h1>
 
@@ -38,4 +38,10 @@
 		->set('organization_id', $organization->id)
 		->layout('widget')
 		->display(); ?>
+		
+	<? if ($edit): ?>
+		<form action="<?= @route('view=opportunity&layout=form&org_id='.$organization->id) ?>" method="get">
+			<p><input type="submit" value="Create Opportunity" /></p> 
+		</form>
+	<? endif; ?>
 </div>

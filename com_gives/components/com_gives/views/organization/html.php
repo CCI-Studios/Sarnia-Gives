@@ -18,12 +18,7 @@ class ComGivesViewOrganizationHtml extends ComGivesViewHtml
 		}
 		
 		if ($this->layout !== 'form') {
-			if ($me->id === $row->user_id) {
-				$this->assign('edit_button', true);
-			} else {
-				$this->assign('edit_button', false);
-			}
-			
+			$this->assign('edit', $me->id === $row->user_id);
 			$this->assign('title', sprintf("%s's Profile", $row->title));
 		} else {
 			$this->assign('title', sprintf("%s's Settings", $row->title));
