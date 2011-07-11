@@ -13,7 +13,7 @@
 				
 				<th width="100"><?=@text('Joomla Account')?></th>
 				<th width="25">Enabled</th>
-				<th width="5"><?=@text('id')?></th>
+				<th width="5"><?= @helper('grid.sort', array('column'=>'id')) ?></th>
 			</tr>
 		</thead>
 	
