@@ -8,7 +8,7 @@ class ComGivesControllerProfile extends ComDefaultControllerDefault
 		$user = KFactory::get('lib.joomla.user');
 
 		if ($user->guest !== 0) {
-			KFactory::get('lib.joomla.application')->redirect('index.php?option=com_user&view=login');
+			KFactory::get('lib.joomla.application')->redirect('index.php?option=com_user&view=login&Itemid=11');
 			return true;
 		}
 		
