@@ -33,31 +33,58 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 		
 		$params = &JComponentHelper::getParams('com_gives');
 		if ($params->get('send_emails')) {
-			$this->_emailUser($data['title'], $data['first_name'], $data['email'], $data['password']);
+			$this->_emailUser($data['first_name'] .' '. $data['last_name'], $data['title'], $data['email'], $data['password']);
+			$this->_emailAdmin($data['title'], $data['first_name'] .' '. $data['last_name']);
 		}
 	}
 	
-	protected function _emailUser($title, $name, $email, $password)
+	protected function _emailUser($name, $organization, $email, $password)
 	{
-		$mailer = JFactory::getMailer();
-		$config = JFactory::getConfig();
-
+		$params = &JComponentHelper::getParams('com_gives');
+		$admins = $params->get('email_list');
+		if ($admins === '')
+			return;
+		
+		$view = KFactory::tmp("admin::com.default.template.default");
+		$view->loadIdentifier('admin::com.gives.view.organization.email_user', array(
+			'name'	=> $name,
+			'title'	=> $organization,
+			'email'	=> $email,
+			'password'	=> $password,
+		));
+		
+		$this->_sendMail($email, "Thank you for registering", $view->render());
+	}
+	
+	protected function _emailAdmin($title, $name)
+	{
+		$params = &JComponentHelper::getParams('com_gives');
+		$admins = $params->get('email_list');
+		if ($admins === '')
+			return;
+		
+		$view = KFactory::tmp("admin::com.default.template.default");
+		$view->loadIdentifier('admin::com.gives.view.organization.email_admin', array(
+			'name'	=> $name,
+			'title' => $title,
+		));
+		
+		$this->_sendMail($admins, "New Organization Registered", $view->render());
+	}
+	
+	protected function _sendMail($to, $subject, $body)
+	{
+		$mailer		= JFactory::getMailer();
+		$config		= JFactory::getConfig();
+		
 		$mailer->setSender(array(
 			$config->getValue('config.mailfrom'),
 			$config->getValue('config.fromname')
 		));
-		$mailer->addRecipient($email);
-		$mailer->setSubject('Sarnia Gives - Organization Registration');
-		$mailer->setBody(
-			"<p>
-				<img src=\"http://dev.sarniagives.com/images/stories/default/logo.png\" style=\"float: right; margin: 0 0 10px 10px;\" alt=\"Sarnia Gives\" />
-				Hello {$name},</p>".
-			"<p>Thank you for registering {$title} for Sarnia Gives!</p>".
-			"<p>You can access your account <a href=\"http://sarniagives.com/login\">here</a></p>".
-			"<p>Your temporary password is: <b>{$password}</b></p>".
-			"<p>Once again, thank you,<br/>The Sarnia Gives Team</p>"
-		);
 		
+		$mailer->addRecipient($to);
+		$mailer->setSubject($subject);
+		$mailer->setBody($body);
 		$mailer->isHtml(true);
 		$mailer->send();
 	}
