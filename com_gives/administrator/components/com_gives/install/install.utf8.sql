@@ -98,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_opportunities` (
 	`city`		VARCHAR(250) NOT NULL,
 	`province`	VARCHAR(250) NOT NULL,
 	`postal`	VARCHAR(250) NOT NULL,
+	`description`	TEXT NOT NULL,
 	
 	# search 
 	`interests`		TEXT NOT NULL,

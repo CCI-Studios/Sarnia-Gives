@@ -39,6 +39,11 @@
 				<?= @helper('form.text', array('name'=>'phone')) ?>
 				<?= @helper('form.text', array('name'=>'fax')) ?>
 			<?= @helper('tabs.endPanel') ?>
+			
+			<?= @helper('tabs.startPanel', array('title'=>'Description')) ?>
+				<?= @helper('admin::com.default.template.helper.editor.display', array(
+					'name'=>'description', 'height'=>150, 'buttons'=>false)) ?>
+			<?= @helper('tabs.endPanel') ?>
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Interests')) ?>
 				<?= @helper('listbox.interests') ?>

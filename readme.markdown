@@ -21,5 +21,3 @@ TODO
 - organization copy opp settings
 - enable password
 - add text size
-- add opportunity description
-- 

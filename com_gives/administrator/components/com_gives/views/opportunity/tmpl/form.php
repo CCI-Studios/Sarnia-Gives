@@ -28,6 +28,11 @@
 			<label for="field_end_date" class="mainlabel"><?=@text('End Date')?>:</label>
 			<input type="text" name="end_date" id="field_end_date" value="<?=$opportunity->end_date?>" /><br/>
 		</fieldset>
+		
+		<fieldset>
+			<legend><?= @text('Description') ?></legend>
+			<textarea name="description" style="width: 100%;" rows="10"><?=$opportunity->description?></textarea>
+		</fieldset>
 	</div>
 		
 	<div style="float: left; width: 50%">
