@@ -12,6 +12,7 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 			->insert('locations', 'raw')
 			->insert('skills', 'raw')
 			->insert('interests', 'raw')
+			->insert('enabled', 'boolean', false)
 			->insert('fuzzy', 'boolean', false);
 	}	
 	
@@ -24,6 +25,10 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 			$op = 'OR';
 		} else {
 			$op = 'AND';
+		}
+		
+		if ($state->enabled) {
+			$query->where('tbl.enabled', '=', '1');
 		}
 		
 		if (is_numeric($state->organization_id)) {

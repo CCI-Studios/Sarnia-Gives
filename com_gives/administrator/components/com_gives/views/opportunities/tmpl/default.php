@@ -10,6 +10,7 @@
 				<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
 				
 				<th width="100"><?=@text('Organization')?></th>
+				<th width="50"><?= @helper('grid.sort', array('column'=>'enabled')) ?></th>
 				<th width="5"><?=@text('id')?></th>
 			</tr>
 		</thead>
@@ -32,6 +33,7 @@
 					<?=$opportunity->title?>
 				</a></td>
 				<td><?= $opportunity->organization_id ?></td>
+				<td align="center"><?=@helper('grid.enable', array('row'=>$opportunity)) ?></td>
 				<td align="center"><?=$opportunity->id?></td>
 			</tr>
 			<? $i++;
