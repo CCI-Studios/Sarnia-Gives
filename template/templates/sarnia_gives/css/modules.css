@@ -5,6 +5,7 @@
 }
 .no-js #text_sizer { display: none; }
 #text_sizer span { cursor: pointer; }
+#text_sizer .decrease { font-size: 0.9em; }
 
 /* modules */
 .moduletable {}
