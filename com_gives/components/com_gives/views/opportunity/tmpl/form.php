@@ -52,7 +52,7 @@
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Opportunity Details')) ?>
 				<div class="field">
-					<div class="label"><label><?=@text('For Event')?>:</label></div>
+					<div class="label"><label><?=@text('Special Event')?>:</label></div>
 					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'event'))?></div>
 				</div>
 
@@ -75,7 +75,6 @@
 				</div>
 			
 				<?= @helper('form.text', array('name'=>'min_age'))?>
-				<?= @helper('form.text', array('name'=>'max_hours'))?>
 			<?= @helper('tabs.endPanel') ?>
 		<?= @helper('tabs.endPane') ?>
 	
