@@ -41,7 +41,6 @@ window.addEvent('domready', function() {
 	if (!element)
 		return;
 		
-	console.log('current: ' + current);
 	element.getElement('.increase').addEvent('click', function() {
 		current = Math.min(10+delta*2, current + delta);
 		setSize(current);
