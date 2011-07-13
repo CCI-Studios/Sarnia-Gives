@@ -91,7 +91,14 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		
 		<div id="body" class="<?php echo ($this->countModules('sidebar'))? '':'wide'; ?>"><div>
 		    <div id="component">
-						<jdoc:include type="message" />
+				<? if ($menu !== 'home'): ?>
+					<div id="text_sizer">
+						<span class="decrease">A-</span>
+						<span class="increase">A+</span>
+					</div>
+				<? endif; ?>
+			
+				<jdoc:include type="message" />
 		        <jdoc:include type="component" />
 		        
 		        <div class="clear"></div>
@@ -167,6 +174,7 @@ $analytics = "UA-XXXXX-X"; // FIXME Update to client ID
 		<script src="/templates/<?= $this->template ?>/js/dropmenu.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/html5.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/scroller.js"></script>
+		<script src="/templates/<?= $this->template ?>/js/text_size.js"></script>
 	<?php else: ?>
 		<script>
 			var _gaq=[["_setAccount","<?php echo $analytics?>"],["_trackPageview"]];

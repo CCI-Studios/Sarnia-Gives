@@ -1,3 +1,11 @@
+#text_sizer {
+	float: right;
+	line-height: 27px;
+	margin: 8px 0 0 10px;
+}
+.no-js #text_sizer { display: none; }
+#text_sizer span { cursor: pointer; }
+
 /* modules */
 .moduletable {}
 	
