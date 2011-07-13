@@ -2,18 +2,18 @@
 
 <p>Do another <a href="<?= @route('view=opportunities&layout=search') ?>">search</a>, or look on the <a href="#">map</a>.</p>
 
-<ul>
-	<? foreach ($opportunities as $opportunity): ?>
-	<li>
-		<a href="<?= @route('view=opportunity&id='. $opportunity->id) ?>">
-			<?= $opportunity->title ?>
-		</a>
-	</li>
-	<? endforeach; ?>
+<? if (count($opportunities)): ?>
+	<?= @template('search_results', array(
+		'opportunities'	=> $opportunities
+	)) ?>
 
-	<? if (!count($opportunities)): ?>
-	<li>
-		<?= @text('There are currently no opportunities available that match your requirements.'); ?>
-	</li>
-	<? endif; ?>
-</ul>
+	<p>Looking for more options? Check out the results below:</p>
+<? else: ?>
+	<p>No opportunities were found that exactly match your search. Check out the results below for ones that are close.</p>
+<? endif; ?>
+
+<?= @template('search_results', array(
+	'opportunities'	=> KFactory::tmp('site::com.gives.model.opportunity')
+						//->set('fuzzy', true)
+						->getList()
+)) ?>
