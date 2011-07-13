@@ -1,6 +1,6 @@
 <h1 class="componentheading">Opportunities</h1>
 
-<p>Do another <a href="<?= @route('view=opportunities&layout=search') ?>">search</a>, or look on the <a href="#">map</a>.</p>
+
 
 <? if (count($opportunities)): ?>
 	<?= @template('search_results', array(
@@ -17,3 +17,5 @@
 						//->set('fuzzy', true)
 						->getList()
 )) ?>
+<p style="margin-top: 2em;"><a href="<?= @route('layout=search') ?>">Click here</a> to start a new Search.<br/>
+	<a href="#">Click here</a> to do a Map Search.</p>

@@ -23,3 +23,5 @@ KFactory::map('site::com.default.controller.behavior.editable',
 /* template helpers */
 KFactory::map('site::com.gives.template.helper.listbox',
 	'admin::com.gives.template.helper.listbox');
+KFactory::map('site::com.gives.template.helper.select',
+	'admin::com.gives.template.helper.select');

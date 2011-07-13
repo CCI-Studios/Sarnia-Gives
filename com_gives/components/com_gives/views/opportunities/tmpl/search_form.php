@@ -5,17 +5,17 @@
 
 	<div><div>
 		<h2>Interests</h2>
-		<?= @helper('listbox.interests') ?>
+		<?= @helper('select.interests') ?>
 	</div></div>
 
 	<div><div>
 		<h2>Skills</h2>
-		<?= @helper('listbox.skills') ?>
+		<?= @helper('select.skills') ?>
 	</div></div>
 
 	<div><div>
 		<h2>Locations</h2>
-		<?= @helper('listbox.locations') ?>
+		<?= @helper('select.locations') ?>
 	</div></div>
 
 	<p><input type="submit" value="Search" /></p>
