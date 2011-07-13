@@ -40,15 +40,32 @@
 	Province: <?= $opportunity->province ?><br/>
 	Postal: <?= $opportunity->postal ?><br/>
 	
-	<h2>Interests</h2>
-	<? print_r($opportunity->interests) ?>
+	<? if (count($opportunity->interests)): ?>
+		<h2>Interests</h2>
+		<ul>
+			<? foreach ($opportunity->interests as $interest):?>
+			<li><?= $interest ?></li>
+			<? endforeach; ?>
+		</ul>
+	<? endif; ?>
 	
-	<h2>Skills</h2>
-	<? print_r($opportunity->skills) ?>
+	<? if (count($opportunity->skills)): ?>
+		<h2>Skills</h2>
+		<ul>
+			<? foreach ($opportunity->skills as $skill): ?>
+			<li><?= $skill ?></li>
+			<? endforeach; ?>
+		</ul>
+	<? endif; ?>
 	
-	<h2>Location</h2>
-	<? print_r($opportunity->locations) ?>
-	
+	<? if (count($opportunity->locations)): ?>
+		<h2>Location</h2>
+		<ul>
+			<? foreach ($opportunity->locations as $location): ?>
+			<li><?= $location ?></li>
+			<? endforeach; ?>
+		</ul>
+	<? endif; ?>
 	
 	<p>FIXME Clean up the styling of this page.</p>
 </div>
