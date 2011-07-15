@@ -1,3 +1,4 @@
+<?= @helper('behavior.mootools') ?>
 <style src="media://com_gives/css/site.css" />
 
 <div class="com_gives">

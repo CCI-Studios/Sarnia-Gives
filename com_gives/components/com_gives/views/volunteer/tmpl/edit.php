@@ -1,4 +1,5 @@
-<style src="media://com_gives/css/sites.css" />
+<?= @helper('behavior.mootools') ?>
+<style src="media://com_gives/css/site.css" />
 
 <div class="com_gives">
 	<h1>Edit Your Profile</h1>
