@@ -14,17 +14,7 @@
 	</h1>
 
 	<div class="contact_info">
-		<h2><?= @text('Contact Info')?></h2>
-	
-		<div class="column">
-			<?=$organization->address?><br/>
-			<?=$organization->city?>, <?=$organization->province?><br/>
-			<?=$organization->postal?><br/><br/>
-			
-			<?= ($organization->phone)? @text('Phone') .': '. $organization->phone.'<br/>':'' ?>
-			<?= ($organization->fax)? @text('Fax') .': '. $organization->fax.'<br/>':'' ?>
-			<a href="mailto:<?=$organization->email?>"><?=$organization->email?></a><br/>
-		</div>
+		<?= @template('_contact_info') ?>
 	</div>
 
 	<h2><?= @text('Our Mission')?></h2>
