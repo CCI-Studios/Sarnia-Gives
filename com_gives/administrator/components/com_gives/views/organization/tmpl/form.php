@@ -62,30 +62,40 @@
 		<? jimport('joomla.html.pane') ?>
 		<? $pane = &JPane::getInstance('sliders', array('allowAllClose' => true)) ?>
 		<?= $pane->startPane('content-pane') ?>
-		
-		<?= $pane->startPanel('Location', 'locaion-pane') ?>
-			<?= @helper('listbox.locations', array('selected'=>$organization->locations)); ?>
-		<?= $pane->endPanel()?>
-		
-		<?= $pane->startPanel('Interests', 'interests-pane') ?>
-			<?= @helper('listbox.interests', array('selected'=>$organization->interests)); ?>
-		<?= $pane->endPanel() ?>
-		
-		<?= $pane->startPanel('Skills Settings', 'skills-pane') ?>
-			<?= @helper('listbox.skills', array('selected'=>$organization->skills)); ?>
-		<?= $pane->endPanel() ?>
-		
-		
-		<?= $pane->startPanel('Misc', 'availability-pane')?>
-			<label for="field_type" class="mainlabel"><?=@text('Type')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.organizationTypes')?><br/>
+			<?= $pane->startPanel('Location', 'locaion-pane') ?>
+				<?= @helper('select.locations'); ?>
+			<?= $pane->endPanel()?>
 			
-			<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'newsletter'))?><br/>
+			<?= $pane->startPanel('Interests', 'interests-pane') ?>
+				<?= @helper('select.interests'); ?>
+			<?= $pane->endPanel() ?>
 			
-			<label for="field_user_id" class="mainlabel"><?=@text('User ID')?>:</label>
-			<input type="text" name="user_id" id="field_user_id" value="<?=$organization->user_id?>" />
-		<?= $pane->endPanel() ?>
+			<?= $pane->startPanel('Skills Settings', 'skills-pane') ?>
+				<?= @helper('select.skills'); ?>
+			<?= $pane->endPanel() ?>
+			
+			
+			<?= $pane->startPanel('Misc', 'availability-pane')?>
+				<label for="field_type" class="mainlabel"><?=@text('Type')?>:</label>
+				<?=@helper('admin::com.gives.template.helper.listbox.organizationTypes')?><br/>
+				
+				<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter')?>:</label>
+				<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'newsletter'))?><br/>
+				
+				<label for="field_user_id" class="mainlabel"><?=@text('User ID')?>:</label>
+				<input type="text" name="user_id" id="field_user_id" value="<?=$organization->user_id?>" />
+			<?= $pane->endPanel() ?>
+			
+			<?= $pane->startPanel('Logo', 'logo-panel') ?>
+				<? if ($organization->logo): ?>
+					<label class="mainlabel"><?= @text('Preview') ?></label>
+					<img src="media://com_gives/uploads/organizations/<?= $organization->logo ?>" /><br/>
+					<label for="field_logo_delete" class="mainlabel"><?= @text('Delete Logo') ?></label>
+					<input type="checkbox" name="logo_delete" /><br/>
+				<? endif; ?>
+				<label for="field_logo" class="mainlabel"><?= @text('Select Logo') ?></label>
+				<input type="file" name="logo_upload" /><br/>
+			<?= $pane->endPanel() ?>
 		<?= $pane->endPane() ?>
 	</div>	
 </form>

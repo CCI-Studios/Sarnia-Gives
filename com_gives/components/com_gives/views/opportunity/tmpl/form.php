@@ -39,15 +39,15 @@
 			<?= @helper('tabs.endPanel') ?>
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Interests')) ?>
-				<?= @helper('listbox.interests') ?>
+				<?= @helper('select.interests') ?>
 			<?= @helper('tabs.endPanel') ?>
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Skills')) ?>
-				<?= @helper('listbox.skills') ?>
+				<?= @helper('select.skills') ?>
 			<?= @helper('tabs.endPanel') ?>
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Locations')) ?>
-				<?= @helper('listbox.locations') ?>
+				<?= @helper('select.locations') ?>
 			<?= @helper('tabs.endPanel') ?>
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Opportunity Details')) ?>

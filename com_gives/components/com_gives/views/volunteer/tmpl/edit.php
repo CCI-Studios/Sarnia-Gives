@@ -8,16 +8,20 @@
 	<form action="<?= @route('id='.$volunteer->id)?>" method="post">
 		<input type="hidden" name="action" value="save" />
 	
-		<h2>Your Interests</h2>
-		<?= @helper('listbox.interests')?>
-		
-		<h2>Your Skills</h2>
-		<?= @helper('listbox.skills')?>
-		
-		<h2>Your Locations</h2>
-		<?= @helper('listbox.locations')?>
-	
-	
+		<?= @helper('tabs.startPane') ?>
+			<?= @helper('tabs.startPanel', array('title'=>'Interests')) ?>
+				<?= @helper('select.interests')?>
+			<?= @helper('tabs.endPanel') ?>
+
+			<?= @helper('tabs.startPanel', array('title'=>'Skills')) ?>
+				<?= @helper('select.skills')?>
+			<?= @helper('tabs.endPanel') ?>
+
+			<?= @helper('tabs.startPanel', array('title'=>'Locations')) ?>
+				<?= @helper('select.locations')?>
+			<?= @helper('tabs.endPanel') ?>
+		<?= @helper('tabs.endPane')?>
+
 		<p><input type="submit" value="Save" /></p>
 	</form>
 </div>

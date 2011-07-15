@@ -54,15 +54,36 @@
 		<?= @helper('tabs.endPanel') ?>
 		
 		<?= @helper('tabs.startPanel', array('title'=>'Interests')) ?>
-			<?= @helper('listbox.interests')?>
+			<?= @helper('select.interests')?>
 		<?= @helper('tabs.endPanel') ?>
 
 		<?= @helper('tabs.startPanel', array('title'=>'Skills')) ?>
-			<?= @helper('listbox.skills')?>
+			<?= @helper('select.skills')?>
 		<?= @helper('tabs.endPanel') ?>
 		
 		<?= @helper('tabs.startPanel', array('title'=>'Locations')) ?>
-			<?= @helper('listbox.locations')?>
+			<?= @helper('select.locations')?>
+		<?= @helper('tabs.endPanel') ?>
+		
+		<?= @helper('tabs.startPanel', array('title'=>'Logo')) ?>
+			<? if ($organization->logo): ?>
+				<div class="field">
+					<div class="label"><label><?= @text('Logo Preview') ?></label></div>
+					<div class="input">
+						<img
+							src="media://com_gives/uploads/organizations/<?= $organization->logo ?>"
+							alt="<?= $organization->title ?>" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="label"><label><?= @text('Delete Logo') ?></label></div>
+					<div class="input"><input type="checkbox" name="logo_delete" /></div>
+				</div>
+			<? endif; ?>
+			<div class="field">
+				<div class="label"><label><?= @text('Logo') ?></label></div>
+				<div class="input"><input type="file" name="logo_upload" /></div>
+			</div>
 		<?= @helper('tabs.endPanel') ?>
 		
 		<?= @helper('tabs.startPanel', array('title'=>'Password')) ?>

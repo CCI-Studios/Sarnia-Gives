@@ -27,6 +27,9 @@
 			
 			<label for="field_end_date" class="mainlabel"><?=@text('End Date')?>:</label>
 			<input type="text" name="end_date" id="field_end_date" value="<?=$opportunity->end_date?>" /><br/>
+			
+			<label for="field_organization" class="mainlabel"><?=@text('Organization')?>:</label>
+			<?= @helper('listbox.organizations') ?><br/>
 		</fieldset>
 		
 		<fieldset>
@@ -41,15 +44,15 @@
 		<?= $pane->startPane('content-pane') ?>
 		
 		<?= $pane->startPanel('Location', 'location-pane')?>
-			<?= @helper('listbox.locations') ?>
+			<?= @helper('select.locations') ?>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Interests', 'interests-pane')?>
-			<?= @helper('listbox.interests') ?>
+			<?= @helper('select.interests') ?>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Skills', 'skills-pane')?>
-			<?= @helper('listbox.skills') ?>
+			<?= @helper('select.skills') ?>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Requirements', 'requirements-pane') ?>
