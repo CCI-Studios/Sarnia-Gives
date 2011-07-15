@@ -5,17 +5,17 @@
 
 	<div><div>
 		<h2>Interests</h2>
-		<?= @helper('select.interests') ?>
+		<?= @helper('select.interests', array('select_all'=>true)) ?>
 	</div></div>
 
 	<div><div>
 		<h2>Skills</h2>
-		<?= @helper('select.skills') ?>
+		<?= @helper('select.skills', array('select_all'=>true)) ?>
 	</div></div>
 
 	<div><div>
 		<h2>Locations</h2>
-		<?= @helper('select.locations') ?>
+		<?= @helper('select.locations', array('select_all'=>true)) ?>
 	</div></div>
 
 	<p><input type="submit" value="Search" /></p>

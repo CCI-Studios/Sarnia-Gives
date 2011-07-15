@@ -108,13 +108,42 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 			'key'		=> 'id',
 			'text'		=> 'title',
 			'selected'	=> null,
-			'translate'	=> false
+			'translate'	=> false,
+			
+			'select_all'	=> false
 		));
 
 		$name    = $config->name;
 		$attribs = KHelperArray::toString($config->attribs);
 
+		$script = "";
 		$html = array();
+		$html[] = "<ul id=\"checklist{$name}\" class=\"checklist\">\n";
+		
+		if ($config->select_all) {
+			$html[] = "<li class=\"selectall\" style=\"width: 100%;\">";
+			$html[] = "<input type=\"checkbox\" name=\"\" />";
+			$html[] = "<label>". JText::_('Select All') ."</label>";
+			$html[] = "</li>";
+			
+			$script  = "<script>";
+			$script .= "	window.addEvent('domready', function () {\n";
+			$script .= "		var ul, sa, lis;\n";
+			$script .= "		ul = $('checklist{$name}');\n";
+			$script .= "		sa = ul.getElement('.selectall input');\n";
+			$script .= "		lis = ul.getElements('li input');\n";
+			$script .= "		lis.splice(lis.indexOf(sa), 1);\n";
+			$script .= "		sa.addEvents({\n";
+			$script .= "			change: function() {\n";
+			$script .= "				lis.each(function (el) {\n";
+			$script .= "					el.checked = sa.checked;\n";
+			$script .= "				});\n";
+			$script .= "			}\n";
+			$script .= "		});\n";
+			$script .= "	});\n";
+			$script .= "</script>";
+		}
+		
 		foreach($config->list as $row)
 		{
 			$key  = $row->{$config->key};
@@ -137,10 +166,13 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 			} 
 			else $extra .= ($key == $config->selected) ? 'checked="checked"' : '';
 
+			$html[] = "<li>";
 			$html[] = '<input type="checkbox" name="'.$name.'[]" id="'.$name.$key.'" value="'.$key.'" '.$extra.' '.$attribs.' />';
 			$html[] = '<label for="'.$name.$key.'">'.$text.'</label>';
-			$html[] = '<br/>';
+			$html[] = '</li>';
 		}
+		$html[] = "</ul>";
+		$html[] = $script;
 
 		return implode(PHP_EOL, $html);
 	}

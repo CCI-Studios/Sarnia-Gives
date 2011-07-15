@@ -54,3 +54,19 @@
 }
 
 /* end tabs */
+
+/* checklist */
+.checklist { 
+	list-style: none;
+	margin-top: 0;
+}
+.checklist li { 
+	background: none;
+	display: inline-block;
+	*display: inline;
+	padding: 0;
+	width: 32%;
+	zoom: 1;
+}
+
+/* end checklist */
