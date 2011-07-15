@@ -2,13 +2,19 @@
 
 <ul style="border: 1px solid black; padding: 5px; background: ; list-style: none;">
 	<? foreach ($opportunities as $opportunity): ?>
+	<? $org = KFactory::tmp('admin::com.gives.model.organization')
+		->set('id', $opportunity->gives_organization_id)
+		->getItem();
+	?>
 	<li style="border: 1px solid black; padding: 0 0 5px 2em;">
+		<? if ($org->logo): ?>
 		<div class="logo" style="float: left; margin: 5px 5px 5px 0;">
-			<img src="http://dummyimage.com/40x40/000/585858&text=+" />
+			<img src="media://com_gives/uploads/organizations/small_<?= $org->logo ?>" alt="" />
 		</div>
+		<? endif; ?>
 		
 		<div style="float: left;">
-			Organization title<br/>
+			<?= $org->title ?><br/>
 			<span style="font-weight: 500;"><?= $opportunity->title; ?></span>
 		</div>
 		
