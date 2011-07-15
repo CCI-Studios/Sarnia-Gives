@@ -54,6 +54,9 @@ class ComGivesDatabaseBehaviorUploadable extends KDatabaseBehaviorAbstract {
 		$post = $context->data;
 		$file = KRequest::get('FILES.'.$this->_fieldname.'_upload', 'raw');
 		
+		if ($file == null)
+			return true;
+			
 		// cancel if there is an error and there is a file
 		if ($file['error'] !== 0 && $file['error'] !== 4) {
 			JError::raiseWarning('300', 'Error uploading image.');
