@@ -8,9 +8,18 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
         $reg = KDatabaseBehavior::factory('admin::com.gives.database.behavior.registerable', array(
 		   'name'	=> array('first_name', 'last_name')
 		));
+        
+        $uploadable = KDatabaseBehavior::factory('admin::com.gives.database.behavior.uploadable', array(
+        	'fieldname'	=> 'logo',
+        	'thumbs'	=> array(
+        		array('width'=>50,'height'=>50,'prefix'=>'small'),
+        		array('width'=>150,'height'=>75,'prefix'=>'large'),
+        	),
+        	'location'	=> 'media/com_gives/uploads/organizations/'
+        ));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg, "editable")
+		   'behaviors'	=> array($reg, $uploadable, "editable")
 		));
         
         parent::_initialize($config);

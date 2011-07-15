@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `#__gives_organizations` (
 	`type` 		TINYINT(1) NOT NULL,
 	`mission`	TEXT NOT NULL,
 	`description` TEXT NOT NULL,
+	`logo`		VARCHAR(250) NOT NULL,
 	
 	# search 
 	`interests`		TEXT NOT NULL,
