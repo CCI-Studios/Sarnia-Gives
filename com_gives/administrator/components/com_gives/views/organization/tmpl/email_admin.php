@@ -18,6 +18,7 @@
 	
 	<div style="width: 650px; text-align: left; ">
 		<p><?= $title ?> has been registered on Sarnia Gives by <?= $name ?> their profile has been updated and their information has been added to the database.</p>
+		<p>Please signin to the website to activate their profile.</p>
 	</div>
 </center>
 		

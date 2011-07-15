@@ -28,6 +28,8 @@
 		<p>You can update your profile and upload volunteer opportunity postings anytime simply by simply by logging in with your username and password here <a href="#">here</a>:</p>
 		<p>Username: <?= $email ?><br/>
 		Password: <?= $password ?></p>
+		
+		<p>Your account is currently pending and will be activated by an administrator shortly. Your account will not be accessible until this is completed.</p>
 
 		<p>If you have any questions about our using the site, professional development opportunities, membership or anything else please email us at <a href="mailto:info@sarniagives.com">info@sarniagives.com</a>.</p>
 
