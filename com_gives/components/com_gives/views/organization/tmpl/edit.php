@@ -15,8 +15,9 @@
 	
 	<p>Update your search settings below:</p>
 
-	<form action="<?= @route('id='.$organization->id)?>" method="post">
+	<form enctype="multipart/form-data" action="<?= @route('id='.$organization->id)?>" method="post">
 		<input type="hidden" name="action" value="save" />
+		<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
 	
 		<?= @helper('tabs.startPane') ?>
 		<?= @helper('tabs.startPanel', array('title'=>'Organization Details')) ?>
