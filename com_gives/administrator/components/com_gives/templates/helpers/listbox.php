@@ -31,6 +31,20 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		return $this->optionlist($config);
 	}
 	
+	public function organizations($config = array())
+	{
+		$config = new KConfig($config);
+		$config->append(array(
+			'model'		=> 'organizations',
+			'name'		=> 'gives_organization_id',
+			'value'		=> 'id',
+			'text'		=> 'title',
+			'prompt'	=> '- Select organization -',
+		));
+		
+		return $this->_listbox($config);
+	}
+	
 	public function volunteerTypes($config = array()) {
 		$config = new KConfig($config);
 		$config->append(array(
