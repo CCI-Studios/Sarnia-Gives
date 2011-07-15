@@ -17,7 +17,7 @@ class ComGivesControllerToolbarMenubar extends ComDefaultControllerToolbarMenuba
 			'active'	=> ($name === 'volunteer')
 		));
 		
-		$this->addCommand('organization', array(
+		$this->addCommand('organizations', array(
 			'href'		=> 'index.php?option=com_gives&view=organizations',
 			'active'	=> ($name === 'organization')
 		));
