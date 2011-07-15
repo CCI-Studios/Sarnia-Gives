@@ -1,3 +1,3 @@
 <h1><?= @text('Cannot View Profile')?></h1>
 
-<p>No profile is available for your account. If you beleive this is an error, please contact an administrator.</p>
+<p>Sorry, this account is not active yet. An administrator will be looking at the account shortly.</p>

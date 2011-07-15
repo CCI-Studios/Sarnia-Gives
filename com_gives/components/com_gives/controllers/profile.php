@@ -1,6 +1,6 @@
 <?php
 
-class ComGivesControllerProfile extends ComDefaultControllerDefault
+class ComGivesControllerProfile extends ComDefaultControllerResource
 {
 	
 	protected function _actionGet(KCommandContext $context)
