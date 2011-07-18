@@ -1,6 +1,7 @@
 <? defined('KOOWA') or die; ?>
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/form.css" />
+<style src="media://com_gives/css/admin.css" />
 
 <form action="<?=@route('id='.$opportunity->id)?>" method="post" class="-koowa-form" id="mainform">
 	<div style="float: left; width: 50%">

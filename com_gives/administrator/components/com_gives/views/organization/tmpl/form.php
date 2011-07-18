@@ -1,6 +1,7 @@
 <? defined('KOOWA') or die; ?>
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/form.css" />
+<style src="media://com_gives/css/admin.css" />
 
 <form enctype="multipart/form-data" action="<?=@route('id='.$organization->id)?>" method="post" class="-koowa-form" id="mainform">
 	<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
