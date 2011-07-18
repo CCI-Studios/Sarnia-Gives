@@ -64,9 +64,53 @@
 	background: none;
 	display: inline-block;
 	*display: inline;
+	margin-bottom: 10px;
 	padding: 0;
 	width: 32%;
 	zoom: 1;
 }
+.checklist label {
+	color: #252525;
+	font-weight: 300;
+}
 
+.checklist .selectall label { color: #5F167B; }
 /* end checklist */
+
+.underline { border-bottom: 1px solid #939; }
+
+/* opporrtunities */
+.opportunity_list {
+	background: white;
+	border: 1px solid #A7A7A7;
+	margin: 1em 1em;
+	padding: 1em;
+}
+
+.opportunity_list li {
+	background: none;
+	clear: both;
+	margin: 0 0 1em;
+	padding: 0;
+}
+.opportunity_list li:last-child { margin-bottom: 0; } /* FIXME: ie chap */
+
+.opportunity_list .logo {
+	border: 1px solid #e3e3e3;
+	float: left; 
+	margin: 0 10px 0 0;
+}
+.opportunity_list .logo img { display: block; }
+
+.opportunity_list .details {
+	float: right;
+}
+.opportunity_list .details a {
+	display: block; 
+	padding: 0 5px;
+}
+
+.renameme { /* FIXME rename this */
+}
+.renameme a:hover { text-decoration: none; 
+}
