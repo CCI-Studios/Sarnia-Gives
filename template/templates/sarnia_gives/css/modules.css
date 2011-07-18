@@ -78,7 +78,7 @@
 
 .moduletable_hmenu ul ul li {
   display: block;
-  padding: 3px 10px 5px;
+  padding: 5px 10px;
   white-space: nowrap;
 }
 .moduletable_hmenu ul ul li:first-child {
