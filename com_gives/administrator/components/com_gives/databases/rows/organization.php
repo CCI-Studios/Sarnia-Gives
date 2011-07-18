@@ -25,8 +25,11 @@ class ComGivesDatabaseRowOrganization extends KDatabaseRowTable
 			$data['skills'] = json_decode($data['skills']);
 		}
 		
-		parent::setData($data, $modified);
+		if ($data['email']) {
+			$data['contact_email'] = $data['email'];
+		}
 		
+		parent::setData($data, $modified);
 		return $this;
 	}
 }

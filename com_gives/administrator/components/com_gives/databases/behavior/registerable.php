@@ -4,6 +4,7 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 {
 	protected $_column;
 	protected $_name_column;
+	protected $_email;
 	
 	public function __construct(KConfig $config)
 	{
@@ -11,6 +12,7 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		
 		$this->_column = $config->column;
 		$this->_name_columns = $config->name;
+		$this->_email = $config->email;
 	}
 	
 	protected function _initialize(KConfig $config)
@@ -18,6 +20,7 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		$config->append(array(
 			'column'	=> 'user_id',
 			'name'		=> array(),
+			'email'		=> 'email',
 		));
 		
 		parent::_initialize($config);
@@ -28,7 +31,8 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		$post = $context->data;
 		
 		if ($post->password != $post->confirmation) {
-			echo "fail"; /* FIXME Add Message */
+			echo "Passwords don't match."; /* FIXME Add Message */
+			die;
 			return false;
 		}
 		
@@ -36,10 +40,13 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		foreach ($this->_name_columns as $col)
 			$name .= ' ' . $post->{$col};
 
-		$user = $this->_createUser($name, $post->email, $post->password);
+		$user = $this->_createUser($name, $post->{$this->_email}, $post->password);
 		
 		if	($user->getErrors()) {
 			/* FIXME echo save errors */
+			print_r($user->getErrors());
+			print_r($post);
+			die;
 			return false;
 		}
 
