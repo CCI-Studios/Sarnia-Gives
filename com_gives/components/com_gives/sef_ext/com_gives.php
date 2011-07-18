@@ -22,11 +22,11 @@ switch ($view) {
 			
 			$title[] = JText::_('organization');
 			$title[] = JText::_('edit');
-			$title[] = $id.'-'.$slug->sanitize($org->title);
+			$title[] = $slug->sanitize($org->title);
 			
 			shRemoveFromGETVarsList('layout');
 			shRemoveFromGETVarsList('id');
-		} elseif (isset($layout) && $layout === 'new' ) {
+		} elseif (isset($layout) && $layout === 'form' ) {
 			$title[] = JText::_('organization');
 			$title[] = JText::_('register');
 			
@@ -35,7 +35,7 @@ switch ($view) {
 			$org = $model->set('id', $id)->getItem();
 			
 			$title[] = JText::_('organization');
-			$title[] = $id.'-'.$slug->sanitize($org->title);
+			$title[] = $slug->sanitize($org->title);
 			
 			shRemoveFromGETVarsList('id');
 		}
@@ -52,14 +52,21 @@ switch ($view) {
 		break;
 	case 'opportunity':
 		if (isset($layout)) {
-			if ($layout === 'form') {
+			if ($layout == 'edit' && isset($id)) {
+				$model	= KFactory::tmp('site::com.gives.model.organization');
+				$org = $model->set('id', $id)->getItem();
 				$title[] = $view;
-				$title[]  = 'edit';
+				$title[] = 'edit';
+				$title[] = $org->title;
+				
+				shRemoveFromGETVarsList('layout');
+				shRemoveFromGETVarsList('id');
+			} elseif ($layout === 'form') {
+				$title[] = $view;
+				$title[]  = 'register';
 				shRemoveFromGETVarsList('layout');
 			}
-		}
-		
-		if (isset($id)) {
+		} elseif (isset($id)) {
 			$model 	= KFactory::tmp('site::com.gives.model.opportunity');
 			$opp	= $model->set('id', $id)->getItem();
 			
@@ -67,7 +74,7 @@ switch ($view) {
 			$title[] = $slug->sanitize($opp->title);
 			shRemoveFromGETVarsList('id');
 		}
-		
+
 		break;
 	case 'opportunities':
 		$title[] = $view;
@@ -79,6 +86,9 @@ switch ($view) {
 		} else {
 			// nothing else
 		}
+		break;
+	case 'profile':
+		$title[] = $view;
 		break;
 	case '':
 	default:
