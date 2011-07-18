@@ -194,8 +194,8 @@ class ComGivesDatabaseBehaviorUploadable extends KDatabaseBehaviorAbstract {
 		
 		// crop to fit output dimensions
 		$final_image = imagecreatetruecolor($width, $height);
-		imagealphablending($temp_image, false);
-		imagesavealpha($temp_image, true);
+		imagealphablending($final_image, true);
+		imagesavealpha($final_image, true);
 		imagecopy($final_image, $temp_image, 0,0, 
 					($temp_width-$width)/2, ($temp_height-$height)/2,
 					$width, $height);
