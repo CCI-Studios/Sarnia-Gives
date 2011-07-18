@@ -65,10 +65,7 @@
 		<? jimport('joomla.html.pane') ?>
 		<? $pane = &JPane::getInstance('sliders', array('allowAllClose' => true)) ?>
 		<?= $pane->startPane('content-pane') ?>
-			<?= $pane->startPanel('Location', 'locaion-pane') ?>
-				<?= @helper('select.locations'); ?>
-			<?= $pane->endPanel()?>
-			
+
 			<?= $pane->startPanel('Interests', 'interests-pane') ?>
 				<?= @helper('select.interests'); ?>
 			<?= $pane->endPanel() ?>
@@ -76,6 +73,10 @@
 			<?= $pane->startPanel('Skills Settings', 'skills-pane') ?>
 				<?= @helper('select.skills'); ?>
 			<?= $pane->endPanel() ?>
+			
+			<?= $pane->startPanel('Location', 'locations-pane') ?>
+				<?= @helper('select.locations'); ?>
+			<?= $pane->endPanel()?>
 			
 			
 			<?= $pane->startPanel('Misc', 'availability-pane')?>
