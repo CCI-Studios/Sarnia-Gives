@@ -26,7 +26,7 @@
 	<h2>Our Opportunities</h2>
 	<?= KFactory::get('site::com.gives.controller.opportunities')
 		->set('organization_id', $organization->id)
-		->layout('widget')
+		->layout('search_results')
 		->display(); ?>
 		
 	<? if ($edit): ?>
