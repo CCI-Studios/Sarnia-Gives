@@ -6,7 +6,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
     protected function _initialize(KConfig $config)
     {
         $reg = KDatabaseBehavior::factory('admin::com.gives.database.behavior.registerable', array(
-		   'name'	=> array('first_name', 'last_name')
+		   'name'	=> array('contact')
 		));
         
         $uploadable = KDatabaseBehavior::factory('admin::com.gives.database.behavior.uploadable', array(
