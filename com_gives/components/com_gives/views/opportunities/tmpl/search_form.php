@@ -4,7 +4,7 @@
 	<input type="hidden" name="layout" value="default">
 
 	<div><div>
-		<h2>Interests</h2>
+		<h2 class="underline">Interests</h2>
 		<? if ($user) {
 			echo @helper('select.interests', array(
 				'select_all'	=> true,
@@ -16,7 +16,7 @@
 	</div></div>
 
 	<div><div>
-		<h2>Skills</h2>
+		<h2 class="underline">Skills</h2>
 		<? if ($user) {
 			echo @helper('select.skills', array(
 				'select_all'	=> true,
@@ -28,7 +28,7 @@
 	</div></div>
 
 	<div><div>
-		<h2>Locations</h2>
+		<h2 class="underline">Locations</h2>
 		<? if ($user) {
 			echo @helper('select.locations', array(
 				'select_all'	=> true,
