@@ -101,6 +101,10 @@ CREATE TABLE IF NOT EXISTS `#__gives_opportunities` (
 	`postal`	VARCHAR(250) NOT NULL,
 	`description`	TEXT NOT NULL,
 	
+	# location
+	`lat`		VARCHAR(10) NOT NULL,
+	`lng`		VARCHAR(10) NOT NULL,
+	
 	# search 
 	`interests`		TEXT NOT NULL,
 	`skills`		TEXT NOT NULL,
