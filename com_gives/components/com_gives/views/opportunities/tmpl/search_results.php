@@ -8,13 +8,17 @@
 	?>
 	<li>
 		<? if ($org->logo): ?>
-			<img src="media://com_gives/uploads/organizations/small_<?= $org->logo ?>" alt="" />
 		<div class="logo">
+			<a href="<?= @route('view=organization&id='. $org->id) ?>">
+				<img src="media://com_gives/uploads/organizations/small_<?= $org->logo ?>" alt="" />
+			</a>
 		</div>
 		<? endif; ?>
 		
 		<div style="float: left;">
-			<?= $org->title ?><br/>
+			<a href="<?= @route('view=organization&id='. $org->id) ?>">
+				<?= $org->title ?>
+			</a><br/>
 			<span style="font-weight: 500;"><?= $opportunity->title; ?></span>
 		</div>
 		
