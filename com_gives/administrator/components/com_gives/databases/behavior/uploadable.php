@@ -148,9 +148,11 @@ class ComGivesDatabaseBehaviorUploadable extends KDatabaseBehaviorAbstract {
 		switch($original->type) {
 			case IMAGETYPE_GIF:
 				$original->image = imagecreatefromgif($fullpath);
+				imagealphablending($original->image, true);
 				break;
 			case IMAGETYPE_PNG:
 				$original->image = imagecreatefrompng($fullpath);
+				imagealphablending($original->image, true);
 				break;
 			case IMAGETYPE_JPEG:
 				$original->image = imagecreatefromjpeg($fullpath);
@@ -183,6 +185,8 @@ class ComGivesDatabaseBehaviorUploadable extends KDatabaseBehaviorAbstract {
 		
 		// temp_image is larger than the requested dimensions
 		$temp_image = imagecreatetruecolor($temp_width, $temp_height);
+		imagealphablending($temp_image, false);
+		imagesavealpha($temp_image, true);
 		imagecopyresampled($temp_image, $original->image,
 							0,0,0,0,
 							$temp_width, $temp_height,
@@ -190,6 +194,8 @@ class ComGivesDatabaseBehaviorUploadable extends KDatabaseBehaviorAbstract {
 		
 		// crop to fit output dimensions
 		$final_image = imagecreatetruecolor($width, $height);
+		imagealphablending($temp_image, false);
+		imagesavealpha($temp_image, true);
 		imagecopy($final_image, $temp_image, 0,0, 
 					($temp_width-$width)/2, ($temp_height-$height)/2,
 					$width, $height);
