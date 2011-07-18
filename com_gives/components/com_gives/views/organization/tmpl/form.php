@@ -20,13 +20,8 @@
     </dl>
 
     <dl>
-        <dt><label for="fname_field"><?= @text('First Name') ?>:</label></dt>
-        <dd><input class="required" type="text" name="first_name" id="fname_field" value="<?= $organization->first_name?>" /></dd>
-    </dl>
-    
-    <dl>
-        <dt><label for="lname_field"><?= @text('Last Name') ?>:</label></dt>
-        <dd><input class="required" type="text" name="last_name" id="lname_field" value="<?= $organization->last_name ?>" /></dd>
+        <dt><label for="fname_field"><?= @text('Name') ?>:</label></dt>
+        <dd><input class="required" type="text" name="contact" id="fname_field" value="<?= $organization->first_name?>" /></dd>
     </dl>
     
     <dl>
