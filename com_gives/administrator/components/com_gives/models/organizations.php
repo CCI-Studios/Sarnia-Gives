@@ -74,4 +74,33 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		
 		return $this->_me;
 	}
+	
+	public function validate($data)
+	{
+		$errors = array();
+		if ($data->title === '') {
+			$errors[] = JText::_('Organization title is required.');
+		}
+		
+		if ($data->contact === '') {
+			$errors[] = JText::_('Contact name is required.');
+		}
+		
+		if ($data->email === '') {
+			$errors[] = JText::_('An email address is required.');
+		} else {
+			$db = $this->getTable()->getDatabase();
+			$query = $db->getQuery();
+			$query->select('*')
+				->from('users')
+				->where('email', '=', $data->email);
+				
+			$results = $db->select($query);
+			if (count($results)) {
+				$error[] = JText::_('A user already exists with that email address.');
+			}
+		}
+		
+		return $errors;
+	}
 }

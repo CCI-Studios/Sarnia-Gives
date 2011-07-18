@@ -1,4 +1,7 @@
 <?php
+/* commands */
+KFactory::map('site::com.gives.command.validate',
+	'admin::com.gives.command.validate');
 
 /* models */
 KFactory::map('site::com.gives.model.opportunities',
