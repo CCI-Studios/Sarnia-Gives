@@ -31,6 +31,21 @@
 				<?= @helper('form.text', array('name'=>'postal')) ?>
 				<?= @helper('form.text', array('name'=>'phone')) ?>
 				<?= @helper('form.text', array('name'=>'fax')) ?>
+				
+				<div class="field">
+					<div class="label"><label><?=@text('Special Event')?>:</label></div>
+					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'event'))?></div>
+				</div>
+
+				<div class="field">
+					<div class="label"><label><?= @text('Event/Start Date')?>:</label></div>
+					<div class="input"><input type="text" name="event_date" id="field_event_date" value="<?=$opportunity->event_date?>" /></div>
+				</div>
+				
+				<div class="field">
+					<div class="label"><label><?= @text('End Date')?>:</label></div>
+					<div class="input"><input type="text" name="end_date" id="field_end_date" value="<?=$opportunity->event_date?>" /></div>
+				</div>
 			<?= @helper('tabs.endPanel') ?>
 			
 			<?= @helper('tabs.startPanel', array('title'=>'Description')) ?>
@@ -51,16 +66,6 @@
 			<?= @helper('tabs.endPanel') ?>
 		
 			<?= @helper('tabs.startPanel', array('title'=>'Opportunity Details')) ?>
-				<div class="field">
-					<div class="label"><label><?=@text('Special Event')?>:</label></div>
-					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'event'))?></div>
-				</div>
-
-				<div class="field">
-					<div class="label"><label><?= @text('Event Date')?>:</label></div>
-					<div class="input"><input type="text" name="event_date" id="field_event_date" value="<?=$opportunity->event_date?>" /></div>
-				</div>
-			
 				<?= @helper('form.text', array('name'=>'min_hours'))?>
 				<?= @helper('form.text', array('name'=>'max_hours'))?>
 			
