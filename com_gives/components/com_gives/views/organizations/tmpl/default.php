@@ -7,12 +7,29 @@
 <?= @template('site::com.gives.views.list.search_letters', 
 	array('letters' => $letters)); ?>
 
-<ul class="organization">
-<? foreach ($organizations as $organization): ?>
+<ul class="organization_list">
+	<? foreach ($organizations as $organization): ?>
 	<li>
-		<a href="<?=@route('view=organization&id='.$organization->id)?>"><?= $organization->title ?></a>
+		<div class="logo">
+			<a href="<?= @route('view=organization&id='. $organization->id) ?>">
+				<? if ($organization->logo): ?>
+					<img src="media://com_gives/uploads/organizations/small_<?= $organization->logo ?>" alt="" />
+				<? else: ?>
+					SG LOGO FIXME
+				<? endif; ?>
+			</a>
+		</div>
+		
+		<div style="float: left;">
+			<a href="<?= @route('view=organization&id='. $organization->id) ?>">
+				<?= $organization->title ?>
+			</a><br/>
+		</div>
+		
+		<div class="clear"></div>
 	</li>
-<? endforeach; ?>
+	<? endforeach; ?>
 </ul>
+
 
 <?= @helper('paginator.pagination', array('total'=>$total)) ?>
