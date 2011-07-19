@@ -13,15 +13,9 @@
 		<? endif; ?>
 	</h1>
 
-	<div class="right" style="width: 200px;">
-		<div class="contact_info">
-			<?= @template('_contact_info') ?>
-		</div>
-	
-		<?= KFactory::get('site::com.gives.controller.opportunities')
-			->set('organization_id', $organization->id)
-			->layout('widget')
-			->display(); ?>
+	<div class="contact_info">
+		<?= @template('_contact_info') ?>
+		<div class="clear"></div>
 	</div>
 
 	<h2><?= @text('Our Mission')?></h2>
@@ -29,6 +23,12 @@
 
 	<h2><?=@text('Description')?></h2>
 	<p><?=$organization->description?></p>
+	
+	<h2>Opportunities</h2>
+	<?= KFactory::get('site::com.gives.controller.opportunities')
+		->set('organization_id', $organization->id)
+		->layout('search_results')
+		->display(); ?>
 		
 	<? if ($edit): ?>
 		<form action="<?= @route('view=opportunity&layout=form&org_id='.$organization->id) ?>" method="get">
