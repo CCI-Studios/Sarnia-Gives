@@ -12,20 +12,75 @@
 	<p>No opportunities were found that match all of your search preferences. Check out the results below for opportunities that match one or two of your criteria.</p>
 <? endif; ?>
 
-<h2 class="renameme"><a href="#">
-	Opportunities Matching Your Interests and Skills (2 matches) 
-	<img src="media://com_gives/images/open.jpg" alt="Open"  />
-</a></h2>
-<?= @template('search_results', array(
-	'opportunities'	=> KFactory::tmp('site::com.gives.model.opportunity')
-						//->set('fuzzy', true)
-						->getList()
-)) ?>
-<h2 class="renameme">Opportunities Matching Your Interests and Locations</h2>
-<h2 class="renameme">Opportunities Matching Your Skills and Locations</h2>
-<h2 class="renameme">Opportunities Matching Your Interests</h2>
-<h2 class="renameme">Opportunities Matching Your Skills</h2>
-<h2 class="renameme">Opportunities Matching Your Locations</h2>
+<script>
+window.addEvent('domready', function() {
+	var alternatives = $$('.alternatives');
+	
+	alternatives.each(function (alt) {
+		var headings;
+		
+		headings = alt.getElements('.heading');
+		headings.each(function (heading) {
+			var body, slide;
+			
+			body = heading.getNext();
+			slide = new Fx.Slide(body, {
+				
+			});
+			slide.hide();
+			heading.addEvent('click', function () {
+				heading.toggleClass('close');
+				slide.toggle();
+			});
+		});
+	});
+});
+</script>
 
-<p style="margin-top: 2em;">Still unable to find what you are looking for?<br/>
+<ul class="alternatives">
+	<li>
+		<div class="heading">Opportunities Matching Your Interests and Skills (<?= count($opps_is) ?> matches)</div>
+		<div class="body">
+			<?= @template('search_results', array('opportunities' => $opps_is)) ?>
+			<div style="height: 1px;"></div>
+		</div>
+	</li>
+	<li>
+		<div class="heading">Opportunities Matching Your Interests and Locations (<?= count($opps_il) ?> matches)</div>
+		<div class="body">
+			<?= @template('search_results', array('opportunities' => $opps_il)) ?>
+			<div style="height: 1px;"></div>
+		</div>
+	</li>
+	<li>
+		<div class="heading">Opportunities Matching Your Skills and Locations (<?= count($opps_sl) ?> matches)</div>
+		<div class="body">
+			<?= @template('search_results', array('opportunities' => $opps_sl)) ?>
+			<div style="height: 1px;"></div>
+		</div>
+	</li>
+	<li>
+		<div class="heading">Opportunities Matching Your Interests (<?= count($opps_i) ?> matches)</div>
+		<div class="body">
+			<?= @template('search_results', array('opportunities' => $opps_i)) ?>
+			<div style="height: 1px;"></div>
+		</div>
+	</li>
+	<li>
+		<div class="heading">Opportunities Matching Your Skills (<?= count($opps_s) ?> matches)</div>
+		<div class="body">
+			<?= @template('search_results', array('opportunities' => $opps_s)) ?>
+			<div style="height: 1px;"></div>
+		</div>
+	</li>
+	<li>
+		<div class="heading">Opportunities Matching Your Locations (<?= count($opps_l) ?> matches)</div>
+		<div class="body">
+			<?= @template('search_results', array('opportunities' => $opps_l)) ?>
+			<div style="height: 1px;"></div>
+		</div>
+	</li>
+</ul>
+
+<p>Still unable to find what you are looking for?<br/>
 	<a href="<?= @route('layout=search') ?>">Click here</a> to start a new Search or <a href="#">click here</a> to do a Map Search.</p>
