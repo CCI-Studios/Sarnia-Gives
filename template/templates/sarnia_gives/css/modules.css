@@ -161,7 +161,7 @@
 	position: absolute;
 	top: 70px;
 	width: 26px;
-	z-index: 1;
+	z-index: 3;
 }
 #scroll .arrow-right {
 	background-position: 0 -26px;
