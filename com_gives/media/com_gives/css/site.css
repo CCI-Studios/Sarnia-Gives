@@ -80,7 +80,8 @@
 .underline { border-bottom: 1px solid #939; }
 
 /* opporrtunities */
-.opportunity_list {
+.opportunity_list,
+.opportunity_list:first-child {
 	background: white;
 	border: 1px solid #A7A7A7;
 	margin: 1em 1em;
@@ -110,7 +111,23 @@
 	padding: 0 5px;
 }
 
-.renameme { /* FIXME rename this */
+/* @group opportunity alternatives */
+ul.alternatives {
+	
 }
-.renameme a:hover { text-decoration: none; 
+
+ul.alternatives li {
+	background: none;
+	padding: 0;
 }
+
+ul.alternatives .heading {
+	background: url(../images/button_down.png) right center no-repeat;
+	color: #5F167B;
+	cursor: pointer;
+	display: inline;
+	font-size: 18px;
+	padding-right: 25px;
+}
+ul.alternatives .heading.close { background-image: url(../images/button_up.png); }
+/* @end */
