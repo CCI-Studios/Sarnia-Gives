@@ -13,7 +13,9 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 			->insert('skills', 'raw')
 			->insert('interests', 'raw')
 			->insert('enabled', 'boolean', false)
-			->insert('fuzzy', 'boolean', false);
+			->insert('fuzzy', 'boolean', false)
+			->remove('sort')
+			->insert('sort', 'cmd', 'title'); // FIXME group by organization
 	}	
 	
 	
