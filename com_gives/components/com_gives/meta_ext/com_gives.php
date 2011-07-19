@@ -53,7 +53,7 @@ $shCustomRobotsTag = ($tmpl == 'component') ? 'noindex, nofollow' : $shCustomRob
 $title= array();
 switch ($view) {
 	case 'organizations':
-		$title[] = 'Organizations';
+		$title[] = 'Directory';
 		break;
 	case 'organization':
 		$title[] = 'Organization';

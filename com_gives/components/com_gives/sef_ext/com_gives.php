@@ -45,7 +45,24 @@ switch ($view) {
 		$title[] = JText::_('organizations');
 		break;
 	case 'volunteer':
-		$title[] = $view;
+		$model	= KFactory::tmp('site::com.gives.model.organization');
+		if (isset($layout) && $layout === 'edit' && isset($id)) {
+			$vol = $model->set('id', $id)->getItem();
+			
+			$title[] = JText::_('volunteer');
+			$title[] = JText::_('edit');
+			
+			shRemoveFromGETVarsList('layout');
+			// shRemoveFromGETVarsList('id');
+		} elseif (isset($layout) && $layout === 'form') {
+			$title[] = JText::_('volunteer');
+			$title[] = JText::_('register');
+			
+			shRemoveFromGETVarsList('layout');
+		} elseif (isset($id)) {
+			$title[] = JText::_('volunteers');
+		}
+		
 		break;
 	case 'volunteers':
 		$title[] = $view;
