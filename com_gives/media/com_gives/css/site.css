@@ -80,35 +80,43 @@
 
 /* opporrtunities */
 .opportunity_list,
-.opportunity_list:first-child {
+.opportunity_list:first-child,
+.organization_list {
 	background: white;
 	border: 1px solid #A7A7A7;
-	margin: 1em 1em;
+	margin: 1em 0;
 	padding: 1em;
 }
 
-.opportunity_list li {
+.opportunity_list li,
+.organization_list li {
 	background: none;
 	clear: both;
 	margin: 0 0 1em;
 	padding: 0;
 }
-.opportunity_list li:last-child { margin-bottom: 0; } /* FIXME: ie chap */
+.opportunity_list li:last-child,
+.organization_list li:last-child { margin-bottom: 0; } /* FIXME: ie chap */
 
-.opportunity_list .logo {
+.opportunity_list .logo,
+.organization_list .logo {
 	border: 1px solid #e3e3e3;
 	float: left; 
 	margin: 0 10px 0 0;
 }
-.opportunity_list .logo img { display: block; }
+.opportunity_list .logo img,
+.organization_list .logo img { display: block; }
 
-.opportunity_list .details {
+.opportunity_list .details,
+.organization_list .details {
 	float: right;
 }
-.opportunity_list .details a {
+.opportunity_list .details a,
+.organization_list .details a {
 	display: block; 
 	padding: 0 5px;
 }
+
 
 /* @group opportunity alternatives */
 ul.alternatives {

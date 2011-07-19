@@ -1,6 +1,6 @@
 <? defined('KOOWA') or die; ?>
 
-<ul class="opportunity_list" style="margin: 0;">
+<ul class="opportunity_list">
 	<? foreach ($opportunities as $opportunity): ?>
 	<? $org = KFactory::tmp('admin::com.gives.model.organization')
 		->set('id', $opportunity->gives_organization_id)
