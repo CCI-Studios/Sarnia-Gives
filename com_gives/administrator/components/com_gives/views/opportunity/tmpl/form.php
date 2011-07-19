@@ -44,16 +44,16 @@
 		<? $pane = &JPane::getInstance('sliders', array('allowAllClose' => true)) ?>
 		<?= $pane->startPane('content-pane') ?>
 		
-		<?= $pane->startPanel('Location', 'location-pane')?>
-			<?= @helper('select.locations') ?>
-		<?= $pane->endPanel() ?>
-		
 		<?= $pane->startPanel('Interests', 'interests-pane')?>
 			<?= @helper('select.interests') ?>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Skills', 'skills-pane')?>
 			<?= @helper('select.skills') ?>
+		<?= $pane->endPanel() ?>
+		
+		<?= $pane->startPanel('Location', 'location-pane')?>
+			<?= @helper('select.locations') ?>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Requirements', 'requirements-pane') ?>
