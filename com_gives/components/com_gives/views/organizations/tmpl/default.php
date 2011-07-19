@@ -2,7 +2,7 @@
 <script src="media://com_gives/js/koowa.js" />
 <style src="media://com_gives/css/site.css" />
 
-<h1 class="componentheading">Organizations</h1>
+<h1 class="componentheading">Directory</h1>
 
 <?= @template('site::com.gives.views.list.search_letters', 
 	array('letters' => $letters)); ?>
