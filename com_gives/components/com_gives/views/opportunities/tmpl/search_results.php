@@ -31,4 +31,8 @@
 		<div class="clear"></div>
 	</li>
 	<? endforeach; ?>
+	
+	<? if (!count($opportunities)): ?>
+		<li>We currently have no opportunities listed.</li>
+	<? endif; ?>
 </ul>
