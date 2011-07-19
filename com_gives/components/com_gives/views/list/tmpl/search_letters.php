@@ -8,7 +8,7 @@
 		</li>
 	<? endforeach; ?>
 	
-	<? if (isset($state->letter_name)): ?>
+	<? if (isset($state->letter_name) && $state->letter_name !== ''): ?>
 	<li>
 		<a href="<?= @route('letter_name=') ?>"><?= @text('All')?></a>
 	</li>
