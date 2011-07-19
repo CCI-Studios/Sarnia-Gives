@@ -1,17 +1,20 @@
 <?php defined('KOOWA') or die ?>
 
+<div class="logo">
 <? if ($organization->logo): ?>
-	<img src="media://com_gives/uploads/organizations/<?= $organization->logo ?>" alt="<?= $organization->title ?>" width="100%" />
+	<img src="media://com_gives/uploads/organizations/<?= $organization->logo ?>" alt="<?= $organization->title ?>" />
 <? else: ?>
-	<h2><?= @text('Contact Info')?></h2>
+	get a logo
 <? endif; ?>
+</div>
 
-<div class="column">
+<div style="width: 50%; float: left;">
 	<?=$organization->address?><br/>
 	<?=$organization->city?>, <?=$organization->province?><br/>
-	<?=$organization->postal?><br/><br/>
-	
+	<?=$organization->postal?>
+</div>
+<div style="width: 50%; float: left;">
 	<?= ($organization->phone)? @text('Phone') .': '. $organization->phone.'<br/>':'' ?>
 	<?= ($organization->fax)? @text('Fax') .': '. $organization->fax.'<br/>':'' ?>
-	<a href="mailto:<?=$organization->email?>"><?=$organization->email?></a><br/>
+	<a href="mailto:<?=$organization->email?>"><?=$organization->contact ?></a><br/>
 </div>

@@ -25,10 +25,16 @@
 }
 
 .com_gives .contact_info {
-	border: 1px solid #ddd;
 	margin: 0 0 1em;
-	padding: 5px;
 }
+
+.contact_info .logo {
+	border: 1px solid #e3e3e3;
+	margin: 0 0 1em;
+	max-height: 100px;
+	max-width: 300px;
+}
+.contact_info .logo img { display: block; }
 
 /* tabs */
 .tabs {
