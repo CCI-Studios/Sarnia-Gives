@@ -26,8 +26,7 @@
 
 .com_gives .contact_info {
 	border: 1px solid #ddd;
-	float: right;
-	margin: 0 0 10px 10px;
+	margin: 0 0 1em;
 	padding: 5px;
 }
 
