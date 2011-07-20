@@ -16,13 +16,13 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$options = array();
 		
 		$options[] = new KConfig(array('text'=>"Animals/Animal Services", 'value'=>"Animals"));
-		$options[] = new KConfig(array('text'=>"Community Development", 'value'=>"Community Development"));
-		$options[] = new KConfig(array('text'=>"Health &amp; Wellness", 'value'=>"Health & Wellness"));
 		$options[] = new KConfig(array('text'=>"Arts &amp; Culture", 'value'=>"Arts & Culture"));
-		$options[] = new KConfig(array('text'=>"Emergency/Crisis Services", 'value'=>"Emergency/Crisis Services"));
-		$options[] = new KConfig(array('text'=>"Social Services &amp; Justice", 'value'=>"Social Services & Justice"));
 		$options[] = new KConfig(array('text'=>"Children &amp; Youth", 'value'=>"Children & Youth"));
+		$options[] = new KConfig(array('text'=>"Community Development", 'value'=>"Community Development"));
+		$options[] = new KConfig(array('text'=>"Emergency/Crisis Services", 'value'=>"Emergency/Crisis Services"));
 		$options[] = new KConfig(array('text'=>"Environment", 'value'=>"Environment"));
+		$options[] = new KConfig(array('text'=>"Health &amp; Wellness", 'value'=>"Health & Wellness"));
+		$options[] = new KConfig(array('text'=>"Social Services &amp; Justice", 'value'=>"Social Services & Justice"));
 		$options[] = new KConfig(array('text'=>"Special Events", 'value'=>"Special Events"));
 		
 		$config->list = $options;
@@ -44,16 +44,16 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$options = array();
 		
 		$options[] = new KConfig(array('text'=>"Brooke-Alvinston", 'value'=>"Brooke-Alvinston"));
+		$options[] = new KConfig(array('text'=>"Dawn-Euphemia", 'value'=>"Dawn-Euphemia"));
+		$options[] = new KConfig(array('text'=>"Enniskillen", 'value'=>"Enniskillen"));
 		$options[] = new KConfig(array('text'=>"Lambton Shores", 'value'=>"Lambton Shores"));
+		$options[] = new KConfig(array('text'=>"Location Flexible", 'value'=>"Location Flexible"));
+		$options[] = new KConfig(array('text'=>"Oil Springs", 'value'=>"Oil Springs"));
+		$options[] = new KConfig(array('text'=>"Petrolia", 'value'=>"Petrolia"));
+		$options[] = new KConfig(array('text'=>"Plympton Wyoming", 'value'=>"Plympton Wyoming"));
 		$options[] = new KConfig(array('text'=>"Point Edward", 'value'=>"Point Edward"));
 		$options[] = new KConfig(array('text'=>"Sarnia", 'value'=>"Sarnia"));
-		$options[] = new KConfig(array('text'=>"Dawn-Euphemia", 'value'=>"Dawn-Euphemia"));
-		$options[] = new KConfig(array('text'=>"Oil Springs", 'value'=>"Oil Springs"));
-		$options[] = new KConfig(array('text'=>"Plympton Wyoming", 'value'=>"Plympton Wyoming"));
-		$options[] = new KConfig(array('text'=>"Enniskillen", 'value'=>"Enniskillen"));
-		$options[] = new KConfig(array('text'=>"Petrolia", 'value'=>"Petrolia"));
 		$options[] = new KConfig(array('text'=>"St. Clair", 'value'=>"St. Clair"));
-		$options[] = new KConfig(array('text'=>"Location Flexible", 'value'=>"Location Flexible"));
 		
 		$config->list = $options;
 		
@@ -74,24 +74,24 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$options = array();
 		
 		$options[] = new KConfig(array('text'=>"Accounting", 'value'=>"Accounting"));
-		$options[] = new KConfig(array('text'=>"Coaching", 'value'=>"Coaching"));
-		$options[] = new KConfig(array('text'=>"Event Coordination", 'value'=>"Event Coordination"));
-		$options[] = new KConfig(array('text'=>"IT", 'value'=>"IT"));
-		$options[] = new KConfig(array('text'=>"Marketing & Communications", 'value'=>"Marketing & Communications"));
-		$options[] = new KConfig(array('text'=>"Outreach", 'value'=>"Outreach"));
-		$options[] = new KConfig(array('text'=>"Translation", 'value'=>"Translation"));
 		$options[] = new KConfig(array('text'=>"Bilingual (Eng/Fr)", 'value'=>"Bilingual (Eng/Fr)"));
-		$options[] = new KConfig(array('text'=>"Counseling", 'value'=>"Counseling"));
-		$options[] = new KConfig(array('text'=>"Fundraising", 'value'=>"Fundraising"));
-		$options[] = new KConfig(array('text'=>"Legal", 'value'=>"Legal"));
-		$options[] = new KConfig(array('text'=>"Medical Assistance", 'value'=>"Medical Assistance"));
-		$options[] = new KConfig(array('text'=>"PR", 'value'=>"PR"));
-		$options[] = new KConfig(array('text'=>"Writing & Research", 'value'=>"Writing & Research"));
 		$options[] = new KConfig(array('text'=>"Board Work", 'value'=>"Board Work"));
+		$options[] = new KConfig(array('text'=>"Coaching", 'value'=>"Coaching"));
+		$options[] = new KConfig(array('text'=>"Counseling", 'value'=>"Counseling"));
+		$options[] = new KConfig(array('text'=>"Event Coordination", 'value'=>"Event Coordination"));
+		$options[] = new KConfig(array('text'=>"Fundraising", 'value'=>"Fundraising"));
 		$options[] = new KConfig(array('text'=>"General Administration", 'value'=>"General Administration"));
+		$options[] = new KConfig(array('text'=>"IT", 'value'=>"IT"));
+		$options[] = new KConfig(array('text'=>"Legal", 'value'=>"Legal"));
 		$options[] = new KConfig(array('text'=>"Management Consulting", 'value'=>"Management Consulting"));
+		$options[] = new KConfig(array('text'=>"Marketing & Communications", 'value'=>"Marketing & Communications"));
+		$options[] = new KConfig(array('text'=>"Medical Assistance", 'value'=>"Medical Assistance"));
 		$options[] = new KConfig(array('text'=>"Mentoring & Training", 'value'=>"Mentoring & Training"));
+		$options[] = new KConfig(array('text'=>"Outreach", 'value'=>"Outreach"));
+		$options[] = new KConfig(array('text'=>"PR", 'value'=>"PR"));
 		$options[] = new KConfig(array('text'=>"Sports & Recreation", 'value'=>"Sports & Recreation"));
+		$options[] = new KConfig(array('text'=>"Translation", 'value'=>"Translation"));
+		$options[] = new KConfig(array('text'=>"Writing & Research", 'value'=>"Writing & Research"));
 		
 		$config->list = $options;
 		
