@@ -20,6 +20,7 @@ h1 {
 	background: url(../images/h1_bg.png) left center no-repeat;
 	font-size: 22px;
 	margin-left: -40px;
+	margin-top: 0;
 	padding-left: 40px;
 }
 
