@@ -15,7 +15,7 @@
 				<? if ($organization->logo): ?>
 					<img src="media://com_gives/uploads/organizations/small_<?= $organization->logo ?>" alt="" />
 				<? else: ?>
-					SG LOGO FIXME
+					<img src="media://com_gives/images/no_logo.png" alt="" />
 				<? endif; ?>
 			</a>
 		</div>
