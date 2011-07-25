@@ -146,3 +146,23 @@ ul.alternatives .heading {
 }
 ul.alternatives .heading.close { background-image: url(../images/button_up.png); }
 /* @end */
+
+/* map */
+#mapsearch {
+	margin: 1em 0;
+}
+
+#mapview {
+	float: left;
+	height: 400px;
+	width: 60%;
+}
+
+#mapresults {
+	float: left;
+	width: 40%;
+}
+
+#mapresults > div { 
+	margin-left: 20px;
+}
