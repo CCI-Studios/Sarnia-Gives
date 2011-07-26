@@ -10,21 +10,24 @@
 </h1>
 <? endif; ?>
 
+<p>Enter a address and maximum distance to find opportunities near you.</p>
 
-<form id="mapsearch">
+<form action="<?= @route() ?>" method="get" id="mapsearch">
 	<label><?= @text('Address') ?>:</label>
-	<input type="text" name="address" /><br/>
+	<input type="text" name="address" value="<?= $address; ?>" /><br/>
 	
 	<label><?= @text('Distance') ?>:</label>
-	<input type="text" name="distance" /><br/>
+	<input type="text" name="distance" value="<?= $distance; ?>" /><br/>
+	
+	<input type="submit" />
 </form>
 	
-<div id="mapview"><div>
-</div></div>
+<div id="mapview"><div></div></div>
 
-<div id="mapresults"><div>
-	<?= KFactory::tmp('site::com.gives.controller.opportunity')
-			->layout('search_results')
-			->limit(5)
-			->display(); ?>
-</div></div>
+<div id="mapresults">
+	<? if ($distance && $address) {
+		echo @template('search_results');
+	} else {
+	
+	} ?>
+</div>

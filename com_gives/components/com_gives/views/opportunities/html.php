@@ -46,6 +46,9 @@ class ComGivesViewOpportunitiesHtml extends ComGivesViewHtml
 				->set('skills', null)
 				->set('locations', KRequest::get('locations', 'raw'))
 				->getList());
+		} elseif ($this->getLayout() === 'map') {
+			$this->assign('address', KRequest::get('get.address', 'string'));
+			$this->assign('distance', KRequest::get('get.distance', 'string'));
 		}
 		
 		return parent::display();
