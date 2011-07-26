@@ -10,8 +10,14 @@
 		->set('id', $opportunity->gives_organization_id)
 		->getItem();
 	?>
-	<li>
-		<? if ($org->logo): ?>
+	<li
+		<? if (isset($opportunity->distance)): ?>
+			data-distance="<?= $opportunity->distance ?>"
+			data-lat="<?= $opportunity->lat ?>"
+			data-lng="<?= $opportunity->lng ?>"
+			data-title="<?= $opportunity->title ?>"
+		<? endif; ?>>
+		
 		<div class="logo">
 			<a href="<?= @route('view=organization&id='. $org->id) ?>">
 				<? if ($org->logo): ?>
@@ -21,13 +27,18 @@
 				<? endif; ?>
 			</a>
 		</div>
-		<? endif; ?>
 		
 		<div style="float: left;">
 			<a href="<?= @route('view=organization&id='. $org->id) ?>">
 				<?= $org->title ?>
 			</a><br/>
-			<span style="font-weight: 500;"><?= $opportunity->title; ?></span>
+			<span style="font-weight: 500;">
+				<?= $opportunity->title; ?>
+			</span><br/>
+			
+			<? if (isset($opportunity->distance)): ?>
+				Distance: <?= sprintf('%.2f', $opportunity->distance) ?>km
+			<? endif; ?>
 		</div>
 		
 		<div class="details">
