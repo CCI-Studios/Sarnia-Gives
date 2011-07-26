@@ -61,8 +61,7 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 			$query->where('tbl.skills', 'REGEXP', implode('|', $state->skills), $op);
 		}
 		
-		if (isset($state->address)) {
-			list($lat, $lng) = $this->_getLocation($state->address);
+		if ($state->address) {
 			$query->where('tbl.lat', '!=', 'null');
 			$query->where('tbl.lng', '!=', 'null');
 		}
