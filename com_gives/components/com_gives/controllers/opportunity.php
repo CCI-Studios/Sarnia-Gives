@@ -18,6 +18,15 @@ class ComGivesControllerOpportunity extends ComDefaultControllerDefault
         parent::_initialize($config);
     }
     
+    public function getRequest()
+    {
+    	if ($this->_request->layout === 'map' && is_numeric($this->_request->distance)) {
+    		$this->_request->sort = 'distance';
+    	}
+    	
+    	return parent::getRequest();
+    }
+    
     public function afterSave(KCommandContext $context)
     {	
         $this->setRedirect('index.php?option=com_gives&view=organization&id='. $context->result->gives_organization_id);
