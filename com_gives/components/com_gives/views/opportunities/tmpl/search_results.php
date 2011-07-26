@@ -2,6 +2,10 @@
 
 <ul class="opportunity_list">
 	<? foreach ($opportunities as $opportunity): ?>
+	<? if ($distance && $opportunity->distance > $distance) {
+		continue;
+	} ?>
+	
 	<? $org = KFactory::tmp('admin::com.gives.model.organization')
 		->set('id', $opportunity->gives_organization_id)
 		->getItem();
