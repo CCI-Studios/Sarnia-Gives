@@ -10,7 +10,11 @@
 		<? if ($org->logo): ?>
 		<div class="logo">
 			<a href="<?= @route('view=organization&id='. $org->id) ?>">
-				<img src="media://com_gives/uploads/organizations/small_<?= $org->logo ?>" alt="" />
+				<? if ($org->logo): ?>
+					<img src="media://com_gives/uploads/organizations/small_<?= $org->logo ?>" alt="" />
+				<? else: ?>
+					<img src="media://com_gives/images/no_logo.png" alt="" />
+				<? endif; ?>
 			</a>
 		</div>
 		<? endif; ?>
