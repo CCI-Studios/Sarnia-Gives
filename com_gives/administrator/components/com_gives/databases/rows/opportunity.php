@@ -8,27 +8,7 @@ class ComGivesDatabaseRowOpportunity extends KDatabaseRowTable
 		$this->locations = json_encode($this->locations);
 		$this->skills = json_encode($this->skills);
 		
-		$ch = curl_init();
-		$url = 'http://maps.googleapis.com/maps/api/geocode/json?';
-		$data = array(
-			'sensor=false',
-			'address='.$this->address .', '.
-				$this->city .', '. $this->province .', '.
-				$this->postal .', '. 'canada'
-		);
-		$url = $url . str_replace(' ', '+', implode('&', $data));
-		
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$results = json_decode(curl_exec($ch));
-		
-		if (isset($results->status) && $results->status === 'REQUEST_DENIED') {
-			echo "denied";
-		} else {
-			$data = $results->results[0]->geometry->location;
-			$this->lat = $data->lat;
-			$this->lng = $data->lng;
-		}
+		$this->_setLocation();
 		
 		return (bool)parent::save();
 	}
@@ -49,5 +29,29 @@ class ComGivesDatabaseRowOpportunity extends KDatabaseRowTable
 		
 		parent::setData($data, $modified);
 		return $this;
+	}
+	
+	protected function _setLocation() {
+		$ch = curl_init();
+		$url = 'http://maps.googleapis.com/maps/api/geocode/json?';
+		$data = array(
+					'sensor=false',
+					'address='.$this->address .', '.
+		$this->city .', '. $this->province .', '.
+		$this->postal .', '. 'canada'
+		);
+		$url = $url . str_replace(' ', '+', implode('&', $data));
+		
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$results = json_decode(curl_exec($ch));
+		
+		if (isset($results->status) && $results->status === 'REQUEST_DENIED') {
+			// JError::raiseWarning(100, 'Failed to update opportunity location. Please specify a more detailed address.');
+		} else {
+			$data = $results->results[0]->geometry->location;
+			$this->lat = $data->lat;
+			$this->lng = $data->lng;
+		}
 	}
 }
