@@ -99,6 +99,9 @@ switch ($view) {
 			if ($layout === 'search') {
 				$title[] = 'search';
 				shRemoveFromGETVarsList('layout');
+			} elseif ($layout === 'map') {
+				$title[] = 'map-search';
+				shRemoveFromGETVarsList('layout');
 			}
 		} else {
 			// nothing else
