@@ -7,8 +7,8 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
         parent::__construct($config);
         
         $this->registerCallback('after.save', array($this, 'afterSave'));
-		//$command = KFactory::get('site::com.gives.command.validate');
-		//$this->getCommandChain()->enqueue($command);
+		$command = KFactory::get('site::com.gives.command.validate');
+		$this->getCommandChain()->enqueue($command);
     }
     
     protected  function _initialize(KConfig $config)
@@ -22,6 +22,6 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
     
     public function afterSave(KCommandContext $context)
     {
-		$this->setRedirect(JRoute::_('index.php?option=com_gives&view=profile'));
+		$this->setRedirect(JRoute::_('index.php?option=com_user&view=login'));
     }
 }
