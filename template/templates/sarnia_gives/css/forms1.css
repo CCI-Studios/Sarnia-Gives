@@ -17,17 +17,11 @@ legend {
 }
 
 form .label {
-	clear: both;
-	float: left;
-	margin-bottom: 2px;
-	text-align: right;
-	width: 25%;
+	margin: 0.7em 0 0.3em;
 }
 
 form .input {
-	float: left;
-	margin: 0 0 15px;
-	width: 75%;
+	margin: 0.3em 0 0.7em;
 }
 
 form .input small {
@@ -39,9 +33,9 @@ form .input small {
 label {
 	color: #555;
 	cursor: pointer;
+	display: block;
 	font-size: 14px;
 	font-weight: bold;
-	margin-right: 12px;
 }
 
 input[type=text], input[type=email],
@@ -52,5 +46,5 @@ input[type=password], select, textarea {
 	border-radius: 3px;
 	font-size: 11px;
 	padding: 4px 5px;
-	width: 300px;
+	width: 360px; /* FIXME Check this */
 }
