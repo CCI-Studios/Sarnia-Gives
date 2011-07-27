@@ -99,7 +99,7 @@
 			<?= @helper('tabs.endPanel') ?>
 		<?= @helper('tabs.endPane') ?>
 	
-		<p class="clear"><input type="submit" value="Save" /></p>
+		<p class="clear right"><input type="submit" value="Save" /></p>
  
 	</form>
 	</div>
