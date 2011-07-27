@@ -8,9 +8,9 @@ cci.gives.map = new Class({
 	element: null,
 	
 	options: {
-		lat: 42.98,
-		lng: -82.385,
-		zoom: 14,
+		lat: 42.97,
+		lng: -82.35,
+		zoom: 12,
 		width: '100%',
 		height: 400
 	},
