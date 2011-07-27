@@ -28,6 +28,18 @@ class ComGivesModelVolunteers extends ComDefaultModelDefault
 	{
 		$errors = array();
 		
+		if ($data->first_name === '' && $data->last_name === '') {
+			$errors[] = JText::_('Please provide your first and last name.');
+		} else {
+			if ($data->first_name === '') {
+				$errors[] = JText::_('Please provide your first name.');
+			}
+			
+			if ($data->last_name === '') {
+				$errors[] = JText::_('Please provide your last name.');
+			}
+		}
+		
 		if ($data->email === '') {
 			$errors[] = JText::_('An email address is required.');
 		} else {

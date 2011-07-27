@@ -79,7 +79,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 	{
 		$errors = array();
 		if ($data->title === '') {
-			$errors[] = JText::_('Organization title is required.');
+			$errors[] = JText::_('An organization name is required.');
 		}
 		
 		if ($data->contact === '') {
