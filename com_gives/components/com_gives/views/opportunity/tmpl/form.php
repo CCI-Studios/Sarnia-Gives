@@ -51,12 +51,16 @@
 
 				<div class="field">
 					<div class="label"><label><?= @text('Event/Start Date')?>:</label></div>
-					<div class="input"><input type="text" name="event_date" id="field_event_date" value="<?=$opportunity->event_date?>" /></div>
+					<div class="input">
+						<?= JHtml::calendar($opportunity->start_date, 'start_date', 'field_start_date', '%Y-%m-%d') ?>
+					</div>
 				</div>
 				
 				<div class="field">
 					<div class="label"><label><?= @text('End Date')?>:</label></div>
-					<div class="input"><input type="text" name="end_date" id="field_end_date" value="<?=$opportunity->event_date?>" /></div>
+					<div class="input">
+						<?= JHtml::calendar($opportunity->end_date, 'end_date', 'field_end_date', '%Y-%m-%d') ?>
+					</div>
 				</div>
 			<?= @helper('tabs.endPanel') ?>
 			
@@ -77,7 +81,7 @@
 				<?= @helper('select.locations') ?>
 			<?= @helper('tabs.endPanel') ?>
 		
-			<?= @helper('tabs.startPanel', array('title'=>'Opportunity Details')) ?>
+			<?= @helper('tabs.startPanel', array('title'=>'Requirements')) ?>
 				<?= @helper('form.text', array('name'=>'min_hours'))?>
 				<?= @helper('form.text', array('name'=>'max_hours'))?>
 			

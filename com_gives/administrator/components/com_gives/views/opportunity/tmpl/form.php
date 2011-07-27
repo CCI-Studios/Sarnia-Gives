@@ -24,10 +24,10 @@
 			<input type="text" name="postal" id="field_postal" value="<?=$opportunity->postal?>" /><br/>
 			
 			<label for="field_start_date" class="mainlabel"><?=@text('Start Date')?>:</label>
-			<input type="text" name="start_date" id="field_start_date" value="<?=$opportunity->start_date?>" /><br/>
+			<?= JHtml::calendar($opportunity->start_date, 'start_date', 'field_start_date', '%Y-%m-%d') ?><br/>
 			
 			<label for="field_end_date" class="mainlabel"><?=@text('End Date')?>:</label>
-			<input type="text" name="end_date" id="field_end_date" value="<?=$opportunity->end_date?>" /><br/>
+			<?= JHtml::calendar($opportunity->end_date, 'end_date', 'field_end_date', '%Y-%m-%d') ?><br/>
 			
 			<label for="field_organization" class="mainlabel"><?=@text('Organization')?>:</label>
 			<?= @helper('listbox.organizations') ?><br/>
@@ -60,8 +60,10 @@
 			<label for="field_event" class="mainlabel"><?=@text('For Event')?>:</label>
 			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'event'))?><br/>
 
+			<!--
 			<label for="field_event_date" class="mainlabel"><?=@text('Event Date')?>:</label>
 			<input type="text" name="event_date" id="field_event_date" value="<?=$opportunity->event_date?>" /><br/>
+			-->
 			
 			<label for="field_min_hours" class="mainlabel"><?=@text('Min Hours')?>:</label>
 			<input type="text" name="min_hours" id="field_min_hours" value="<?=$opportunity->min_hours?>" /><br/>
