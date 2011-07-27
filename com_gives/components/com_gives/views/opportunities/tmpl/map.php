@@ -4,6 +4,15 @@
 <script src="media://com_gives/js/map.js" />
 <style src="media://com_gives/css/site.css" />
 
+<? if ($distance && $address): ?>
+<script>
+window.addEvent('domready', function () {
+	var map = new cci.gives.map($('mapview').getElement('div'));
+	var list = new cci.gives.list($('mapresults'), map);
+});
+</script>
+<? endif; ?>
+
 <? if ($params->get('show_page_title')): ?>
 <h1 class="componentheading">
 	<?= $params->get('page_title') ?>
