@@ -48,6 +48,9 @@
 	color: #5F167B;
 	margin: 5px 0;
 }
+
+.tabs dt:hover, .tabs dt.open {
+	border-bottom: 1px solid #5F167B;
 	margin-bottom: 4px;
 }
 
@@ -70,15 +73,17 @@
 }
 .checklist li { 
 	background: none;
-	display: inline-block;
-	*display: inline;
+	float: left;
 	margin-bottom: 10px;
 	padding: 0;
 	width: 32%;
-	zoom: 1;
 }
+
+.checklist li:nth-child(3n+1) { clear: both; }
+
 .checklist label {
 	color: #252525;
+	display: inline;
 	font-weight: 300;
 }
 
