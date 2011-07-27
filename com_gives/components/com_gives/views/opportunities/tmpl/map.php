@@ -31,12 +31,11 @@ window.addEvent('domready', function () {
 	<input type="submit" />
 </form>
 	
+	
+<? if ($distance && $address): ?>
 <div id="mapview"><div></div></div>
 
 <div id="mapresults">
-	<? if ($distance && $address) {
-		echo @template('search_results');
-	} else {
-	
-	} ?>
+	<?= @template('search_results'); ?>
 </div>
+<? endif; ?>
