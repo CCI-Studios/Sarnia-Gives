@@ -97,7 +97,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 				
 			$results = $db->select($query);
 			if (count($results)) {
-				$error[] = JText::_('A user already exists with that email address.');
+				$errors[] = JText::_('A user already exists with that email address.');
 			}
 		}
 		
