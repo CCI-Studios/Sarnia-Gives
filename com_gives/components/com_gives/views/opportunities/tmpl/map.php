@@ -35,7 +35,7 @@ window.addEvent('domready', function () {
 <? if ($distance && $address): ?>
 <div id="mapview"><div></div></div>
 
-<div id="mapresults">
+<div id="mapresults" style="display: none;">
 	<?= @template('search_results'); ?>
 </div>
 <? endif; ?>
