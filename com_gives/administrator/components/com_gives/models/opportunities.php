@@ -23,7 +23,7 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 	public function _buildQueryColumns(KDatabaseQuery $query)
 	{
 		if (is_numeric($this->_state->distance) && isset($this->_state->address)) {
-			list($lat, $lng) = $this->_getLocation($this->_state->address);
+			list($lat, $lng) = $this->_getLocation($this->_state->address .', sarnia ontario');
 			$query->select("(6371 * ACOS(SIN(RADIANS($lat))*SIN(RADIANS(tbl.lat)) + COS(RADIANS($lat))*COS(RADIANS(tbl.lat))*COS(RADIANS($lng)-RADIANS(tbl.lng)))) AS distance");
 		}
 		
