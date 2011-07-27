@@ -83,4 +83,4 @@ window.addEvent('domready', function() {
 </ul>
 
 <p>Still unable to find what you are looking for?<br/>
-	<a href="<?= @route('layout=search') ?>">Click here</a> to start a new Search or <a href="#">click here</a> to do a Map Search.</p>
+	<a href="<?= @route('layout=search') ?>">Click here</a> to start a new Search or <a href="<?= @route('view=opportunities&layout=map') ?>">click here</a> to do a Map Search.</p>
