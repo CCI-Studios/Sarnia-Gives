@@ -6,7 +6,7 @@
 		
 		<? if ($edit): ?>
 		<span class="edit">
-			<a href="<?= @route('view=opportunity&layout=edit&id='.$opportunity->id) ?>">
+			<a href="<?= @route('view=opportunity&layout=form&id='.$opportunity->id) ?>">
 				<?= @text('Edit Opportunity') ?>
 			</a>
 		</span>

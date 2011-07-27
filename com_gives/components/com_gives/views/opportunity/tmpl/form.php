@@ -6,11 +6,19 @@
 
 <div class="com_gives">
 	<h1 class="componentheading">
-	    <?= @text('Create new Opportunity')?>
+		<? if ($opportunity->isnew()): ?>
+	    	<?= @text('Create New Opportunity') ?>
+	    <? else: ?>
+	    	<?= 'Edit '. $opportunity->title ?>
+	    <? endif; ?>
 
 		<span class="edit">
 			<a href="<?= @route('view=organization&id='. KRequest::get('get.org_id', 'int')); ?>">
-				<?= 'Back' ?>
+				<? if ($opportunity->isnew()): ?>
+					Cancel
+			    <? else: ?>
+			    	Back
+			    <? endif; ?>
 			</a>
 		</span>
 	</h1>
@@ -18,7 +26,11 @@
 	<div style="margin: 1em 0;">
 	<form action="<?= @route('id='.$opportunity->id) ?>" method="post" class="-koowa-form">
 	    <input type="hidden" name="action" value="save" />
-		<input type="hidden" name="gives_organization_id" value="<?= KRequest::get('get.org_id', 'int') ?>" />
+	    <? if ($opportunity->isNew()): ?>
+			<input type="hidden" name="gives_organization_id" value="<?= KRequest::get('get.org_id', 'int') ?>" />
+		<? else: ?>
+			<input type="hidden" name="gives_organization_id" value="<?= $opportunity->gives_organization_id ?>" />
+		<? endif; ?>
    
 		<?= @helper('tabs.startPane') ?>
 			<?= @helper('tabs.startPanel', array('title'=>'Opportunity Details')) ?>
