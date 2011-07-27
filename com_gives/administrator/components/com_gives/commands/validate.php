@@ -51,7 +51,7 @@ class ComGivesCommandValidate extends KCommand
 		if (method_exists($model, 'validate')) {
 			$data = $context->data;
 			$validationErrors = $model->validate($data);
-				
+			
 			if (!empty($validationErrors)) {
 				$tempData = $data;
 				unset($tempData['_token']);

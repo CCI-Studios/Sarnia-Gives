@@ -24,6 +24,28 @@ class ComGivesModelVolunteers extends ComDefaultModelDefault
 		parent::_buildQueryWhere($query);
 	}
 	
+	public function validate($data)
+	{
+		$errors = array();
+		
+		if ($data->email === '') {
+			$errors[] = JText::_('An email address is required.');
+		} else {
+			$db = $this->getTable()->getDatabase();
+			$query = $db->getQuery();
+			$query->select('*')
+				->from('users')
+				->where('email', '=', $data->email);
+		
+			$results = $db->select($query);
+			if (count($results)) {
+				$errors[] = JText::_('A user already exists with that email address.');
+			}
+		}
+		
+		return $errors;
+	}
+	
 	public function getMe()
 	{
 		if (!isset($this->_me)) {

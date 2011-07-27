@@ -12,6 +12,8 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 		$this->registerCallback(
 			array('after.save'),
 			array($this, 'afterSave'));
+		$command = KFactory::get('site::com.gives.command.validate');
+		$this->getCommandChain()->enqueue($command);
     }
     
 	protected  function _initialize(KConfig $config)
@@ -56,7 +58,7 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 	
 	public function afterSave(KCommandContext $context)
 	{
-		$this->setRedirect('index.php?option=com_gives&view=volunteer&id='. $context->result->id);
+		$this->setRedirect('index.php?option=com_user&view=login');
 		return true;
 	}
 }
