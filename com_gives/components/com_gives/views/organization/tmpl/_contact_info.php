@@ -4,7 +4,7 @@
 <? if ($organization->logo): ?>
 	<img src="media://com_gives/uploads/organizations/<?= $organization->logo ?>" alt="<?= $organization->title ?>" />
 <? else: ?>
-	get a logo
+	<img src="media://com_gives/images/no_logo.png" alt="<?= $organization->title ?>" />
 <? endif; ?>
 </div>
 
