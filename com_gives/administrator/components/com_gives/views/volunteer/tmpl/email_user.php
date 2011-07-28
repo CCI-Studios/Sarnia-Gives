@@ -21,16 +21,18 @@
 		<p style="color: #5F167B;">Welcome to Sarnia Gives, Sarnia-Lambton's community Volunteer Center!</p>
 		<p>Whether you've used our site before or this is your first time, here are some of the many ways Sarnia Gives can help you:</p>
 		<ul>
-			<li>Information on how to get started volunteering with FAQ’s and tips</li>
+			<li>Information on how to get started volunteering with FAQs and tips</li>
 			<li>Profiles of local organizations</li>
 			<li>Postings to help you find a volunteer opportunity best suited to you.</li>
 		</ul>
-		<p>Now that you're registered, volunteer opportunities best suited to your skills, abilities and interests will always be readily available when you log in.  You will also receive emails if a new opportunity that fits your criteria becomes available.</p>
+		<p>Now that you're registered, volunteer opportunities best suited to your skills, abilities and interests will always be readily available when you log in.
+			You will also receive emails if a new opportunity that fits your criteria becomes available.</p>
 		<p>You can update your profile anytime simply by logging in with your username and password <a href="http://sarniagives.com/profile/">here</a>:</p>
 		<p>Username: <?= $email ?><br/>
 		Password: <?= $password ?></p>
 
-		<p>If you have any questions about our online using the site, volunteering in Sarnia-Lambton or how you can get involved with Sarnia Gives please email us at <a href="mailto:info@sarniagives.com">info@sarniagives.com</a>.</p>
+		<p>If you have any questions about our online using the site, volunteering in Sarnia-Lambton or how you can get involved with Sarnia Gives please email us at
+			 <a href="mailto:info@sarniagives.com">info@sarniagives.com</a>.</p>
 
 		<p>Thanks for joining us, <br/>
 		The Team at Sarnia Gives</p>
