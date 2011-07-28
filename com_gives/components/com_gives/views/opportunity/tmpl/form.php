@@ -51,14 +51,14 @@
 
 				<div class="field">
 					<div class="label"><label><?= @text('Event/Start Date')?>:</label></div>
-					<div class="input">
+					<div class="input date">
 						<?= JHtml::calendar($opportunity->start_date, 'start_date', 'field_start_date', '%Y-%m-%d') ?>
 					</div>
 				</div>
 				
 				<div class="field">
 					<div class="label"><label><?= @text('End Date')?>:</label></div>
-					<div class="input">
+					<div class="input date">
 						<?= JHtml::calendar($opportunity->end_date, 'end_date', 'field_end_date', '%Y-%m-%d') ?>
 					</div>
 				</div>

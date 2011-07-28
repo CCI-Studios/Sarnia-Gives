@@ -48,3 +48,6 @@ input[type=password], select, textarea {
 	padding: 4px 5px;
 	width: 360px; /* FIXME Check this */
 }
+
+.date input[type=text] { width: 332px; }
+.date img { margin-left: 10px; vertical-align: middle; }
