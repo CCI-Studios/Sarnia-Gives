@@ -32,12 +32,17 @@
 	</div></div>
 	<? endif; ?>
 	
+	
 	<h2 class="clear">My Opportunities</h2>
-	<?= KFactory::get('site::com.gives.controller.opportunities')
-		->set('interests', $volunteer->interest)
-		->set('skills', $volunteer->skills)
-		->set('locations', $volunteer->locations)
-		->layout('widget')
-		->limit(5)
-		->display(); ?>
+	<? if ($volunteer->interests || $volunteer->skills || $volunteer->locations): ?>
+		<?= KFactory::get('site::com.gives.controller.opportunities')
+			->set('interests', $volunteer->interest)
+			->set('skills', $volunteer->skills)
+			->set('locations', $volunteer->locations)
+			->layout('widget')
+			->limit(5)
+			->display(); ?>
+	<? else: ?>
+		<p>Please complete your <a href="<?= @route('view=volunteer&layout=edit&id='.$volunteer->id) ?>">profile</a> to receive suggested opportunities.</p>
+	<? endif; ?>
 </div>
