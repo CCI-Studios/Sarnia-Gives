@@ -149,7 +149,11 @@ namespace :deploy do
     extensions.each do |path|
       run "#{deploy_to}/shared/symlinker #{current_path}/#{path} #{public}"
     end
+    
     run "ln -nfs #{current_path}/public/.htaccess #{public}/.htaccess"
+    
+    # project specific
+    run "ln -nfs #{deploy_to}/shared/com_gives_uploads #{public}/media/com_gives/uploads"
   end
 
   task :start do ; end
