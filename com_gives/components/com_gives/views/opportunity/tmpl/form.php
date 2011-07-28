@@ -13,12 +13,15 @@
 	    <? endif; ?>
 
 		<span class="edit">
+			<? if ($opportunity->isnew()): ?>
 			<a href="<?= @route('view=organization&id='. KRequest::get('get.org_id', 'int')); ?>">
-				<? if ($opportunity->isnew()): ?>
-					Cancel
-			    <? else: ?>
-			    	Back
-			    <? endif; ?>
+				Cancel
+			</a>
+			<? else: ?>
+			<a href="<?= @route('view=organization&id='. $opportunity->gives_organization_id) ?>">   
+				Back
+			</a>
+			<? endif; ?>
 			</a>
 		</span>
 	</h1>
