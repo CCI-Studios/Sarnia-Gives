@@ -89,8 +89,8 @@
 		<?= @helper('tabs.endPanel') ?>
 		
 		<?= @helper('tabs.startPanel', array('title'=>'Password')) ?>
-			<?= @helper('form.password', array('name'=>'password')) ?>
-			<?= @helper('form.password', array('name'=>'confirm')) ?>
+			<?= @helper('form.password', array('name'=>'password', '_title'=>'Password')) ?>
+			<?= @helper('form.password', array('name'=>'confirm', '_title'=>'Password Confirmation')) ?>
 		<?= @helper('tabs.endPanel') ?>
 		
 		<?= @helper('tabs.endPane')?>
