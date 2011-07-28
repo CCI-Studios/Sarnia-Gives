@@ -69,12 +69,10 @@ switch ($view) {
 		break;
 	case 'opportunity':
 		if (isset($layout)) {
-			if ($layout == 'edit' && isset($id)) {
-				$model	= KFactory::tmp('site::com.gives.model.organization');
-				$org = $model->set('id', $id)->getItem();
+			if ($layout == 'form' && isset($id)) {
 				$title[] = $view;
 				$title[] = 'edit';
-				$title[] = $org->title;
+				$title[] = $id;
 				
 				shRemoveFromGETVarsList('layout');
 				shRemoveFromGETVarsList('id');
