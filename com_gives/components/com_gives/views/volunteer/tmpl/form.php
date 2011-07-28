@@ -18,7 +18,7 @@
 	<?= @helper('form.text', array('name'=>'last_name', 'value'=>$volunteer->last_name, 'klass'=>'required'))?>
     <?= @helper('form.text', array('name'=>'email', 'title'=>'Email Address', 'value'=> $volunteer->email, 'klass'=>'required validate-email'))?>
     <?= @helper('form.password', array('klass'=>'required'))?>
-	<?= @helper('form.password', array('name'=>'confirmation', 'klass'=>'required'))?>
+	<?= @helper('form.password', array('name'=>'confirmation', '_title'=>'Password Confirmation', 'klass'=>'required'))?>
 	<?= @helper('form.submit', array())?>
     
 </form>

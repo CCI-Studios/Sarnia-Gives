@@ -35,7 +35,7 @@
     </dl>
     
     <dl>
-        <dt><label for="confirmation_field"><?= @text('Password confirmation') ?>:</label></dt>
+        <dt><label for="confirmation_field"><?= @text('Password Confirmation') ?>:</label></dt>
         <dd><input class="required" type="password" name="confirmation" id="confirmation_field" value="" /></dd>
     </dl>
     
