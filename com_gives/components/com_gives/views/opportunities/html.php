@@ -12,36 +12,42 @@ class ComGivesViewOpportunitiesHtml extends ComGivesViewHtml
 
 		if ($this->getLayout() == 'default') {
 			$this->assign('opps_is', KFactory::tmp('site::com.gives.model.opportunities')
+				->set('enabled', '1')
 				->set('interests', KRequest::get('get.interests', 'raw'))
 				->set('skills', KRequest::get('get.skills', 'raw'))
 				->set('locations', null)
 				->getList());
 				
 			$this->assign('opps_il', KFactory::tmp('site::com.gives.model.opportunities')
+				->set('enabled', '1')
 				->set('interests', KRequest::get('get.interests', 'raw'))
 				->set('skills', null)
 				->set('locations', KRequest::get('get.locations', 'raw'))
 				->getList());
 				
 			$this->assign('opps_sl', KFactory::tmp('site::com.gives.model.opportunities')
+				->set('enabled', '1')
 				->set('interests', null)
 				->set('skills', KRequest::get('get.skills', 'raw'))
 				->set('locations', KRequest::get('get.locations', 'raw'))
 				->getList());
 				
 			$this->assign('opps_i', KFactory::tmp('site::com.gives.model.opportunities')
+				->set('enabled', '1')
 				->set('interests', KRequest::get('get.interests', 'raw'))
 				->set('skills', null)
 				->set('locations', null)
 				->getList());
 				
 			$this->assign('opps_s', KFactory::tmp('site::com.gives.model.opportunities')
+				->set('enabled', '1')
 				->set('interests', null)
 				->set('skills', KRequest::get('get.skills', 'raw'))
 				->set('locations', null)
 				->getList());
 				
 			$this->assign('opps_l', KFactory::tmp('site::com.gives.model.opportunities')
+				->set('enabled', '1')
 				->set('interests', null)
 				->set('skills', null)
 				->set('locations', KRequest::get('get.locations', 'raw'))
