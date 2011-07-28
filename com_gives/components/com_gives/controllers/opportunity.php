@@ -24,6 +24,8 @@ class ComGivesControllerOpportunity extends ComDefaultControllerDefault
     		$this->_request->sort = 'distance';
     	}
     	
+    	$this->_request->enabled = 1;
+    	
     	return parent::getRequest();
     }
     

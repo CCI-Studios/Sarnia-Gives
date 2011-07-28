@@ -20,6 +20,12 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
         parent::_initialize($config);
     }
     
+    public function getRequest()
+    {
+    	$this->_request->enabled = 1;
+    	return parent::getRequest();
+    }
+    
     public function afterSave(KCommandContext $context)
     {
 		$this->setRedirect(JRoute::_('index.php?option=com_user&view=login'));
