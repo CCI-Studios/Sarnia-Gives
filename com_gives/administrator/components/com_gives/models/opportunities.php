@@ -30,6 +30,12 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 		parent::_buildQueryColumns($query);
 	}
 	
+	public function _buildQueryJoins(KDatabaseQuery $query)
+	{
+		$query->join('left', 'gives_organizations AS org', 'tbl.gives_organization_id = org.gives_organization_id');
+	
+		parent::_buildQueryJoins($query);
+	}
 	
 	public function _buildQueryWhere(KDatabaseQuery $query)
 	{
@@ -43,6 +49,7 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 		
 		if ($state->enabled) {
 			$query->where('tbl.enabled', '=', '1');
+			$query->where('org.enabled', '=', '1');
 		}
 		
 		if (is_numeric($state->organization_id)) {

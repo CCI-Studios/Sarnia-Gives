@@ -9,9 +9,6 @@
 	<?	$org = KFactory::tmp('admin::com.gives.model.organization')
 			->set('id', $opportunity->gives_organization_id)
 			->getItem();
-		if (!$org->enabled) {
-			continue;
-		}
 	?>
 	<li
 		<? if (isset($opportunity->distance)): ?>
