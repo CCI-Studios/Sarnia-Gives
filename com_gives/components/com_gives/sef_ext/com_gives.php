@@ -26,7 +26,7 @@ switch ($view) {
 			shRemoveFromGETVarsList('id');
 		} elseif (isset($layout) && $layout === 'form' ) {
 			$title[] = JText::_('organization');
-			$title[] = JText::_('agency-registration');
+			$title[] = JText::_('organization-registration');
 			
 			shRemoveFromGETVarsList('layout');
 		} elseif (isset($id)) {

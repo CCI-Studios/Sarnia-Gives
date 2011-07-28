@@ -58,7 +58,7 @@ switch ($view) {
 	case 'organization':
 		$title[] = 'Organization';
 		if ($layout == 'form') {
-			$title[] = 'Agency Registration';
+			$title[] = 'Organization Registration';
 		} else {
 			$model = KFactory::tmp('admin::com.gives.model.organization');
 			$org = $model->set('id', $id)->getitem();
