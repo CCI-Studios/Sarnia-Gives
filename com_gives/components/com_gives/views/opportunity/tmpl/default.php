@@ -35,10 +35,12 @@
 	<? endif; ?>
 
 	<h2>Location</h2>
-	<p>Address: <?= $opportunity->address ?><br/>
-	City: <?= $opportunity->city ?><br/>
-	Province: <?= $opportunity->province ?><br/>
-	Postal: <?= $opportunity->postal ?></p>
+	<p>
+		<?= ($opportunity->address)? 'Address: '. $opportunity->address .'<br/>':'' ?>
+		<?= ($opportunity->city)? 'City: '. $opportunity->city .'<br/>':'' ?>
+		<?= ($opportunity->province)? 'Province: '. $opportunity->province .'<br/>':'' ?>
+		<?= ($opportunity->postal)? 'Postal: '. $opportunity->postal .'<br/>':'' ?>
+	</p>
 	
 	<h2>Contact</h2>
 	<p>Call us at <?= $organization->phone ?> or email <a href="mailto:<?= $organization->email ?>"><?= $organization->contact?></a> for more information.</p>
