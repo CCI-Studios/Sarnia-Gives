@@ -36,6 +36,6 @@ window.addEvent('domready', function () {
 <div id="mapview"><div></div></div>
 
 <div id="mapresults" style="display: none;">
-	<?= @template('search_results'); ?>
+	<?= @template('widget'); ?>
 </div>
 <? endif; ?>

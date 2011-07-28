@@ -16,6 +16,7 @@
 			data-lat="<?= $opportunity->lat ?>"
 			data-lng="<?= $opportunity->lng ?>"
 			data-title="<?= $opportunity->title ?>"
+			data-address="<?= $opportunity->address  ?>"
 		<? endif; ?>>
 		
 		<div class="logo">

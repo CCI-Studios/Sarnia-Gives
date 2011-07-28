@@ -6,7 +6,14 @@
 		->set('id', $opportunity->gives_organization_id)
 		->getItem();
 	?>
-	<li>
+	<li
+		<? if (isset($opportunity->distance)): ?>
+			data-distance="<?= $opportunity->distance ?>"
+			data-lat="<?= $opportunity->lat ?>"
+			data-lng="<?= $opportunity->lng ?>"
+			data-title="<?= $opportunity->title ?>"
+			data-address="<?= $opportunity->address  ?>"
+		<? endif; ?>>
 		<? if ($org->logo): ?>
 		<div class="logo">
 			<a href="<?= @route('view=organization&id='. $org->id) ?>">

@@ -62,6 +62,7 @@ cci.gives.list = new Class({
 	},
 	
 	initialize: function (element, map, options) {
+		var marker, position;
 		this.setOptions(options);
 		
 		this.element = $(element);
@@ -70,19 +71,20 @@ cci.gives.list = new Class({
 		
 		this.markers = [];
 		this.children.each(function (child) {
-			this.markers.push(new cci.gives.annotation(
-					child,
-					child.get('data-title'),
-					child.get('data-lat'),
-					child.get('data-lng'),
-					this.map));
+			if (child.get('data-lat') +' '+ child.get('data-lng') != position) {
+				marker = new cci.gives.annotation(child.get('data-lat'), child.get('data-lng'), this.map);
+				this.markers.push(child);
+				position = child.get('data-lat') +' '+ child.get('data-lng');
+			}
+			
+			marker.addElement(child);
 		}, this);
 	}
 });
 
 cci.gives.annotation = new Class({
 	marker: null,
-	element: null,
+	elements: null,
 	
 	title: null,
 	lat: null,
@@ -90,12 +92,11 @@ cci.gives.annotation = new Class({
 	
 	map: null,
 	
-	initialize: function (element, title, lat, lng, map) {
-		this.element = $(element);
-		this.title = title;
+	initialize: function (lat, lng, map) {
 		this.lat = lat;
 		this.lng = lng;
 		this.map = map;
+		this.elements = [];
 		
 		this.marker = this.map.addMarker(this);
 		google.maps.event.addListener(this.marker, 'click', (function (event) {
@@ -105,17 +106,35 @@ cci.gives.annotation = new Class({
 			}
 			
 			cci.gives.infoWindow = new google.maps.InfoWindow({
-				content: new Element('div', {
-					'class': 'infoWindow',
-					html: this.element.get('html')
-				})
+				content: this._getHtml()
 			});
 
 			cci.gives.infoWindow.open(this.map, this.marker);
-			
-			this.element.getParent().getChildren().removeClass('active');
-			this.element.addClass('active');
 		}).bind(this));
+	},
+	
+	_getHtml: function () {
+		html = '';
 		
+		for (i = 0; i < this.elements.length; i++) {
+			html += '<div style="margin: 1em 1em 1em 0;">';
+			html += this.elements[i].get('html');
+			html += '</div>'
+		}
+		
+		return html;
+	},
+	
+	addElement: function (element) {
+		this.elements.push(element);
+		
+		if (this.elements.length == 1) {
+			this.title = element.get('data-title');
+		} else {
+			this.title = this.elements.length + ' opportunities'; 
+		}
+		
+		this.marker.setTitle(this.title);
 	}
+
 });
