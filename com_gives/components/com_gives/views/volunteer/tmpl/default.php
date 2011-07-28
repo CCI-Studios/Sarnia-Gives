@@ -43,6 +43,6 @@
 			->limit(5)
 			->display(); ?>
 	<? else: ?>
-		<p>Please complete your <a href="<?= @route('view=volunteer&layout=edit&id='.$volunteer->id) ?>">profile</a> to receive suggested opportunities.</p>
+		<p>Please complete your <a href="<?= @route('view=volunteer&layout=edit&id='.$volunteer->id) ?>">profile</a> to view suggested opportunities.</p>
 	<? endif; ?>
 </div>
