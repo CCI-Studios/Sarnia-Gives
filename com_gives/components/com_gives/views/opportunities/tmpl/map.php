@@ -22,11 +22,15 @@ window.addEvent('domready', function () {
 <p>Enter a address and maximum distance to find opportunities near you.</p>
 
 <form action="<?= @route() ?>" method="get" id="mapsearch">
-	<label><?= @text('Address') ?>:</label>
-	<input type="text" name="address" value="<?= $address; ?>" /><br/>
+	<div>
+		<div class="label"><label><?= @text('Address') ?>:</label></div>
+		<div class="input"><input type="text" name="address" value="<?= $address; ?>" /></div>
+	</div>
 	
-	<label><?= @text('Distance (in km)') ?>:</label>
-	<input type="text" name="distance" value="<?= $distance; ?>" /><br/>
+	<div>
+		<div class="label"><label><?= @text('Distance (in km)') ?>:</label></div>
+		<div class="input"><input type="text" name="distance" value="<?= $distance; ?>" /></div>
+	</div>
 	
 	<input type="submit" />
 </form>
