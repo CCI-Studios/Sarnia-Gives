@@ -131,7 +131,7 @@ cci.gives.annotation = new Class({
 		if (this.elements.length == 1) {
 			this.title = element.get('data-title');
 		} else {
-			this.title = this.elements.length + ' opportunities'; 
+			this.title = this.elements.length + ' Opportunities'; 
 		}
 		
 		this.marker.setTitle(this.title);
