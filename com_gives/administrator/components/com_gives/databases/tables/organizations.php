@@ -63,7 +63,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 			'password'	=> $password,
 		));
 		
-		$this->_sendMail($email, "Thank you for registering", $view->render());
+		$this->_sendMail($email, "Thank You for Registering with Sarnia Gives", $view->render());
 	}
 	
 	protected function _emailAdmin($title, $name)
@@ -79,7 +79,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 			'title' => $title,
 		));
 		
-		$this->_sendMail($admins, "New Organization Registered", $view->render());
+		$this->_sendMail($admins, "New Sarnia Gives Agency Registration", $view->render());
 	}
 	
 	protected function _sendMail($to, $subject, $body)

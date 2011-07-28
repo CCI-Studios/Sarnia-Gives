@@ -47,7 +47,7 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 			'password' => $password,
 		));
 		
-		$this->_sendMail($email, "Thank you for registering", $view->render());
+		$this->_sendMail($email, "Thank You for Registering with Sarnia Gives", $view->render());
 	}
 	
 	protected function _emailAdmin($name)
@@ -62,7 +62,7 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 			'name'	=> $name
 		));
 		
-		$this->_sendMail($admins, "New Volunteer Registered", $view->render());
+		$this->_sendMail($admins, "New Sarnia Gives Volunteer Registration", $view->render());
 	}
 	
 	protected function _sendMail($to, $subject, $body)

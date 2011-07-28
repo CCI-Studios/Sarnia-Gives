@@ -42,7 +42,7 @@ class ComGivesModelVolunteers extends ComDefaultModelDefault
 		
 		if ($data->email === '') {
 			$errors[] = JText::_('An email address is required.');
-		} else {
+		} elseif (isset($data->email)) {
 			$db = $this->getTable()->getDatabase();
 			$query = $db->getQuery();
 			$query->select('*')
