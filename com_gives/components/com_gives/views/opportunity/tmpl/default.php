@@ -16,10 +16,24 @@
 	<h2>Description</h2>
 	<p><?= $opportunity->description ?></p>
 	
+	<?
+		$r = array();
+		
+		if ($opportunity->license) {
+			$r[] = @text('License');
+		}
+		
+		if ($opportunity->police_check) {
+			$r[] = @text('Police Check');
+		}
+		
+		if (count($r)):	?>
 	<h2>Requirements</h2>
-	<p>police check<Br/>
-	license</p>
-	
+	<p>
+		<?= implode('<br/>', $r); ?>
+	</p>
+	<? endif; ?>
+
 	<h2>Location</h2>
 	<p>Address: <?= $opportunity->address ?><br/>
 	City: <?= $opportunity->city ?><br/>
