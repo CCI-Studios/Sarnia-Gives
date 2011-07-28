@@ -10,13 +10,15 @@
 	echo $description;
 } ?>
 
+<p>Please note, your Email Address will be used for your Username.</p>
+
 <div style="margin: 1em 0;">
 <form action="<?= @route('id='.$volunteer->id) ?>" method="post" class="-koowa-form">
     <input type="hidden" name="action" value="save" />
    
 	<?= @helper('form.text', array('name'=>'first_name', 'value'=>$volunteer->first_name, 'klass'=>'required'))?>
 	<?= @helper('form.text', array('name'=>'last_name', 'value'=>$volunteer->last_name, 'klass'=>'required'))?>
-    <?= @helper('form.text', array('name'=>'email', 'title'=>'Email Address', 'value'=> $volunteer->email, 'klass'=>'required validate-email'))?>
+    <?= @helper('form.text', array('name'=>'email', '_title'=>'Email Address', 'value'=> $volunteer->email, 'klass'=>'required validate-email'))?>
     <?= @helper('form.password', array('klass'=>'required'))?>
 	<?= @helper('form.password', array('name'=>'confirmation', '_title'=>'Password Confirmation', 'klass'=>'required'))?>
 	<?= @helper('form.submit', array())?>

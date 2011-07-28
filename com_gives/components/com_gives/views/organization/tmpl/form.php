@@ -3,45 +3,47 @@
 <script src="media://lib_koowa/js/koowa.js" />
 
 <h1 class="componentheading">
-    <?= @text('Agency Registration'); ?>
+    <?= @text('Organization Registration'); ?>
 </h1>
 
-<? if ($description) {
+<? if (isset($description)) {
 	echo $description;
 } ?>
+
+<p>Please note, your Email Address will be used for your Username.</p>
 
 <div style="margin: 1em 0;">
 <form action="<?= @route('id='.$organization->id) ?>" method="post" class="-koowa-form">
     <input type="hidden" name="action" value="save" />
     
-	<dl>
-        <dt><label for="title_field"><?= @text('Organization Name') ?>:</label></dt>
-        <dd><input class="required" type="text" name="title" id="title_field" value="<?= $organization->title ?>" /></dd>
-    </dl>
+	<div>
+        <div class="label"><label for="title_field"><?= @text('Organization Name') ?>:</label></div>
+        <div class="input"><input class="required" type="text" name="title" id="title_field" value="<?= $organization->title ?>" /></div>
+	</div>
 
-    <dl>
-        <dt><label for="fname_field"><?= @text('Name') ?>:</label></dt>
-        <dd><input class="required" type="text" name="contact" id="fname_field" value="<?= $organization->first_name?>" /></dd>
-    </dl>
+    <div>
+    	<div class="label"><label for="fname_field"><?= @text('Name') ?>:</label></div>
+        <div class="input"><input class="required" type="text" name="contact" id="fname_field" value="<?= $organization->first_name?>" /></div>
+    </div>
     
-    <dl>
-        <dt><label for="email_field"><?= @text('Email Address') ?>:</label></dt>
-        <dd><input class="required validate-email" type="text" name="email" id="email_field" value="<?= $organization->email ?>" /></dd>
-    </dl>
+    <div>
+    	<div class="label"><label for="email_field"><?= @text('Email Address') ?>:</label></div>
+       	<div class="input"><input class="required validate-email" type="text" name="email" id="email_field" value="<?= $organization->email ?>" /></div>
+	</div>
+
+	<div>
+		<div class="label"><label for="password_field"><?= @text('Password') ?>:</label></div>
+		<div class="input"><input class="required" type="password" name="password" id="password_field" value="" /></div>
+	</div>
     
-    <dl>
-        <dt><label for="password_field"><?= @text('Password') ?>:</label></dt>
-        <dd><input class="required" type="password" name="password" id="password_field" value="" /></dd>
-    </dl>
+    <div>
+    	<div class="label"><label for="confirmation_field"><?= @text('Password Confirmation') ?>:</label></div>
+    	<div class="input"><input class="required" type="password" name="confirmation" id="confirmation_field" value="" /></div>
+    </div>
     
-    <dl>
-        <dt><label for="confirmation_field"><?= @text('Password Confirmation') ?>:</label></dt>
-        <dd><input class="required" type="password" name="confirmation" id="confirmation_field" value="" /></dd>
-    </dl>
-    
-    <dl>
-        <dt>&nbsp;</dt>
-        <dd><input type="submit" value="Create Account" /></dd>
-    </dl>    
+    <div>
+    	<div class="label">&nbsp;</div>
+    	<div class="input"><input type="submit" value="Create Account" /></div>
+    </div>   
 </form>
 </div>
