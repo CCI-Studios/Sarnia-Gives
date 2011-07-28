@@ -18,11 +18,9 @@ switch ($view) {
 	case 'organization':
 		$model	= KFactory::tmp('site::com.gives.model.organization');
 		if (isset($layout) && $layout === 'edit' && isset($id)) {
-			$org = $model->set('id', $id)->getItem();
-			
 			$title[] = JText::_('organization');
 			$title[] = JText::_('edit');
-			$title[] = $slug->sanitize($org->title);
+			$title[] = $id;
 			
 			shRemoveFromGETVarsList('layout');
 			shRemoveFromGETVarsList('id');
@@ -35,20 +33,16 @@ switch ($view) {
 			$org = $model->set('id', $id)->getItem();
 			
 			$title[] = JText::_('organization');
-			$title[] = $slug->sanitize($org->title);
+			$title[] = $id .'-'. $slug->sanitize($org->title);
 			
 			shRemoveFromGETVarsList('id');
 		}
 		break;
 	case 'organizations':
-		// no options needed
 		$title[] = JText::_('organizations');
 		break;
 	case 'volunteer':
-		$model	= KFactory::tmp('site::com.gives.model.organization');
 		if (isset($layout) && $layout === 'edit' && isset($id)) {
-			$vol = $model->set('id', $id)->getItem();
-			
 			$title[] = JText::_('volunteer');
 			$title[] = JText::_('edit');
 			
@@ -68,13 +62,12 @@ switch ($view) {
 		$title[] = $view;
 		break;
 	case 'opportunity':
+		$model	= KFactory::tmp('site::com.gives.model.opportunities');
 		if (isset($layout)) {
-			if ($layout == 'edit' && isset($id)) {
-				$model	= KFactory::tmp('site::com.gives.model.organization');
-				$org = $model->set('id', $id)->getItem();
+			if ($layout == 'form' && isset($id)) {
 				$title[] = $view;
 				$title[] = 'edit';
-				$title[] = $org->title;
+				$title[] = $id;
 				
 				shRemoveFromGETVarsList('layout');
 				shRemoveFromGETVarsList('id');
@@ -84,11 +77,10 @@ switch ($view) {
 				shRemoveFromGETVarsList('layout');
 			}
 		} elseif (isset($id)) {
-			$model 	= KFactory::tmp('site::com.gives.model.opportunity');
 			$opp	= $model->set('id', $id)->getItem();
 			
 			$title[] = $view;
-			$title[] = $slug->sanitize($opp->title);
+			$title[] = $id .'-'. $slug->sanitize($opp->title);
 			shRemoveFromGETVarsList('id');
 		}
 
