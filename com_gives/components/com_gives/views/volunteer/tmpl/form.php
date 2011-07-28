@@ -6,7 +6,7 @@
     <?= @text('Volunteer Registration')?>
 </h1>
 
-<? if ($description) {
+<? if (isset($description)) {
 	echo $description;
 } ?>
 

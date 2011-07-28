@@ -11,6 +11,12 @@ class ComGivesViewVolunteerHtml extends ComGivesViewHtml
 		$row = $this->getModel()->getItem();
 		$me = $this->getModel()->getMe();
 		
+		if ($params->get('description')) {
+			$this->assign('description', '<p>'.
+			str_replace(array("\r\n", "\r", "\n"), '</p><p>', $params->get('description'))
+			.'</p>');
+		}
+		
 		if ($this->layout !== 'form') {
 			if ($me->id === $row->user_id) {
 				$this->assign('edit_button', true);
