@@ -16,7 +16,7 @@ set :use_sudo, false
 # Joomla
 set :joomla_url, "http://joomlacode.org/gf/download/frsrelease/14506/63460/Joomla_1.5.23-Stable-Full_Package.zip"
 set :nooku_url, "http://svn2.assembla.com/svn/nooku-framework/trunk/code"
-set :symlinker_url, "https://github.com/jbennett/symlinker/raw/master/link.php"
+set :symlinker_url, "https://raw.github.com/jbennett/symlinker/master/link.php"
 
 namespace :deploy do
 
