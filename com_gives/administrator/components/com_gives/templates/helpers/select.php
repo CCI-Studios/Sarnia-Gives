@@ -118,7 +118,12 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 
 		$script = "";
 		$html = array();
-		$html[] = "<ul id=\"checklist{$name}\" class=\"checklist\">\n";
+		$ul = "<ul ";
+		$ul .= "id='checklist".$name."' ";
+		$ul .= "class='checklist ";
+		$ul .= ($config->select_all)? 'select_all':'';
+		$ul .= "'>\n";
+		$html[] = $ul;
 		
 		if ($config->select_all) {
 			$html[] = "<li class=\"selectall\" style=\"width: 100%;\">";

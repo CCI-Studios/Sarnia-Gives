@@ -52,6 +52,7 @@ window.addEvent('domready', function () {
 		} else {
 			echo @helper('select.interests', array('select_all'=>true));
 		} ?>
+		<div class="clear"></div>
 	</div></div>
 
 	<div><div>
@@ -64,6 +65,7 @@ window.addEvent('domready', function () {
 		} else {
 			echo @helper('select.skills', array('select_all'=>true));
 		} ?>
+		<div class="clear"></div>
 	</div></div>
 
 	<div><div>
@@ -76,6 +78,7 @@ window.addEvent('domready', function () {
 		} else {
 			echo @helper('select.locations', array('select_all'=>true));
 		} ?>
+		<div class="clear"></div>
 	</div></div>
 
 	<p><input type="submit" value="Search" /></p>

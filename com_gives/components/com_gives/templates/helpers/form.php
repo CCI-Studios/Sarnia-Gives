@@ -53,11 +53,11 @@ class ComGivesTemplateHelperForm extends KTemplateHelperAbstract
 			'klass'	=> '',
 		))->append(array(
 			'_id'	=> $config->name.'_field',
-			'title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
+			'_title'	=> trim(ucwords(str_replace(array('_'), ' ', $config->name))),
 		));
 		
 		return "<div class=\"field\">
-			<div class=\"label\"><label for=\"{$config->id}\">{$config->title}:</label></div>
+			<div class=\"label\"><label for=\"{$config->id}\">{$config->_title}:</label></div>
 			<div class=\"input\"><input 
 					type=\"password\" 
 					name=\"{$config->name}\" 
