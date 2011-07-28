@@ -18,7 +18,7 @@
 				Cancel
 			</a>
 			<? else: ?>
-			<a href="<?= @route('view=organization&id='. $opportunity->gives_organization_id) ?>">   
+			<a href="<?= @route('view=opportunity&id='. $opportunity->id) ?>">   
 				Back
 			</a>
 			<? endif; ?>
