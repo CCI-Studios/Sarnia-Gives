@@ -28,7 +28,7 @@ window.addEvent('domready', function () {
 	</div>
 	
 	<div>
-		<div class="label"><label><?= @text('Distance (in km)') ?>:</label></div>
+		<div class="label"><label><?= @text('Distance (in KM)') ?>:</label></div>
 		<div class="input"><input type="text" name="distance" value="<?= $distance; ?>" /></div>
 	</div>
 	
