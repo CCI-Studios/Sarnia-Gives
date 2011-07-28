@@ -95,7 +95,7 @@
 			
 				<div class="field">
 					<div class="label"><label><?=@text('Police Check')?>:</label></div>
-					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'license'))?></div>
+					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'police_check'))?></div>
 				</div>
 			
 				<?= @helper('form.text', array('name'=>'min_age'))?>
