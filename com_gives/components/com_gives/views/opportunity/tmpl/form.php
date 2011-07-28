@@ -38,6 +38,7 @@
 		<?= @helper('tabs.startPane') ?>
 			<?= @helper('tabs.startPanel', array('title'=>'Opportunity Details')) ?>
 				<?= @helper('form.text', array('name'=>'title')) ?>
+				<?= @helper('form.text', array('name'=>'address')) ?>
 				<?= @helper('form.text', array('name'=>'city')) ?>
 				<div class="field">
 					<div class="label"><label for=""><?= @text('Province') ?>:</label></div>

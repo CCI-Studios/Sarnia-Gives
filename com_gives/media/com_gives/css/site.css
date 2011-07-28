@@ -168,4 +168,23 @@ ul.alternatives .heading.close { background-image: url(../images/button_up.png);
 }
 
 #mapview > div { border: 1px solid #A7A7A7; }
+
+#mapview .arrow-left, #mapview .arrow-right {
+	background: url(/templates/sarnia_gives/images/arrows.png) no-repeat;
+	cursor: pointer;
+	height: 26px;
+	left: -20px;
+	position: absolute;
+	top: 70px;
+	width: 26px;
+}
+
+#mapview .arrow-right {
+	background-position: 0 -26px;
+	left: auto;
+	right: -20px;
+} 
+
 #mapresults {}
+
+/* end */
