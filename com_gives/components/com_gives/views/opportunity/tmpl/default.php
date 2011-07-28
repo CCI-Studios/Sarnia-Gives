@@ -28,5 +28,8 @@
 	
 	<h2>Contact</h2>
 	<p>Call us at <?= $organization->phone ?> or email <a href="mailto:<?= $organization->email ?>"><?= $organization->contact?></a> for more information.</p>
-	<p style="margin-top:2em;">Click <a href="<?= @route('view=organization&id='. $organization->id) ?>">here</a> to view more opportunities from <a href="<?= @route('view=organization&id='. $organization->id) ?>"><?= $organization->title ?></a>.</p>
+	<p style="margin-top:2em;">
+		Click <a href="<?= @route('view=organization&id='. $organization->id) ?>">here</a> to view more 
+		opportunities from <a href="<?= @route('view=organization&id='. $organization->id) ?>"><?= $organization->title ?></a>.
+	</p>
 </div>
