@@ -2,7 +2,7 @@
 
 <ul class="opportunity_list">
 	<? foreach ($opportunities as $opportunity): ?>
-	<? if ($distance && $opportunity->distance > $distance) {
+	<? if (isset($distance) && $opportunity->distance > $distance) {
 		continue;
 	} ?>
 	
