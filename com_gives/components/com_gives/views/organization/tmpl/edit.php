@@ -13,7 +13,7 @@
 		<? endif; ?>
 	</h1>
 	
-	<p>Update your search settings below:</p>
+	<p>Update your profile below:</p>
 
 	<form enctype="multipart/form-data" action="<?= @route('id='.$organization->id)?>" method="post">
 		<input type="hidden" name="action" value="save" />
@@ -32,11 +32,11 @@
 			<?= @helper('form.text', array('name'=>'fax')) ?>
 			<?= @helper('form.text', array('name'=>'email')) ?>
 			<?= @helper('form.text', array('name'=>'website')) ?>
+			<?= @helper('form.text', array('name'=>'director', '_title'=>'Executive Director')) ?>
 			<div class="clear"></div>
 		<?= @helper('tabs.endPanel') ?>
 		
 		<?= @helper('tabs.startPanel', array('title'=>'Contact Details')) ?>
-			<?= @helper('form.text', array('name'=>'director')) ?>
 			<?= @helper('form.text', array('name'=>'contact')) ?>
 			<?= @helper('form.text', array('name'=>'contact_email')) ?>
 			<?= @helper('form.text', array('name'=>'contact_title')) ?>

@@ -25,7 +25,7 @@ window.addEvent('domready', function () {
 	<label><?= @text('Address') ?>:</label>
 	<input type="text" name="address" value="<?= $address; ?>" /><br/>
 	
-	<label><?= @text('Distance') ?>:</label>
+	<label><?= @text('Distance (in km)') ?>:</label>
 	<input type="text" name="distance" value="<?= $distance; ?>" /><br/>
 	
 	<input type="submit" />
