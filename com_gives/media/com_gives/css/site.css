@@ -49,9 +49,15 @@
 	margin: 5px 0;
 }
 
-.tabs dt:hover, .tabs dt.open {
+.tabs dt:hover,
+.tabs dt.open {
 	border-bottom: 1px solid #5F167B;
 	margin-bottom: 4px;
+}
+
+.tabs dt:hover + dt, 
+.tabs dt.open + dt {
+	margin-top: 4px;
 }
 
 .tabs + .current {
