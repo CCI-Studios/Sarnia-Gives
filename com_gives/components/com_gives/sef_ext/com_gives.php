@@ -26,7 +26,7 @@ switch ($view) {
 			shRemoveFromGETVarsList('id');
 		} elseif (isset($layout) && $layout === 'form' ) {
 			$title[] = JText::_('organization');
-			$title[] = JText::_('register');
+			$title[] = JText::_('agency-registration');
 			
 			shRemoveFromGETVarsList('layout');
 		} elseif (isset($id)) {
@@ -50,7 +50,7 @@ switch ($view) {
 			// shRemoveFromGETVarsList('id');
 		} elseif (isset($layout) && $layout === 'form') {
 			$title[] = JText::_('volunteer');
-			$title[] = JText::_('register');
+			$title[] = JText::_('volunteer-registration');
 			
 			shRemoveFromGETVarsList('layout');
 		} elseif (isset($id)) {
@@ -90,6 +90,9 @@ switch ($view) {
 		if (isset($layout)) {
 			if ($layout === 'search') {
 				$title[] = 'search';
+				shRemoveFromGETVarsList('layout');
+			} elseif ($layout === 'default') {
+				$title[] = 'search-results';
 				shRemoveFromGETVarsList('layout');
 			} elseif ($layout === 'map') {
 				$title[] = 'map-search';

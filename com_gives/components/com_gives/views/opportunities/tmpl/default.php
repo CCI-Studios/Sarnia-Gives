@@ -1,6 +1,8 @@
 <style src="media://com_gives/css/site.css" />
 
-<h1 class="componentheading">Opportunities</h1>
+<h1 class="componentheading">
+	Criteria Search
+</h1>
 
 <? if (count($opportunities)): ?>
 	<?= @template('search_results', array(

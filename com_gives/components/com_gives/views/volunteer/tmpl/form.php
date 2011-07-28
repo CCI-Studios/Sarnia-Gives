@@ -3,7 +3,7 @@
 <script src="media://lib_koowa/js/koowa.js" />
 
 <h1 class="componentheading">
-    <?= @text('Create new account')?>
+    <?= @text('Volunteer Registration')?>
 </h1>
 
 <? if ($description) {

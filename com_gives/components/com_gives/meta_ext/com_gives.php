@@ -58,33 +58,68 @@ switch ($view) {
 	case 'organization':
 		$title[] = 'Organization';
 		if ($layout == 'form') {
-			$title[] = 'New Organization';
+			$title[] = 'Agency Registration';
 		} else {
 			$model = KFactory::tmp('admin::com.gives.model.organization');
 			$org = $model->set('id', $id)->getitem();
 			
 			$title[] = $org->title;
+			$title[] = 'Edit Profile';
 		}
 		break;
 	case 'opportunities':
-		$title[] = 'Opportunities';
+		if ($layout === 'search' || $layout === 'default') {
+			$title[] = 'Criteria Search';
+		} elseif ($layout === 'map') {
+			$title[] = 'Map Search';
+		} else {
+			$title[] = 'Opportunities';
+		}
 		break;
 	case 'opportunity':
 		$title[] = 'Opportunity';
 		if ($layout == 'form') {
 			$title[] = 'New Opportunity';
 		} else {
-			$model = KFactory::tmp('admin::com.gives.model.opportunity');
-			$opp = $model->set('id', $id)->getitem();
+			$opps = KFactory::tmp('admin::com.gives.model.opportunity');
+			$opp = $opps->set('id', $id)->getitem();
+			$orgs =  KFactory::tmp('admin::com.gives.model.organizations');
+			$org = $orgs->set('id', $opp->gives_organization_id)->getItem();
 			
-			$title[] = $opp->title;
+			$title[] = $org->title .' - '. $opp->title;
 		}
 		break;
 	case 'volunteers':
-		$title[] = 'Volunteers';
+		if ($layout === 'form') {
+			$title[] = 'Volunteer Registration';
+		} elseif ($layout === 'edit') {
+			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$me = $model->getMe();
+			
+			$title[] = $me->display_name();
+			$title[] = 'Edit Profile'; 
+		} else { // default
+			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$me = $model->getMe();
+			
+			$title[] = $me->display_name();
+		}
 		break;
 	case 'volunteer':
-		$title[] = 'Volunteer';
+		if ($layout === 'form') {
+			$title[] = 'Volunteer Registration';
+		} elseif ($layout === 'edit') {
+			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$me = $model->getMe();
+			
+			$title[] = $me->display_name();
+			$title[] = 'Edit Profile'; 
+		} else { // default
+			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$me = $model->getMe();
+			
+			$title[] = $me->display_name();
+		}
 		break;
 	case 'profile':
 		$title[] = 'Profile';
