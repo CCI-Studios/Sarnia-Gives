@@ -89,13 +89,15 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		if ($data->email === '') {
 			$errors[] = JText::_('An email address is required.');
 		} else {
+			$user = KFactory::get('lib.joomla.user');
+			
 			$db = $this->getTable()->getDatabase();
 			$query = $db->getQuery();
 			$query->select('*')
 				->from('users')
-				->where('email', '=', $data->email);
-				
-			$results = $db->select($query);
+				->where('email', '=', $data->email)
+				->where('id', '<>', $user->id);
+			
 			if (count($results)) {
 				$errors[] = JText::_('A user already exists with that email address.');
 			}
