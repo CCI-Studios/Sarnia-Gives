@@ -28,6 +28,12 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
     
     public function afterSave(KCommandContext $context)
     {
-		$this->setRedirect(JRoute::_('index.php?option=com_user&view=login'));
+    	if ($this->getRequest()->layout === 'form') {
+    		$this->setRedirect('index.php?option=com_user&view=login');
+    	} else {
+    		$this->setRedirect('index.php?option=com_gives&view=organization&id='. KRequest::get('get.id', 'int'));
+    	}
+    	
+    	return true;
     }
 }
