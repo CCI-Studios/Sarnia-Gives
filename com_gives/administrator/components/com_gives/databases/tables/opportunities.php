@@ -28,7 +28,7 @@ class ComGivesDatabaseTableOpportunities extends KDatabaseTableAbstract
 		
 		$view = KFactory::tmp("admin::com.default.template.default");
 		$view->loadIdentifier('admin::com.gives.view.opportunity.email_admin', array(
-			'name'	=> $name
+			'title'	=> $title
 		));
 		
 		$this->_sendMail($admins, "New Sarnia Gives Opportunity", $view->render());
