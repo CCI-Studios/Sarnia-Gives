@@ -12,7 +12,7 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 			->insert('locations', 'raw')
 			->insert('skills', 'raw')
 			->insert('interests', 'raw')
-			->insert('enabled', 'boolean', false)
+			->insert('enabled', 'int')
 			->insert('fuzzy', 'boolean', false)
 			->insert('address', 'string')
 			->insert('distance', 'float')
@@ -47,9 +47,9 @@ class ComGivesModelOpportunities extends ComDefaultModelDefault
 			$op = 'AND';
 		}
 		
-		if ($state->enabled) {
-			$query->where('tbl.enabled', '=', '1');
-			$query->where('org.enabled', '=', '1');
+		if (is_numeric($state->enabled)) {
+			$query->where('tbl.enabled', '=', $state->enabled);
+			$query->where('org.enabled', '=', $state->enabled);
 		}
 		
 		if (is_numeric($state->organization_id)) {
