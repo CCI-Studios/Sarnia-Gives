@@ -29,6 +29,11 @@
 			<?= @helper('tabs.startPanel', array('title'=>'Locations')) ?>
 				<?= @helper('select.locations')?>
 			<?= @helper('tabs.endPanel') ?>
+			
+			<?= @helper('tabs.startPanel', array('title'=>'Password')) ?>
+				<?= @helper('form.password', array('name'=>'password', '_title'=>'Password')) ?>
+				<?= @helper('form.password', array('name'=>'confirm', '_title'=>'Password Confirmation')) ?>
+			<?= @helper('tabs.endPanel') ?>
 		<?= @helper('tabs.endPane')?>
 
 		<p class="clear right"><input type="submit" value="Save" /></p>

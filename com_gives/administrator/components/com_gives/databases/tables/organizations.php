@@ -20,7 +20,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
         ));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg, $uploadable, "editable")
+		   'behaviors'	=> array($reg, $uploadable, "editable", 'admin::com.gives.database.behavior.passwordable')
 		));
         
         parent::_initialize($config);

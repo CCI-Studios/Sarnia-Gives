@@ -10,7 +10,7 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 		));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg, 'admin::com.gives.database.behavior.editable')
+		   'behaviors'	=> array($reg, 'admin::com.gives.database.behavior.editable', 'admin::com.gives.database.behavior.passwordable')
 		));
 		
 		parent::_initialize($config);
