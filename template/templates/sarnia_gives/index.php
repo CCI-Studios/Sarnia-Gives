@@ -152,11 +152,16 @@ $analytics = "UA-24737487-1";
 		
 		<div class="hr"></div>
 		
-		<div id="copyright">
-		    <div class="left">
+		<div id="copyright" style="position: relative;">
+		    <div style="position: absolute; top:3px; left:0">
 		        &copy; <?php echo date('Y') ?> Sarnia Gives. All Rights Reserved.
 		    </div>
-		    <div class="right">
+<div style="text-align:center;">
+<a href="http://www.otf.ca/" target="_blank">
+<img src="/images/stories/Trillium_Logo_Small.png" />
+</a>
+</div>
+		    <div style="position: absolute; top: 3px; right:0;">
 		        Site by <a href="http://www.ccistudios.com" target="_blank">CCI Studios</a>
 		    </div>
 		    

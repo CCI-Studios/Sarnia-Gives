@@ -19,24 +19,48 @@
 	<div style="width: 650px; text-align: left; ">
 		<p>Hello <?= $name ?>,</p>
 		
-		<p style="color: #5F167B;">Welcome to Sarnia Gives, Sarnia-Lambton's Community Volunteer Centre!</p>
-		<p>Thank you for registering <?= $title ?> with Sarnia Gives. You've completed your registration and profile so you already know about the VOLUNTEER RECRUITMENT &amp; REFERRAL, PROFESSIONAL DEVELOPMENT 
-		and PROMOTION &amp; ADVOCACY services that Sarnia Gives offers.  Now, let's talk about how to get the most out of <a href="http://www.sarniagives.com">www.sarniagives.com</a>:</p>
-		<p><strong>Volunteer Opportunity Postings</strong>: Log in to your profile to post an unlimited number of volunteer opportunities for your organization.</p>
-		<p><strong>Professional Development Tools</strong>: Use the tools provided, such as our Volunteer Interview Questions and the How Are We Doing Checklist to help you be as effective as you can.</p>
-		<p><strong>Best Practices &amp; Tips</strong>: We continuously update the information we provide based on trends and best practices from leaders in the not-for-profit industry.</p>
-		<p><strong>Information Sharing</strong>: Check the schedule for upcoming round-table discussions, conference dates and professional development sessions.</p>
-		<p>You can update your profile and add volunteer opportunity postings, by logging in with your username and password <a href="http://sarniagives.com/log-in.html">here</a>:</p>
+		<p><span style="color: #5F167B;">Welcome to Sarnia Gives, Sarnia-Lambton’s community Volunteer Centre!</span></p>
+		
+		<p>Thank you for registering <?= $title ?> with Sarnia gives. You’ve already created your profile, now let us tell you some of the many ways Sarnia Gives can help you and your organization:</p>
+		<p><span style="color: #5F167B;">VOLUNTEER RECRUITMENT &amp; REFERAL</span>: member organizations can advertise an unlimited number of volunteer opportunities with Sarnia Gives through:</p>
+		<ul>
+			<li><strong>An interactive, searchable database of volunteer opportunities on our website</strong></li>
+			<li>A monthly summary of new and/or urgent volunteer opportunities sent to local media outlets, corporate contacts and registered volunteers</li>
+			<li>Monthly recruitment ads/postings (September-June) for students needing to complete their required volunteer hours</li>
+		</ul>
+		
+		<p><span style="color: #5F167B;">PROFESSIONAL DEVELOPMENT</span>: Sarnia Gives meets its member’s needs for training and resources through community partnerships.  We offer:</p>
+		<ul>
+			<li>Quarterly information sessions</li>
+			<li>An annual conference facilitated by our strategic partner, MindBridge Strategies</li>
+			<li>Access to Volunteer Canada information and resources</li>
+			<li>Reduced rate on conferences hosted by Sarnia Gives (annual conference is included in  membership fee)</li>
+			<li>One-on-One consultations on volunteer management and organization development, in partnership with the Sarnia Community Foundation </li>
+			<li>A quarterly newsletter to update members on volunteering news and to share best practices &amp; information related to volunteer and non-profit management</li>
+		</ul>
+
+		<p><span style="color: #5F167B;">PROMOTION &amp; ADVOCACY</span>: Sarnia Gives provides member organizations with opportunities to network and communicate with the community, including:</p>
+		<ul>
+			<li>An annual Volunteer Showcase to encourage volunteerism and promote local organizations</li>
+			<li>Annual Youth Service event(s)/activities to promote the importance being active citizens</li>
+			<li>An annual volunteer recognition event </li>
+			<li>Programs focused on youth, retirees, newcomers and employers/employees</li>
+			<li>Volunteer of the Month feature on <a href="http://www.sarniagives.com" target="_blank">www.sarniagives.com</a></li>
+			<li>Featured Organization feature on <a href="http://www.sarniagives.com" target="_blank">www.sarniagives.com</a></li>
+			<li>Inclusion in outreach presentations in the Sarnia-Lambton community</li>
+			<li>Increased community awareness about volunteerism through events and promotions</li>
+		</ul>
+
+		<p>You can update your profile and add volunteer opportunity postings anytime simply by logging in with your username and password <a href="http://sarniagives.com/log-in.html">here</a>:</p>
 		<p>Username: <?= $email ?><br/>
-		Password: <?= $password ?></p>
+		Password:<?= $password ?></p>
 		
-		<p>Your account is currently pending and will be activated by an Administrator shortly. Your account will not be accessible until this is completed within the next 24 hours.</p>
+		<p>There are instructions attached to this email to guide you along if you need some help.</p>
 
-		<p>If you have any questions about Sarnia Gives please do not hesitate to email us at <a href="mailto:info@sarniagives.com">info@sarniagives.com</a>.</p>
-
-		<p>Thank you again for registering with Sarnia Gives,<br/>
+		<p>If you have any questions about our using the site, professional development opportunities, membership or anything else please email us at <a href="mailto:info@sarniagives.com" target="_blank">info@sarniagives.com</a>.</p>
+		
+		<p>Thanks for joining us, <br/>
 		The Team at Sarnia Gives</p>
-		
 	</div>
 </center>
 		
