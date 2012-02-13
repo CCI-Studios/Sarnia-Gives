@@ -30,7 +30,11 @@
 				<td><?=$i?></td>
 				<td><?=@helper('grid.checkbox', array('row'=>$opportunity))?></td>
 				<td><a href="<?=@route('view=opportunity&id='.$opportunity->id)?>">
-					<?=$opportunity->title?>
+					<? if ($opportunity->title) {
+						echo $opportunity->title;
+					} else {
+						echo '** Title Missing **';
+					} ?>
 				</a></td>
 				<td><?= $opportunity->organization_id ?></td>
 				<td align="center"><?=@helper('grid.enable', array('row'=>$opportunity)) ?></td>
