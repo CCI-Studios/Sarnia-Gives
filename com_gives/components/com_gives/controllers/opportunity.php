@@ -31,7 +31,7 @@ class ComGivesControllerOpportunity extends ComDefaultControllerDefault
     
     public function afterSave(KCommandContext $context)
     {	
-        $this->setRedirect('index.php?option=com_gives&view=organization&id='. $context->result->gives_organization_id);
+        $this->setRedirect('index.php?option=com_gives&view=opportunity&id='. $context->result->id);
 		return true;
     }
 }
