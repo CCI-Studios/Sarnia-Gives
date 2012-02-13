@@ -1,4 +1,7 @@
-<? defined('KOOWA') or die; ?>
+<?
+	defined('KOOWA') or die;
+	$user = JFactory::getUser();
+?>
 
 <ul class="opportunity_list">
 	<? foreach ($opportunities as $opportunity): ?>
@@ -43,9 +46,13 @@
 		</div>
 		
 		<div class="details">
-			<a href="<?= @route('view=opportunity&id='. $opportunity->id) ?>">
-				View Opportunity
-			</a>
+			<a href="<?= @route('view=opportunity&id='. $opportunity->id) ?>">View Opportunity</a>
+			<? if ($org->user_id == $user->id): ?>
+				<form action="<?= @route('view=opportunity&id='. $opportunity->id) ?>" method="post" class="-koowa-form">
+					<input type="hidden" name="enabled" value="0" />
+					<button>Delete</button>
+				</form>
+			<? endif; ?>
 		</div>
 		
 		<div class="clear"></div>

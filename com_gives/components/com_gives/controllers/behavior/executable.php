@@ -9,7 +9,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
 	
 		if ($caller == 'volunteer' || 
 			$caller == 'organization' || 
-			$caller = 'opportunity')
+			$caller == 'opportunity')
             return true;
 
         return parent::canAdd($context);
