@@ -17,4 +17,8 @@
 	<?= ($organization->phone)? @text('Phone') .': '. $organization->phone.'<br/>':'' ?>
 	<?= ($organization->fax)? @text('Fax') .': '. $organization->fax.'<br/>':'' ?>
 	<a href="mailto:<?=$organization->email?>"><?=$organization->contact ?></a><br/>
+	<? if ($organization->website): ?>
+		<a href="<?= strpos($organization->website, '://')? '' : 'http://' ?><?= $organization->website ?>" target="_blank">
+			<?= $organization->website ?></a>
+	<? endif; ?>
 </div>
