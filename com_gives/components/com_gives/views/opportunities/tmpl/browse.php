@@ -60,3 +60,5 @@
 	<li>We currently have no opportunities listed.</li>
 <? endif; ?>
 </ul>
+
+<?= @helper('paginator.pagination', array('total' => $total)); ?>

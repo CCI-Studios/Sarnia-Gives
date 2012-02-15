@@ -20,13 +20,14 @@ class ComGivesControllerOpportunity extends ComDefaultControllerDefault
     
     public function getRequest()
     {
-    	if ($this->_request->layout === 'map' && is_numeric($this->_request->distance)) {
-    		$this->_request->sort = 'distance';
-    	}
-    	
-    	$this->_request->enabled = 1;
-    	
-    	return parent::getRequest();
+        if ($this->_request->layout === 'map' && is_numeric($this->_request->distance)) {
+            $this->_request->sort = 'distance';
+        } elseif ($this->_request->layout === 'browse') {
+            $this->_request->limit = 10;
+        }
+	 
+        $this->_request->enabled = 1;
+        return parent::getRequest();
     }
     
     public function afterSave(KCommandContext $context)
