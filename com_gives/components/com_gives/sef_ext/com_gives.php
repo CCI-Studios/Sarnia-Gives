@@ -97,6 +97,9 @@ switch ($view) {
 			} elseif ($layout === 'map') {
 				$title[] = 'map-search';
 				shRemoveFromGETVarsList('layout');
+			} elseif($layout === 'browse') {
+				$title[] = 'browse';
+				shRemoveFromGETVarsList('layout');
 			}
 		} else {
 			// nothing else

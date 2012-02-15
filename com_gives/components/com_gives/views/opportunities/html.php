@@ -55,6 +55,7 @@ class ComGivesViewOpportunitiesHtml extends ComGivesViewHtml
 		} elseif ($this->getLayout() === 'map') {
 			$this->assign('address', KRequest::get('get.address', 'string'));
 			$this->assign('distance', KRequest::get('get.distance', 'string'));
+		} elseif ($this->getLayout() === 'browse') {
 		}
 		
 		return parent::display();
