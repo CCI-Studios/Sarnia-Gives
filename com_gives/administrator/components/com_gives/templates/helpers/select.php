@@ -8,7 +8,7 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$config->append(array(
 			'name'		=> 'interests',
 			'text'		=> 'text',
-			'key'		=> 'value',
+			'key' 		=> 'value',
 		))->append(array(
 			'selected'	=> $config->{$config->name},
 		));
@@ -36,7 +36,7 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$config->append(array(
 			'name'		=> 'locations',
 			'text'		=> 'text',
-			'key'		=> 'value',
+			'key' 		=> 'value',
 		))->append(array(
 			'selected'	=> $config->{$config->name},
 		));
@@ -66,7 +66,7 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$config->append(array(
 			'name'		=> 'skills',
 			'text'		=> 'text',
-			'key'		=> 'value'
+			'key' 		=> 'value'
 		))->append(array(
 			'selected'	=> $config->{$config->name},
 		));
@@ -81,6 +81,7 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$options[] = new KConfig(array('text'=>"Event Coordination", 'value'=>"Event Coordination"));
 		$options[] = new KConfig(array('text'=>"Fundraising", 'value'=>"Fundraising"));
 		$options[] = new KConfig(array('text'=>"General Administration", 'value'=>"General Administration"));
+		$options[] = new KConfig(array('text'=>"Computer Basics", 'value'=>"Computer Basics"));
 		$options[] = new KConfig(array('text'=>"IT", 'value'=>"IT"));
 		$options[] = new KConfig(array('text'=>"Legal", 'value'=>"Legal"));
 		$options[] = new KConfig(array('text'=>"Management Consulting", 'value'=>"Management Consulting"));
@@ -102,12 +103,12 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 	{
 		$config = new KConfig($config);
 		$config->append(array(
-			'list' 		=> null,
-			'name'   	=> 'id',
-			'attribs'	=> array(),
-			'key'		=> 'id',
-			'text'		=> 'title',
-			'selected'	=> null,
+			'list'     		=> null,
+			'name'     	=> 'id',
+			'attribs'  	=> array(),
+			'key'      		=> 'id',
+			'text'     		=> 'title',
+			'selected' 	=> null,
 			'translate'	=> false,
 			
 			'select_all'	=> false
