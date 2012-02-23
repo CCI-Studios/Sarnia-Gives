@@ -60,3 +60,5 @@ ul li {
 b, strong {
 	font-weight: 500;
 }
+
+table.joomlatable tr td:first-child { display: none; }
