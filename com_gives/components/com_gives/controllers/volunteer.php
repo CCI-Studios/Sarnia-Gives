@@ -34,7 +34,7 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 		$row	 = parent::_actionRead($context);
 		
 		if (!isset($request->id))
-			$request->id = KFactory::get('lib.joomla.user')->id;
+			$request->id = JFactory::getUser()->id;
 			
 		$me = $this->getModel()->getMe();
 			
@@ -44,7 +44,7 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 			else 
 				$message = "You cannot view other volunteers profiles.";
 				
-			KFactory::get('lib.joomla.application')
+			JFactory::getApplication()
 				->redirect(JRoute::_('/'), JText::_($message), 'error');
 			return $row;
 		}

@@ -23,7 +23,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
 			$caller == 'organization' ||
 			$caller == 'opportunity') {
 			
-			$me = KFactory::get('lib.joomla.user');
+			$me = JFactory::getUser();
 			$row = $this->getModel()->getItem();
 			
 			if ($caller == 'opportunity') {

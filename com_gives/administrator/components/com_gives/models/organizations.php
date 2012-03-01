@@ -37,7 +37,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 	protected function _buildQueryWhere(KDatabaseQuery $query)
 	{
 		$state = $this->_state;
-		$app = KFactory::get('lib.joomla.application');
+		$app = JFactory::getApplication();
 	
 		if ($app->getName() == 'site' && isset($state->draft)) {
 			$query->where('tbl.enabled', '=', 1);
@@ -58,7 +58,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 	public function getMe()
 	{
 		if (!isset($this->_me)) {
-			$user = KFactory::get('lib.joomla.user');
+			$user = JFactory::getUser();
 			
 			$table = $this->getTable();
 			$query = $table->getDatabase()->getQuery();
@@ -89,7 +89,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		if ($data->email === '') {
 			$errors[] = JText::_('An email address is required.');
 		} else {
-			$user = KFactory::get('lib.joomla.user');
+			$user = JFactory::getUser();
 			
 			$db = $this->getTable()->getDatabase();
 			$query = $db->getQuery();

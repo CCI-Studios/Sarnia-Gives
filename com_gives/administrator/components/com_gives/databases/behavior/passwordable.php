@@ -12,7 +12,7 @@ class ComGivesDatabaseBehaviorPasswordable extends KDatabaseBehaviorAbstract
 		$confirm = $context->data->confirm;
 
 		if ($password && $password == $confirm) {
-			$user = KFactory::get('lib.joomla.user');
+			$user = JFactory::getUser();
 			$user->password = JUserHelper::getCryptedPassword($password);
 			$user->save();
 		} else {
