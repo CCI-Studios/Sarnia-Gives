@@ -73,7 +73,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 		if ($admins === '')
 			return;
 		
-		$view = K$this->getService("com://admin/default.template.default");
+		$view = $this->getService('com://admin/default.template.default');
 		$view->loadIdentifier('com://admin/gives.view.organization.email_admin', array(
 			'name'	=> $name,
 			'title' => $title,
