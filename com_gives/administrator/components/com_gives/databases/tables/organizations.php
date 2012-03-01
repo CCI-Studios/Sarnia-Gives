@@ -5,12 +5,12 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
     
     protected function _initialize(KConfig $config)
     {
-        $reg = KDatabaseBehavior::factory('com://admin/gives.database.behavior.registerable', array(
+        $reg = $this->getService('com://admin/gives.database.behavior.registerable', array(
 			'name'	=> array('contact'),
 			'email'	=> 'contact_email',
 		));
         
-        $uploadable = KDatabaseBehavior::factory('com://admin/gives.database.behavior.uploadable', array(
+        $uploadable = $this->getService('com://admin/gives.database.behavior.uploadable', array(
         	'fieldname'	=> 'logo',
         	'thumbs'	=> array(
         		array('width'=>50,'height'=>50,'prefix'=>'small'),
@@ -20,7 +20,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
         ));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg, $uploadable, "editable", 'com://admin/gives.database.behavior.passwordable')
+		   'behaviors'	=> array($reg, $uploadable, "editable", 'passwordable')
 		));
         
         parent::_initialize($config);

@@ -5,12 +5,12 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
  
 	protected function _initialize(KConfig $config)
 	{
-		$reg = KDatabaseBehavior::factory('com://admin/gives.database.behavior.registerable', array(
+		$reg = $this->getService('com://admin/gives.database.behavior.registerable', array(
 		   'name'	=> array('first_name', 'last_name')
 		));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg, 'com://admin/gives.database.behavior.editable', 'com://admin/gives.database.behavior.passwordable')
+		   'behaviors'	=> array($reg, 'editable', 'passwordable')
 		));
 		
 		parent::_initialize($config);
