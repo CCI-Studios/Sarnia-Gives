@@ -42,7 +42,7 @@
 				<?= @helper('form.text', array('name'=>'city')) ?>
 				<div class="field">
 					<div class="label"><label for=""><?= @text('Province') ?>:</label></div>
-					<div class="input"><?= @helper('site::com.gives.template.helper.listbox.provinces', array()) ?></div>
+					<div class="input"><?= @helper('com://site/gives.template.helper.listbox.provinces', array()) ?></div>
 				</div>
 				<?= @helper('form.text', array('name'=>'postal')) ?>
 				<?= @helper('form.text', array('name'=>'phone')) ?>
@@ -50,7 +50,7 @@
 				
 				<div class="field">
 					<div class="label"><label><?=@text('Special Event')?>:</label></div>
-					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'event'))?></div>
+					<div class="input"><?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'event'))?></div>
 				</div>
 
 				<div class="field">
@@ -69,7 +69,7 @@
 			<?= @helper('tabs.endPanel') ?>
 			
 			<?= @helper('tabs.startPanel', array('title'=>'Description')) ?>
-				<?= @helper('admin::com.default.template.helper.editor.display', array(
+				<?= @helper('com://admin/default.template.helper.editor.display', array(
 					'name'=>'description', 'height'=>150, 'buttons'=>false)) ?>
 			<?= @helper('tabs.endPanel') ?>
 		
@@ -91,12 +91,12 @@
 			
 				<div class="field">
 					<div class="label"><label><?=@text('License')?>:</label></div>
-					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'license'))?></div>
+					<div class="input"><?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'license'))?></div>
 				</div>
 			
 				<div class="field">
 					<div class="label"><label><?=@text('Police Check')?>:</label></div>
-					<div class="input"><?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'police_check'))?></div>
+					<div class="input"><?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'police_check'))?></div>
 				</div>
 			
 				<?= @helper('form.text', array('name'=>'min_age'))?>

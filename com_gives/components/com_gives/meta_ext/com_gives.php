@@ -60,7 +60,7 @@ switch ($view) {
 		if ($layout == 'form') {
 			$title[] = 'Organization Registration';
 		} else {
-			$model = KFactory::tmp('admin::com.gives.model.organization');
+			$model = $this->getService('com://admin/gives.model.organization');
 			$org = $model->set('id', $id)->getitem();
 			
 			$title[] = $org->title;
@@ -81,9 +81,9 @@ switch ($view) {
 		if ($layout == 'form') {
 			$title[] = 'New Opportunity';
 		} else {
-			$opps = KFactory::tmp('admin::com.gives.model.opportunity');
+			$opps = $this->getService('com://admin/gives.model.opportunity');
 			$opp = $opps->set('id', $id)->getitem();
-			$orgs =  KFactory::tmp('admin::com.gives.model.organizations');
+			$orgs = $this->getService('com://admin/gives.model.organizations');
 			$org = $orgs->set('id', $opp->gives_organization_id)->getItem();
 			
 			$title[] = $org->title .' - '. $opp->title;
@@ -93,13 +93,13 @@ switch ($view) {
 		if ($layout === 'form') {
 			$title[] = 'Volunteer Registration';
 		} elseif ($layout === 'edit') {
-			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$model = $this->getService('com://admin/gives.model.volunteers');
 			$me = $model->getMe();
 			
 			$title[] = $me->display_name();
 			$title[] = 'Edit Profile'; 
 		} else { // default
-			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$model = $this->getService('com://admin/gives.model.volunteers');
 			$me = $model->getMe();
 			
 			$title[] = $me->display_name();
@@ -109,13 +109,13 @@ switch ($view) {
 		if ($layout === 'form') {
 			$title[] = 'Volunteer Registration';
 		} elseif ($layout === 'edit') {
-			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$model = $this->getService('com://admin/gives.model.volunteers');
 			$me = $model->getMe();
 			
 			$title[] = $me->display_name();
 			$title[] = 'Edit Profile'; 
 		} else { // default
-			$model = KFactory::tmp('admin::com.gives.model.volunteers');
+			$model = $this->getService('com://admin/gives.model.volunteers');
 			$me = $model->getMe();
 			
 			$title[] = $me->display_name();

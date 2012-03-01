@@ -35,7 +35,7 @@
 	
 	<h2 class="clear">My Opportunities</h2>
 	<? if ($volunteer->interests || $volunteer->skills || $volunteer->locations): ?>
-		<?= KFactory::get('site::com.gives.controller.opportunities')
+		<?= $this->getService('com://site/gives.controller.opportunities')
 			->set('interests', $volunteer->interest)
 			->set('skills', $volunteer->skills)
 			->set('locations', $volunteer->locations)

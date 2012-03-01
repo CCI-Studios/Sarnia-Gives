@@ -6,7 +6,7 @@ class JElementOrganization extends JElement
 	
 	public function fetchElement($name, $value, &$node, $control_name)
 	{
-		$lb = KFactory::tmp('admin::com.gives.template.helper.listbox');
+		$lb = $this->getService('com://admin/gives.template.helper.listbox');
 		return $lb->organizations(array('name'=>$control_name.'['.$name.']', 'selected'=>$value));
 	}
 }

@@ -5,12 +5,12 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
     
     protected function _initialize(KConfig $config)
     {
-        $reg = KDatabaseBehavior::factory('admin::com.gives.database.behavior.registerable', array(
+        $reg = KDatabaseBehavior::factory('com://admin/gives.database.behavior.registerable', array(
 			'name'	=> array('contact'),
 			'email'	=> 'contact_email',
 		));
         
-        $uploadable = KDatabaseBehavior::factory('admin::com.gives.database.behavior.uploadable', array(
+        $uploadable = KDatabaseBehavior::factory('com://admin/gives.database.behavior.uploadable', array(
         	'fieldname'	=> 'logo',
         	'thumbs'	=> array(
         		array('width'=>50,'height'=>50,'prefix'=>'small'),
@@ -20,7 +20,7 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
         ));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg, $uploadable, "editable", 'admin::com.gives.database.behavior.passwordable')
+		   'behaviors'	=> array($reg, $uploadable, "editable", 'com://admin/gives.database.behavior.passwordable')
 		));
         
         parent::_initialize($config);
@@ -55,8 +55,8 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 		if ($admins === '')
 			return;
 		
-		$view = KFactory::tmp("admin::com.default.template.default");
-		$view->loadIdentifier('admin::com.gives.view.organization.email_user', array(
+		$view = $this->getService('com://admin/default.template.default');
+		$view->loadIdentifier('com://admin/gives.view.organization.email_user', array(
 			'name'	=> $name,
 			'title'	=> $organization,
 			'email'	=> $email,
@@ -73,8 +73,8 @@ class ComGivesDatabaseTableOrganizations extends KDatabaseTableAbstract
 		if ($admins === '')
 			return;
 		
-		$view = KFactory::tmp("admin::com.default.template.default");
-		$view->loadIdentifier('admin::com.gives.view.organization.email_admin', array(
+		$view = K$this->getService("com://admin/default.template.default");
+		$view->loadIdentifier('com://admin/gives.view.organization.email_admin', array(
 			'name'	=> $name,
 			'title' => $title,
 		));

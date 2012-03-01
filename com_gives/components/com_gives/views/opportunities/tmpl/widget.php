@@ -2,7 +2,7 @@
 
 <ul class="opportunity_list">
 	<? foreach ($opportunities as $opportunity): ?>
-	<? $org = KFactory::tmp('admin::com.gives.model.organization')
+	<? $org = $this->getService('com://admin/gives.model.organization')
 		->set('id', $opportunity->gives_organization_id)
 		->getItem();
 	?>

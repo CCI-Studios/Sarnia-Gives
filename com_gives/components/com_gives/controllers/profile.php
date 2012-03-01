@@ -12,7 +12,7 @@ class ComGivesControllerProfile extends ComDefaultControllerResource
 			return true;
 		}
 		
-		$row = KFactory::get('site::com.gives.model.volunteers')
+		$row = $this->getService('com://site/gives.model.volunteers')
 				->set('user_id', $user->id)->getList();
 		if (count($row) == 1) {
 			KFactory::get('lib.joomla.application')
@@ -20,7 +20,7 @@ class ComGivesControllerProfile extends ComDefaultControllerResource
 			return true;
 		}
 		
-		$row = KFactory::get('site::com.gives.model.organizations')
+		$row = $this->getService('com://site/gives.model.organizations')
 				->set('user_id', $user->id)->getList();
 
 		if (count($row) == 1) {

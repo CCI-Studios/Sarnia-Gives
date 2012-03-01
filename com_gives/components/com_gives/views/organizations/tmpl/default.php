@@ -4,7 +4,7 @@
 
 <h1 class="componentheading">Directory</h1>
 
-<?= @template('site::com.gives.views.list.search_letters', 
+<?= @template('com://site/gives.views.list.search_letters', 
 	array('letters' => $letters)); ?>
 
 <ul class="organization_list">

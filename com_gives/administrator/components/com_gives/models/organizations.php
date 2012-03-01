@@ -18,7 +18,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 	
 	public function getLetters() 
 	{
-		$database = KFactory::get($this->getTable())->getDatabase();
+		$database = $this->getTable()->getDatabase();
 		
 		$query = $database->getQuery()
 			->distinct()

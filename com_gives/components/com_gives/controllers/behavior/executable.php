@@ -27,7 +27,7 @@ class ComGivesControllerBehaviorExecutable extends ComDefaultControllerBehaviorE
 			$row = $this->getModel()->getItem();
 			
 			if ($caller == 'opportunity') {
-				$model = KFactory::get('site::com.gives.model.organizations');
+				$model = $this->getService('com://site/gives.model.organizations');
 				$org = $model->set('id', $row->gives_organization_id)->getItem();
 				
 				return $me->id === $org->user_id;

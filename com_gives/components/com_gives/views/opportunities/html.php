@@ -8,45 +8,45 @@ class ComGivesViewOpportunitiesHtml extends ComGivesViewHtml
 		$params = &JComponentHelper::getParams('com_gives');
 		$this->assign('params', $params);
 		
-		$this->assign('user', KFactory::get('site::com.gives.model.volunteers')->getMe());
+		$this->assign('user', $this->getService('com://site/gives.model.volunteers')->getMe());
 
 		if ($this->getLayout() == 'default') {
-			$this->assign('opps_is', KFactory::tmp('site::com.gives.model.opportunities')
+			$this->assign('opps_is', $this->getService('com://site/gives.model.opportunities')
 				->set('enabled', '1')
 				->set('interests', KRequest::get('get.interests', 'raw'))
 				->set('skills', KRequest::get('get.skills', 'raw'))
 				->set('locations', null)
 				->getList());
 				
-			$this->assign('opps_il', KFactory::tmp('site::com.gives.model.opportunities')
+			$this->assign('opps_il', $this->getService('com://site/gives.model.opportunities')
 				->set('enabled', '1')
 				->set('interests', KRequest::get('get.interests', 'raw'))
 				->set('skills', null)
 				->set('locations', KRequest::get('get.locations', 'raw'))
 				->getList());
 				
-			$this->assign('opps_sl', KFactory::tmp('site::com.gives.model.opportunities')
+			$this->assign('opps_sl', $this->getService('com://site/gives.model.opportunities')
 				->set('enabled', '1')
 				->set('interests', null)
 				->set('skills', KRequest::get('get.skills', 'raw'))
 				->set('locations', KRequest::get('get.locations', 'raw'))
 				->getList());
 				
-			$this->assign('opps_i', KFactory::tmp('site::com.gives.model.opportunities')
+			$this->assign('opps_i', $this->getService('com://site/gives.model.opportunities')
 				->set('enabled', '1')
 				->set('interests', KRequest::get('get.interests', 'raw'))
 				->set('skills', null)
 				->set('locations', null)
 				->getList());
 				
-			$this->assign('opps_s', KFactory::tmp('site::com.gives.model.opportunities')
+			$this->assign('opps_s', $this->getService('com://site/gives.model.opportunities')
 				->set('enabled', '1')
 				->set('interests', null)
 				->set('skills', KRequest::get('get.skills', 'raw'))
 				->set('locations', null)
 				->getList());
 				
-			$this->assign('opps_l', KFactory::tmp('site::com.gives.model.opportunities')
+			$this->assign('opps_l', $this->getService('com://site/gives.model.opportunities')
 				->set('enabled', '1')
 				->set('interests', null)
 				->set('skills', null)
