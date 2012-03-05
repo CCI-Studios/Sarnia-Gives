@@ -43,17 +43,18 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		
 		$options = array();
 		
+		$options[] = new KConfig(array('text'=>"Location Flexible", 'value'=>"Location Flexible"));
 		$options[] = new KConfig(array('text'=>"Brooke-Alvinston", 'value'=>"Brooke-Alvinston"));
 		$options[] = new KConfig(array('text'=>"Dawn-Euphemia", 'value'=>"Dawn-Euphemia"));
 		$options[] = new KConfig(array('text'=>"Enniskillen", 'value'=>"Enniskillen"));
 		$options[] = new KConfig(array('text'=>"Lambton Shores", 'value'=>"Lambton Shores"));
-		$options[] = new KConfig(array('text'=>"Location Flexible", 'value'=>"Location Flexible"));
 		$options[] = new KConfig(array('text'=>"Oil Springs", 'value'=>"Oil Springs"));
 		$options[] = new KConfig(array('text'=>"Petrolia", 'value'=>"Petrolia"));
 		$options[] = new KConfig(array('text'=>"Plympton Wyoming", 'value'=>"Plympton Wyoming"));
 		$options[] = new KConfig(array('text'=>"Point Edward", 'value'=>"Point Edward"));
 		$options[] = new KConfig(array('text'=>"Sarnia", 'value'=>"Sarnia"));
 		$options[] = new KConfig(array('text'=>"St. Clair", 'value'=>"St. Clair"));
+		$options[] = new KConfig(array('text'=>"Warwick Township", 'value'=>"Warwick Township"));
 		
 		$config->list = $options;
 		
