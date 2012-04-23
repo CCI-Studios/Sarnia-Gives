@@ -7,14 +7,14 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
         parent::__construct($config);
         
         $this->registerCallback('after.save', array($this, 'afterSave'));
-		$command = KFactory::get('site::com.gives.command.validate');
+		$command = $this->getService('com://site/gives.command.validate');
 		$this->getCommandChain()->enqueue($command);
     }
     
     protected  function _initialize(KConfig $config)
     {
         $config->append(array(
-            'behaviors' => array('site::com.default.controller.behavior.editable')
+            'behaviors' => array('com://site/default.controller.behavior.editable')
         ));
         
         parent::_initialize($config);

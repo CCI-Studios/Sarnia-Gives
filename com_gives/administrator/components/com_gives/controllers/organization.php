@@ -7,7 +7,7 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
 	{
 		parent::__construct($config);
 		
-		//$command = KFactory::get('admin::com.gives.command.validate');
+		//$command = $this->getService('com://admin/gives.command.validate');
 		//$this->getCommandChain()->enqueue($command);
 	}
 }

@@ -21,7 +21,7 @@
 			<input type="text" name="city" id="field_city" value="<?=$organization->city?>" /><br/>
 			
 			<label for="field_province" class="mainlabel"><?=@text('Province')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.provinces')?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.provinces')?><br/>
 			
 			<label for="field_postal" class="mainlabel"><?=@text('Postal')?>:</label>
 			<input type="text" name="postal" id="field_postal" value="<?=$organization->postal?>" /><br/>
@@ -82,10 +82,10 @@
 			
 			<?= $pane->startPanel('Misc', 'availability-pane')?>
 				<label for="field_type" class="mainlabel"><?=@text('Type')?>:</label>
-				<?=@helper('admin::com.gives.template.helper.listbox.organizationTypes')?><br/>
+				<?=@helper('com://admin/gives.template.helper.listbox.organizationTypes')?><br/>
 				
 				<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter')?>:</label>
-				<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'newsletter'))?><br/>
+				<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'newsletter'))?><br/>
 				
 				<label for="field_user_id" class="mainlabel"><?=@text('User ID')?>:</label>
 				<input type="text" name="user_id" id="field_user_id" value="<?=$organization->user_id?>" />

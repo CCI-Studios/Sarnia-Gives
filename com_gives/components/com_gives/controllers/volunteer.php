@@ -6,20 +6,16 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
     {
         parent::__construct($config);
         
-		$this->registerCallback(
-			array('before.edit', 'before.apply', 'before.save'), 
-			array($this, 'checkPermission'));
-		$this->registerCallback(
-			array('after.save'),
-			array($this, 'afterSave'));
-		$command = KFactory::get('site::com.gives.command.validate');
+		$this->registerCallback(array('before.edit', 'before.apply', 'before.save'), array($this, 'checkPermission'));
+		$this->registerCallback(array('after.save'), array($this, 'afterSave'));
+		$command = $this->getService('com://site/gives.command.validate');
 		$this->getCommandChain()->enqueue($command);
     }
     
 	protected  function _initialize(KConfig $config)
     {
         $config->append(array(
-            'behaviors' => array('site::com.default.controller.behavior.editable')
+            'behaviors' => array('com://site/default.controller.behavior.editable')
         ));
 
         parent::_initialize($config);
@@ -38,7 +34,7 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 		$row	 = parent::_actionRead($context);
 		
 		if (!isset($request->id))
-			$request->id = KFactory::get('lib.joomla.user')->id;
+			$request->id = JFactory::getUser()->id;
 			
 		$me = $this->getModel()->getMe();
 			
@@ -48,7 +44,7 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 			else 
 				$message = "You cannot view other volunteers profiles.";
 				
-			KFactory::get('lib.joomla.application')
+			JFactory::getApplication()
 				->redirect(JRoute::_('/'), JText::_($message), 'error');
 			return $row;
 		}

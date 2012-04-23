@@ -43,7 +43,7 @@ class ComGivesModelVolunteers extends ComDefaultModelDefault
 		if ($data->email === '') {
 			$errors[] = JText::_('An email address is required.');
 		} elseif (isset($data->email)) {
-			$user = KFactory::get('lib.joomla.user');
+			$user = JFactory::getUser();
 			
 			$db = $this->getTable()->getDatabase();
 			$query = $db->getQuery();
@@ -64,7 +64,7 @@ class ComGivesModelVolunteers extends ComDefaultModelDefault
 	public function getMe()
 	{
 		if (!isset($this->_me)) {
-			$user = KFactory::get('lib.joomla.user');
+			$user = JFactory::getUser();
 			
 			$table = $this->getTable();
 			$query = $table->getDatabase()->getQuery();
