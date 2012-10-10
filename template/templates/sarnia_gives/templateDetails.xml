@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<install version="1.5" type="template">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="2.5" type="template" method="upgrade">
 	<name>sarnia_gives</name>
 	<version>1.0.0</version>
 	<creationDate>May 30, 2011</creationDate>
@@ -27,17 +28,25 @@
 		<folder>resources</folder>
 	</files>
 
-	<positions>	  
+	<positions>
 	    <position>bottom</position>
 	    <position>footer</position>
-	    <position>header</position>  
+	    <position>header</position>
 		<position>hidden</position>
 		<position>sidebar</position>
 		<position>scroll</position>
 		<position>top</position>
 	</positions>
 
-	<params>
-		<param type="text" name="login_id" label="Login Menu id" description="Item id of the login menu item" />
-	</params>
-</install>
+	 <config>
+		  <fields name="params">
+		  	<fieldset name="layout" label="Layout">
+	  			<field
+	  				type="text"
+	  				name="login_id"
+	  				label="Login Menu id"
+	  				description="Item id of the login menu item" />
+			</fieldset>
+		  </fields>
+	  </config>
+</extension>
