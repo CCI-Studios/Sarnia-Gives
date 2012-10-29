@@ -11,12 +11,8 @@
     <description>COM_GIVES_DESCRIPTION</description>
 
     <install><sql>
-		<file charset="utf8" driver="mysql">install/install.sql</file>
+		<file charset="utf8" driver="mysql">install/install.utf8.sql</file>
 	</sql></install>
-
-	<uninstall><sql>
-		<file charset="utf8" driver="mysql">install/uninstall.sql</file>
-	</sql></uninstall>
 
     <administration>
         <menu view="gives" img="media/com_gives/images/icons/logo.png" link="option=com_gives">Sarnia Gives</menu>
