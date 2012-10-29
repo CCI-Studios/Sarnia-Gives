@@ -174,8 +174,8 @@ $analytics = "UA-24737487-1";
 			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
 				g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
 				s.parentNode.insertBefore(g,s)}(document,"script"));
-	  </script>
-		<script src="/templates/<?= $this->template ?>/js/scripts.min.js"></script>
+	  	</script>
+		<script src="/templates/<?= $this->template ?>/js/scripts-ck.js"></script>
 	<?php endif; ?>
 </body>
 </html>

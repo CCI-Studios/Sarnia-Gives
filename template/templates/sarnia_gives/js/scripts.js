@@ -1,7 +1,7 @@
 /**
- * @depends columns.js
- * @depends dropmenu.js
- * @depends html5.js
- * @depends scroller.js
- * @depends text_size.js
+ * @codekit-prepend "columns.js"
+ * @codekit-prepend "dropmenu.js"
+ * @codekit-prepend "html5.js"
+ * @codekit-prepend "scroller.js"
+ * @codekit-prepend "text_size.js"
  */
