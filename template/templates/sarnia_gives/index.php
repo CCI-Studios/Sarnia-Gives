@@ -163,8 +163,6 @@ $analytics = "UA-24737487-1";
 
 	<!-- load scripts -->
 	<?php if ($testing): ?>
-		<script src="/templates/<?= $this->template ?>/js/columns.js"></script>
-		<script src="/templates/<?= $this->template ?>/js/dropmenu.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/html5.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/scroller.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/text_size.js"></script>
