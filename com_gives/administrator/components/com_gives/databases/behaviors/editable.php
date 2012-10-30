@@ -5,7 +5,7 @@ class ComGivesDatabaseBehaviorEditable extends KDatabaseBehaviorAbstract
     
     public function canEdit()
     {
-        $user = KFactory::get('lib.joomla.user');
+        $user = JFactory::getUser();
         if ($user->gid >= 23) // yeah admin
             return true;
             

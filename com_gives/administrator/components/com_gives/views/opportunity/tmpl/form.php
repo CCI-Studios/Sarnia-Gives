@@ -18,7 +18,7 @@
 			<input type="text" name="city" id="field_city" value="<?=$opportunity->city?>" /><br/>
 			
 			<label for="field_province" class="mainlabel"><?=@text('Province')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.provinces')?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.provinces')?><br/>
 			
 			<label for="field_postal" class="mainlabel"><?=@text('Postal')?>:</label>
 			<input type="text" name="postal" id="field_postal" value="<?=$opportunity->postal?>" /><br/>
@@ -58,7 +58,7 @@
 		
 		<?= $pane->startPanel('Requirements', 'requirements-pane') ?>
 			<label for="field_event" class="mainlabel"><?=@text('For Event')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'event'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'event'))?><br/>
 
 			<!--
 			<label for="field_event_date" class="mainlabel"><?=@text('Event Date')?>:</label>
@@ -72,10 +72,10 @@
 			<input type="text" name="max_hours" id="field_max_hours" value="<?=$opportunity->max_hours?>" /><br/>
 			
 			<label for="field_license" class="mainlabel"><?=@text('License')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'license'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'license'))?><br/>
 			
 			<label for="field_police_check" class="mainlabel"><?=@text('Police Check')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'police_check'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'police_check'))?><br/>
 			
 			<label for="field_min_age" class="mainlabel"><?=@text('Min Age')?>:</label>
 			<input type="text" name="min_age" id="field_min_age" value="<?=$opportunity->min_age?>" /><br/>

@@ -26,8 +26,8 @@ class ComGivesDatabaseTableOpportunities extends KDatabaseTableAbstract
 		if ($admins === '')
 			return;
 		
-		$view = KFactory::tmp("admin::com.default.template.default");
-		$view->loadIdentifier('admin::com.gives.view.opportunity.email_admin', array(
+		$view = $this->getService('com://admin/default.template.default');
+		$view->loadIdentifier('com://admin/gives.view.opportunity.email_admin', array(
 			'title'	=> $title
 		));
 		

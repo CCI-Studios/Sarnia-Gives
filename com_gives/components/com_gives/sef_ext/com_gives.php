@@ -9,14 +9,14 @@ $dosef = shInitializePlugin( $lang, $shLangName, $shLangIso, $option);
 // ------------------ standard plugin initialize function - don't change ---------------------------
 
 shRemoveFromGETVarsList('view');
-$slug = KFactory::tmp('lib.koowa.filter.slug');
+$slug = KService::get('koowa:filter.slug');
 
 if (!isset($view))
 	$view = "";
 
 switch ($view) {
 	case 'organization':
-		$model	= KFactory::tmp('site::com.gives.model.organization');
+		$model	= KService::get('com://site/gives.model.organization');
 		if (isset($layout) && $layout === 'edit' && isset($id)) {
 			$title[] = JText::_('organization');
 			$title[] = JText::_('edit');
@@ -62,7 +62,7 @@ switch ($view) {
 		$title[] = $view;
 		break;
 	case 'opportunity':
-		$model	= KFactory::tmp('site::com.gives.model.opportunities');
+		$model = KService::get('com://site/gives.model.opportunities');
 		if (isset($layout)) {
 			if ($layout == 'form' && isset($id)) {
 				$title[] = $view;

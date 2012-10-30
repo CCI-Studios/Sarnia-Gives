@@ -1,30 +1,10 @@
 <?php
-/* commands */
-KFactory::map('site::com.gives.command.validate',
-	'admin::com.gives.command.validate');
-
-/* models */
-KFactory::map('site::com.gives.model.opportunities',
-	'admin::com.gives.model.opportunities');
-KFactory::map('site::com.gives.model.organizations',
-	'admin::com.gives.model.organizations');
-KFactory::map('site::com.gives.model.volunteers',
-	'admin::com.gives.model.volunteers');
-
-/* tables */
-KFactory::map('site::com.gives.database.table.volunteers',
-	'admin::com.gives.database.table.volunteers');
-
-/* rows */
-KFactory::map('site::com.gives.database.row.volunteer',
-	'admin::com.gives.database.row.volunteer');
-
-/* controller behaviors */
-KFactory::map('site::com.default.controller.behavior.editable',
-	'admin::com.default.controller.behavior.editable');
-	
-/* template helpers */
-KFactory::map('site::com.gives.template.helper.listbox',
-	'admin::com.gives.template.helper.listbox');
-KFactory::map('site::com.gives.template.helper.select',
-	'admin::com.gives.template.helper.select');
+KService::setAlias('com://site/gives.command.validate',					'com://admin/gives.command.validate');
+KService::setAlias('com://site/gives.model.opportunities',				'com://admin/gives.model.opportunities');
+KService::setAlias('com://site/gives.model.organizations',				'com://admin/gives.model.organizations');
+KService::setAlias('com://site/gives.model.volunteers',					'com://admin/gives.model.volunteers');
+KService::setAlias('com://site/gives.database.table.volunteers', 		'com://admin/gives.database.table.volunteers');
+KService::setAlias('com://site/gives.database.row.volunteer',			'com://admin/gives.database.row.volunteer');
+KService::setAlias('com://site/default.controller.behavior.editable',	'com://admin/default.controller.behavior.editable');
+KService::setAlias('com://site/gives.template.helper.listbox',			'com://admin/gives.template.helper.listbox');
+KService::setAlias('com://site/gives.template.helper.select',			'com://admin/gives.template.helper.select');

@@ -21,7 +21,7 @@
 			<input type="text" name="city" id="field_city" value="<?=$volunteer->city?>" /><br/>
 			
 			<label for="field_province" class="mainlabel"><?=@text('Province')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.provinces')?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.provinces')?><br/>
 			
 			<label for="field_postal" class="mainlabel"><?=@text('Postal')?>:</label>
 			<input type="text" name="postal" id="field_postal" value="<?=$volunteer->postal?>" /><br/>
@@ -33,10 +33,10 @@
 			<input type="text" name="email" id="field_email" value="<?=$volunteer->email?>" /><br/>
 			
 			<label for="field_type" class="mainlabel"><?=@text('Type')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.volunteerTypes')?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.volunteerTypes')?><br/>
 			
 			<label for="field_required" class="mainlabel"><?=@text('Required')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'required'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'required'))?><br/>
 			
 			<label for="field_agency" class="mainlabel"><?=@text('Agency')?>:</label>
 			<input type="text" name="agency" id="field_agency" value="<?=$volunteer->agency?>" /><br/>
@@ -52,28 +52,28 @@
 		<?= $pane->startPane('content-pane') ?>
 		<?= $pane->startPanel('Availability', 'availability-pane')?>
 			<label for="field_monday" class="mainlabel"><?=@text('Monday')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'monday'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'monday'))?><br/>
 		
 			<label for="field_tuesday" class="mainlabel"><?=@text('Tuesday')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'tueday'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'tueday'))?><br/>
 		
 			<label for="field_wednesday" class="mainlabel"><?=@text('Wednesday')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'wednesday'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'wednesday'))?><br/>
 		
 			<label for="field_thursday" class="mainlabel"><?=@text('Thursday')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'thursday'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'thursday'))?><br/>
 		
 			<label for="field_friday" class="mainlabel"><?=@text('Friday')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'friday'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'friday'))?><br/>
 		
 			<label for="field_saturday" class="mainlabel"><?=@text('Saturday')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'saturday'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'saturday'))?><br/>
 		
 			<label for="field_sunday" class="mainlabel"><?=@text('Sunday')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'sunday'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'sunday'))?><br/>
 		
 			<label for="field_time_flexible" class="mainlabel"><?=@text('Time Flexible')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'time_flexible'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'time_flexible'))?><br/>
 		<?= $pane->endPanel() ?>
 		
 		<?= $pane->startPanel('Locations', 'locations-pane') ?>
@@ -113,10 +113,10 @@
 		
 		<?= $pane->startPanel('Misc', 'misc-panel') ?>
 			<label for="field_newsletter" class="mainlabel"><?=@text('Newsletter Signup')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'newsletter'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'newsletter'))?><br/>
 			
 			<label for="field_search" class="mainlabel"><?=@text('Include in emergency volunteer list')?>:</label>
-			<?=@helper('admin::com.gives.template.helper.listbox.yesNo', array('name'=>'search'))?><br/>
+			<?=@helper('com://admin/gives.template.helper.listbox.yesNo', array('name'=>'search'))?><br/>
 			
 			<label for="field_user_id" class="mainlabel"><?=@text('User ID')?>:</label>
 			<input type="text" name="user_id" id="field_user_id" value="<?=$volunteer->user_id?>" /><br/>

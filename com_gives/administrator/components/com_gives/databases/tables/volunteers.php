@@ -5,12 +5,12 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
  
 	protected function _initialize(KConfig $config)
 	{
-		$reg = KDatabaseBehavior::factory('admin::com.gives.database.behavior.registerable', array(
+		$reg = $this->getService('com://admin/gives.database.behavior.registerable', array(
 		   'name'	=> array('first_name', 'last_name')
 		));
 		
 		$config->append(array(
-		   'behaviors'	=> array($reg, 'admin::com.gives.database.behavior.editable', 'admin::com.gives.database.behavior.passwordable')
+		   'behaviors'	=> array($reg, 'editable', 'passwordable')
 		));
 		
 		parent::_initialize($config);
@@ -40,8 +40,8 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 	
 	protected function _emailUser($name, $email, $password)
 	{
-		$view = KFactory::tmp("admin::com.default.template.default");
-		$view->loadIdentifier('admin::com.gives.view.volunteer.email_user', array(
+		$view = $this->getService('com://admin/default.template.default');
+		$view->loadIdentifier('com://admin/gives.view.volunteer.email_user', array(
 			'name'	=> $name,
 			'email'	=> $email, 
 			'password' => $password,
@@ -57,8 +57,8 @@ class ComGivesDatabaseTableVolunteers extends KDatabaseTableAbstract
 		if ($admins === '')
 			return;
 		
-		$view = KFactory::tmp("admin::com.default.template.default");
-		$view->loadIdentifier('admin::com.gives.view.volunteer.email_admin', array(
+		$view = $this->getService('com://admin/default.template.default');
+		$view->loadIdentifier('com://admin/gives.view.volunteer.email_admin', array(
 			'name'	=> $name
 		));
 		

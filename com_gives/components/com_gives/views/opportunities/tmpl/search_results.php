@@ -9,7 +9,7 @@
 		continue;
 	} ?>
 	
-	<?	$org = KFactory::tmp('admin::com.gives.model.organization')
+	<?	$org = $this->getService('com://admin/gives.model.organization')
 			->set('id', $opportunity->gives_organization_id)
 			->getItem();
 	?>

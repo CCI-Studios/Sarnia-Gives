@@ -1,126 +1,103 @@
-CREATE TABLE IF NOT EXISTS `#__gives_volunteers` (
-	`gives_volunteer_id` SERIAL,
-	
-	# personal info
-	`first_name`	VARCHAR(250) NOT NULL,
-	`last_name`		VARCHAR(250) NOT NULL,
-	`address`		VARCHAR(250) NOT NULL,
-	`city`			VARCHAR(250) NOT NULL,
-	`province`		VARCHAR(250) NOT NULL,
-	`postal`		VARCHAR(250) NOT NULL,
-	`phone`			VARCHAR(250) NOT NULL,
-	`email`			VARCHAR(250) NOT NULL,
-	`type`			TINYINT(1) NOT NULL,
-	`required`		TINYINT(1) NOT NULL,
-	`agency`		VARCHAR(250) NOT NULL,
-	`hours`			INT NOT NULL,
-	
-	# search info
-	`interests`		TEXT NOT NULL,
-	`skills`		TEXT NOT NULL,
-	`locations`		TEXT NOT NULL,
-	
-	# availability
-	`monday`		VARCHAR(20) NOT NULL,
-	`tuesday`		VARCHAR(20) NOT NULL,
-	`wednesday`		VARCHAR(20) NOT NULL,
-	`thursday`		VARCHAR(20) NOT NULL,
-	`friday`		VARCHAR(20) NOT NULL,
-	`saturday`		VARCHAR(20) NOT NULL,
-	`sunday`		VARCHAR(20) NOT NULL,
-	`time_flexible`	TINYINT(1) NOT NULL,
-	`emergency_list`TINYINT(1) NOT NULL, 
-	
-	# experience
-	`organization1`		VARCHAR(250) NOT NULL,
-	`assignment1`		VARCHAR(250) NOT NULL,
-	`dates1`			VARCHAR(250) NOT NULL,
-	`organization2`		VARCHAR(250) NOT NULL,
-	`assignment2`		VARCHAR(250) NOT NULL,
-	`dates2`			VARCHAR(250) NOT NULL,
-	`organization3`		VARCHAR(250) NOT NULL,
-	`assignment3`		VARCHAR(250) NOT NULL,
-	`dates3`			VARCHAR(250) NOT NULL,
-	
-	`newsletter`		TINYINT(1) NOT NULL,
-	`search`			TINYINT(1) NOT NULL,
-	
-	`user_id`		INT(11) NOT NULL,
-	
-	PRIMARY KEY(`gives_volunteer_id`)
-) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `j25_gives_volunteers` (
+  `gives_volunteer_id` bigint(20) SERIAL,
+  `first_name` varchar(250) NOT NULL,
+  `last_name` varchar(250) NOT NULL,
+  `address` varchar(250) NOT NULL,
+  `city` varchar(250) NOT NULL,
+  `province` varchar(250) NOT NULL,
+  `postal` varchar(250) NOT NULL,
+  `phone` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `type` tinyint(1) NOT NULL,
+  `required` tinyint(1) NOT NULL,
+  `agency` varchar(250) NOT NULL,
+  `hours` int(11) NOT NULL,
+  `monday` varchar(20) NOT NULL,
+  `tuesday` varchar(20) NOT NULL,
+  `wednesday` varchar(20) NOT NULL,
+  `thursday` varchar(20) NOT NULL,
+  `friday` varchar(20) NOT NULL,
+  `saturday` varchar(20) NOT NULL,
+  `sunday` varchar(20) NOT NULL,
+  `time_flexible` tinyint(1) NOT NULL,
+  `emergency_list` tinyint(1) NOT NULL,
+  `other` tinyint(1) NOT NULL,
+  `organization1` varchar(250) NOT NULL,
+  `assignment1` varchar(250) NOT NULL,
+  `dates1` varchar(250) NOT NULL,
+  `organization2` varchar(250) NOT NULL,
+  `assignment2` varchar(250) NOT NULL,
+  `dates2` varchar(250) NOT NULL,
+  `organization3` varchar(250) NOT NULL,
+  `assignment3` varchar(250) NOT NULL,
+  `dates3` varchar(250) NOT NULL,
+  `newsletter` tinyint(1) NOT NULL,
+  `search` tinyint(1) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `interests` text NOT NULL,
+  `locations` text NOT NULL,
+  `skills` text NOT NULL,
+  PRIMARY KEY  (`gives_volunteer_id`),
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `#__gives_organizations` (
-	`gives_organization_id` SERIAL,
-	
-	# organization info
-	`title` 		VARCHAR(250) NOT NULL,
-	`address`		VARCHAR(250) NOT NULL,
-	`city`			VARCHAR(250) NOT NULL,
-	`province`		VARCHAR(250) NOT NULL,
-	`postal`		VARCHAR(250) NOT NULL,
-	`phone`			VARCHAR(250) NOT NULL,
-	`fax`			VARCHAR(250) NOT NULL,
-	`email`			VARCHAR(250) NOT NULL,
-	`website`		VARCHAR(250) NOT NULL,
-	`director`		VARCHAR(250) NOT NULL,
-	`contact`		VARCHAR(250) NOT NULL,
-	`contact_email`	VARCHAR(250) NOT NULL,
-	`contact_title`	VARCHAR(250) NOT NULL,
-	
-	# organization info
-	`created` 	VARCHAR(250) NOT NULL,
-	`type` 		TINYINT(1) NOT NULL,
-	`mission`	TEXT NOT NULL,
-	`description` TEXT NOT NULL,
-	`logo`		VARCHAR(250) NOT NULL,
-	
-	# search 
-	`interests`		TEXT NOT NULL,
-	`skills`		TEXT NOT NULL,
-	`locations`		TEXT NOT NULL,
-	
-	# misc
-	`newsletter`		TINYINT(1) NOT NULL,
-  	`enabled` tinyint(1) NOT NULL default '0',
-	
-	`user_id`			INT(11) NOT NULL
-		
-) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `j25_gives_organizations` (
+  `gives_organization_id` SERIAL,
+  `title` varchar(250) NOT NULL,
+  `address` varchar(250) NOT NULL,
+  `city` varchar(250) NOT NULL,
+  `province` varchar(250) NOT NULL,
+  `postal` varchar(250) NOT NULL,
+  `phone` varchar(250) NOT NULL,
+  `fax` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `website` varchar(250) NOT NULL,
+  `director` varchar(250) NOT NULL,
+  `contact` varchar(250) NOT NULL,
+  `contact_email` varchar(250) NOT NULL,
+  `contact_title` varchar(250) NOT NULL,
+  `created` varchar(250) NOT NULL,
+  `type` tinyint(1) NOT NULL,
+  `mission` text NOT NULL,
+  `description` text NOT NULL,
+  `newsletter` tinyint(1) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `skills` text NOT NULL,
+  `interests` text NOT NULL,
+  `locations` text NOT NULL,
+  `enabled` tinyint(1) NOT NULL default '0',
+  `locked_by` int(11) NOT NULL,
+  `locked_on` date NOT NULL,
+  `logo` varchar(250) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
 
 CREATE TABLE IF NOT EXISTS `#__gives_opportunities` (
-	`gives_opportunity_id` SERIAL,
-	
-	# opportunity info
-	`title`		VARCHAR(250) NOT NULL,
-	`start_date`DATE NOT NULL,
-	`end_date`	DATE NOT NULL,
-	`address`	VARCHAR(250) NOT NULL,
-	`city`		VARCHAR(250) NOT NULL,
-	`province`	VARCHAR(250) NOT NULL,
-	`postal`	VARCHAR(250) NOT NULL,
-	`description`	TEXT NOT NULL,
-	
-	# location
-	`lat`		VARCHAR(10) NOT NULL,
-	`lng`		VARCHAR(10) NOT NULL,
-	
-	# search 
-	`interests`		TEXT NOT NULL,
-	`skills`		TEXT NOT NULL,
-	`locations`		TEXT NOT NULL,
-	
-	# position requirements
-	`event`				TINYINT(1) NOT NULL,
-	`event_date`		DATE NOT NULL,
-	`min_hours`			INT NOT NULL,
-	`max_hours`			INT NOT NULL,
-	`license`			TINYINT(1) NOT NULL,
-	`police_check`		TINYINT(1) NOT NULL,
-	`min_age`			TINYINT(1) NOT NULL,
-	`other`				VARCHAR(250) NOT NULL,
-	
-	`enabled` tinyint(1) NOT NULL default '0',
+  `gives_opportunity_id` SERIAL,
 
-	`gives_organization_id` BIGINT(20) NOT NULL
-) ENGINE = InnoDB;
+  `title` varchar(250) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `address` varchar(250) NOT NULL,
+  `city` varchar(250) NOT NULL,
+  `province` varchar(250) NOT NULL,
+  `postal` varchar(250) NOT NULL,
+  `other_skills` tinyint(1) NOT NULL,
+  `event` tinyint(1) NOT NULL,
+  `event_date` date NOT NULL,
+  `min_hours` int(11) NOT NULL,
+  `max_hours` int(11) NOT NULL,
+  `license` tinyint(1) NOT NULL,
+  `police_check` tinyint(1) NOT NULL,
+  `min_age` tinyint(1) NOT NULL,
+  `other` varchar(250) NOT NULL,
+  `enabled` tinyint(1) NOT NULL default '1',
+  `gives_organization_id` bigint(20) NOT NULL,
+  `locations` text NOT NULL,
+  `interests` text NOT NULL,
+  `skills` text NOT NULL,
+  `description` text NOT NULL,
+  `lat` varchar(10) NOT NULL,
+  `lng` varchar(10) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+

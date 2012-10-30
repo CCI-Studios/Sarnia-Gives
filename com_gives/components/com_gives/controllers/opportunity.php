@@ -12,7 +12,7 @@ class ComGivesControllerOpportunity extends ComDefaultControllerDefault
     protected  function _initialize(KConfig $config)
     {
         $config->append(array(
-            'behaviors' => array('site::com.default.controller.behavior.editable')
+            'behaviors' => array('com://site/default.controller.behavior.editable')
         ));
         
         parent::_initialize($config);
