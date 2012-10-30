@@ -1,10 +1,10 @@
 <? defined('KOOWA') or die; ?>
 
 <?= @helper('behavior.mootools') ?>
-<script src="media://com_gives/js/search.js"></script>
+<script src="media://com_gives/js/search.js" />
 
-<form action="<?= @route('') ?>" method="get" id="criteria-search-form">
-	<input type="hidden" name="layout" value="default">
+<form action="<?= @route('view=opportunities') ?>" method="get" id="criteria-search-form">
+	<input type="hidden" name="layout" value="default" />
 
 	<div><div>
 		<h2 class="underline">Interests</h2>

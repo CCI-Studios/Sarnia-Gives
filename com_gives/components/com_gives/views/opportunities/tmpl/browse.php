@@ -20,7 +20,7 @@
 	?>
 	<li>
 		<div class="logo">
-			<a href="<?= @route('view=organization&id='. $org->id) ?>">
+			<a href="<?= @route('layout=default&view=organization&id='. $org->id) ?>">
 				<? if ($org->logo): ?>
 					<img src="media://com_gives/uploads/organizations/small_<?= $org->logo ?>" alt="" />
 				<? else: ?>
@@ -28,30 +28,30 @@
 				<? endif; ?>
 			</a>
 		</div>
-		
+
 		<div style="float: left;">
-			<a href="<?= @route('view=organization&id='. $org->id) ?>">
+			<a href="<?= @route('layout=default&view=organization&id='. $org->id) ?>">
 				<?= $org->title ?>
 			</a><br/>
 			<span style="font-weight: 500;">
 				<?= $opportunity->title; ?>
 			</span><br/>
-			
+
 			<? if (isset($opportunity->distance)): ?>
 				Distance: <?= sprintf('%.2f', $opportunity->distance) ?>km
 			<? endif; ?>
 		</div>
-		
+
 		<div class="details">
-			<a href="<?= @route('view=opportunity&id='. $opportunity->id) ?>">View Opportunity</a>
+			<a href="<?= @route('layout=default&view=opportunity&id='. $opportunity->id) ?>">View Opportunity</a>
 			<? if ($org->user_id == $user->id): ?>
-				<form action="<?= @route('view=opportunity&id='. $opportunity->id) ?>" method="post" class="-koowa-form">
+				<form action="<?= @route('layout=&view=opportunity&id='. $opportunity->id) ?>" method="post" class="-koowa-form">
 					<input type="hidden" name="enabled" value="0" />
 					<button>Delete</button>
 				</form>
 			<? endif; ?>
 		</div>
-		
+
 		<div class="clear"></div>
 	</li>
 <? endforeach; ?>
