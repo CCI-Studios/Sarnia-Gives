@@ -10,12 +10,12 @@
 				<th width="5">#</th>
 				<th width="15"></th>
 				<th><?=@helper('grid.sort', array('column'=>'last_name', 'title'=>'Name'))?></th>
-				
+
 				<th width="100"><?=@text('Joomla Account')?></th>
 				<th width="5"><?=@text('id')?></th>
 			</tr>
 		</thead>
-	
+
 		<tfoot>
 			<tr>
 				<td colspan="99" align="center">
@@ -23,7 +23,7 @@
 				</td>
 			</tr>
 		</tfoot>
-	
+
 		<tbody>
 			<? $i = 1;
 			foreach ($volunteers as $volunteer): ?>
@@ -33,18 +33,18 @@
 				<td><a href="<?=@route('view=volunteer&id='.$volunteer->id)?>">
 					<?=$volunteer->last_name.', '.$volunteer->first_name?>
 				</a></td>
-				<td align="center"><a href="index.php?option=com_users&amp;view=user&amp;task=edit&amp;cid[]=<?=$volunteer->user_id?>"><?=@text('Joomla Account')?></a></td>
+				<td align="center"><a href="index.php?option=com_users&amp;view=user&amp;task=user.edit&amp;id=<?=$volunteer->user_id?>"><?=@text('Joomla Account')?></a></td>
 				<td align="center"><?=$volunteer->id?></td>
 			</tr>
 			<? $i++;
 			endforeach; ?>
-		
+
 			<?if (!count($volunteers)):?>
 			<tr>
 				<td colspan="99" align="center"><?=@text('No volunteers available.')?></td>
 			</tr>
 			<?endif;?>
 		</tbody>
-	
+
 	</table>
 </form>

@@ -1,9 +1,12 @@
-<root>
-	<params>
-		<param type="list" name="send_emails" label="Send Emails" default="1">
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="articles" label="Gives">
+
+		<field name="send_emails" type="list" label="Send Emails" default="1">
 			<option value="1">Yes</option>
 			<option value="0">No</option>
-		</param>
-		<param type="text" name="email_list" label="Email List" description="List of admin email address to send notifications to." />
-	</params>
-</root>
+		</field>
+
+		<field type="text" name="email_list" label="Email List" description="List of admin email address to send notifications to." />
+	</fieldset>
+</config>
