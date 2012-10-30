@@ -24,6 +24,7 @@ if ($_SERVER['SERVER_PORT'] === 8888 ||
 	$testing = false;
 }
 
+JHTML::_('behavior.mootools');
 $analytics = "UA-24737487-1";
 ?>
 

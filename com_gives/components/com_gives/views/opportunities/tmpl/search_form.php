@@ -1,43 +1,7 @@
 <? defined('KOOWA') or die; ?>
 
-<script>
-window.addEvent('domready', function () {
-	var form = $('criteria-search-form');
-
-	form.addEvent('submit', function (event) {
-		var interests = false, 
-			skills = false, 
-			locations = false;
-
-		form.getElements('input[name="interests[]"]').each(function (box) {
-			if (box.checked) {
-				console.log(box.value + ' was checked');
-				interests = true;
-			}
-		});
-
-		form.getElements('input[name="skills[]"]').each(function (box) {
-			if (box.checked) {
-				console.log(box.value + ' was checked');
-				skills = true;
-			}
-		});
-
-		form.getElements('input[name="locations[]"]').each(function (box) {
-			if (box.checked) {
-				console.log(box.value + ' was checked');
-				locations = true;
-			}
-		});
-
-		if (!(interests && skills && locations)) {
-			alert('Please make a selection for all sections.');
-		}
-
-		return (interests && skills && locations);
-	});
-});
-</script>
+<?= @helper('behavior.mootools') ?>
+<script src="media://com_gives/js/search.js"></script>
 
 <form action="<?= @route('') ?>" method="get" id="criteria-search-form">
 	<input type="hidden" name="layout" value="default">
