@@ -6,7 +6,7 @@ require "capistrano/ext/multistage"
 set :application, "Sarnia Gives"
 
 # repository info
-set :repository,  "git@github.com:CCI-Studios/PROJECT.git"
+set :repository,  "git@github.com:CCI-Studios/Sarnia-Gives.git"
 set :scm, :git
 
 # ssh settings
@@ -170,6 +170,9 @@ namespace :deploy do
           ln -nsf #{up_path} #{real_path}/uploads;
         fi
       CMD
+
+      # project specific
+      run "ln -nfs #{deploy_to}/shared/com_gives_uploads #{public}/media/com_gives/uploads"
     end
   end
 
