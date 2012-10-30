@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<install type="component" version="1.5.0" method="upgrade">
+	<name>com_gives</name>
+	<author>Jonathan Bennett</author>
+	<creationDate>Oct 2012</creationDate>
+	<copyright>Copyright (C) 2012 - 2012 What's Up 2nite. All rights reserved</copyright>
+	<license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<authorEmail>jbennett@ccistudios.com</authorEmail>
+	<authorUrl>www.ccistudios.com</authorUrl>
+	<version>2.0.0</version>
+    <description>COM_GIVES_DESCRIPTION</description>
+
+    <install><sql>
+		<file charset="utf8" driver="mysql">install/install.utf8.sql</file>
+	</sql></install>
+
+    <administration>
+        <menu view="gives" img="media/com_gives/images/icons/logo.png" link="option=com_gives">Sarnia Gives</menu>
+
+		<files>
+			<folder>commands</folder>
+			<folder>controllers</folder>
+			<databases>databases</databases>
+			<folder>elements</folder>
+			<install>install</install>
+			<folder>models</folder>
+			<templates>templates</templates>
+			<folder>views</folder>
+			<file>config.xml</file>
+			<file>dispatcher.php</file>
+			<file>gives.php</file>
+		</files>
+    </administration>
+</install>

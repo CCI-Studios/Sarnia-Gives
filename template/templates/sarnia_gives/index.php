@@ -32,9 +32,9 @@ $analytics = "UA-24737487-1";
 	<?= ($testing)? '':  '<meta http-equiv="X-UA-Compatible" contents="IE=edge,chrome=1">' ?>
 
  	<jdoc:include type="head" />
- 	
+
  	<?php if ($testing): ?>
- 	     <meta name="robots" content="noindex, nofollow" /> 
+ 	     <meta name="robots" content="noindex, nofollow" />
     <?php endif; ?>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,29 +66,17 @@ $analytics = "UA-24737487-1";
 
 	<div id="wrapper">
 		<div id="top">
-		    <div class="moduletable login">
-		        <?php if (JFactory::getUser()->guest == 1): ?>
-                    <a href="index.php?option=com_user&amp;view=login<?php 
-						echo ($this->params->get('login_id'))? '&amp;Itemid='.$this->params->get('login_id'):'';
-					?>">Login</a> | <a href="index.php?option=com_content&amp;view=article&amp;id=11&amp;Itemid=24">Register</a>
-		        <?php else: ?>
-		            <a href="index.php?option=com_user&amp;task=logout&amp;return=Lw==">Logout</a>
-		             | 
-		             <a href="index.php?option=com_gives&view=profile&Itemid=23">Profile</a>
-		        <?php endif; ?>
-		    </div>
-		    
 		    <jdoc:include type="modules" name="top" style="xhtml" />
-		    
+
 		    <div class="clear"></div>
 		</div>
-		
+
 		<div id="header">
 		    <jdoc:include type="modules" name="header" style="xhtml" />
-		    
+
 		    <div class="clear"></div>
 		</div>
-		
+
 		<div id="body" class="<?php echo ($this->countModules('sidebar'))? '':'wide'; ?>"><div>
 		    <div id="component">
 				<? if ($menu !== 'home'): ?>
@@ -97,61 +85,61 @@ $analytics = "UA-24737487-1";
 						<span class="increase">A+</span>
 					</div>
 				<? endif; ?>
-			
+
 				<jdoc:include type="message" />
 		        <jdoc:include type="component" />
-		        
+
 		        <div class="clear"></div>
 		    </div>
-		    
+
 		    <?php if ($this->countModules('sidebar')): ?>
 		    <div id="sidebar">
 		        <jdoc:include type="modules" name="sidebar" style="xhtml" />
-		        
+
 		        <div class="clear"></div>
 		    </div>
 		    <?php endif; ?>
-		    
+
 		    <div class="clear"></div>
 		</div></div>
-		
+
 		<div class="hr"></div>
-		
+
 		<?php if ($this->countModules('scroll')): ?>
 		<div id="scroll">
-		    <div class="inner"> 
+		    <div class="inner">
 		        <jdoc:include type="modules" name="scroll" style="xhtml" />
 		    </div>
 		    <div class="arrow-left"></div>
 		    <div class="arrow-right"></div>
-		
+
 		    <div class="clear"></div>
 		</div>
 		<?php endif; ?>
-		
-		<?php if ($this->countModules('scroll') && 
+
+		<?php if ($this->countModules('scroll') &&
 							($this->countModules('bottom') || $this->countModules('footer'))):?>
 			<div class="hr"></div>
 		<?php endif; ?>
-		
+
 		<?php if ($this->countModules('bottom')): ?>
 		<div id="bottom">
 		    <jdoc:include type="modules" name="bottom" style="xhtml" />
-		    
+
 		    <div class="clear"></div>
 		</div>
 		<?php endif; ?>
-		
+
 		<?php if ($this->countModules('footer')): ?>
 		<div id="footer">
 		    <jdoc:include type="modules" name="footer" style="xhtml" />
-		    
+
 		    <div class="clear"></div>
 		</div>
 		<?php endif; ?>
-		
+
 		<div class="hr"></div>
-		
+
 		<div id="copyright" style="position: relative;">
 		    <div style="position: absolute; top:3px; left:0">
 		        &copy; <?php echo date('Y') ?> Sarnia Gives. All Rights Reserved.
@@ -164,7 +152,7 @@ $analytics = "UA-24737487-1";
 		    <div style="position: absolute; top: 3px; right:0;">
 		        Site by <a href="http://www.ccistudios.com" target="_blank">CCI Studios</a>
 		    </div>
-		    
+
 		    <div class="clear"></div>
 		</div>
 	</div>
@@ -175,8 +163,6 @@ $analytics = "UA-24737487-1";
 
 	<!-- load scripts -->
 	<?php if ($testing): ?>
-		<script src="/templates/<?= $this->template ?>/js/columns.js"></script>
-		<script src="/templates/<?= $this->template ?>/js/dropmenu.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/html5.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/scroller.js"></script>
 		<script src="/templates/<?= $this->template ?>/js/text_size.js"></script>
@@ -186,8 +172,8 @@ $analytics = "UA-24737487-1";
 			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
 				g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
 				s.parentNode.insertBefore(g,s)}(document,"script"));
-	  </script>
-		<script src="/templates/<?= $this->template ?>/js/scripts.min.js"></script>
+	  	</script>
+		<script src="/templates/<?= $this->template ?>/js/scripts-ck.js"></script>
 	<?php endif; ?>
 </body>
 </html>
