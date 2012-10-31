@@ -7,16 +7,21 @@
 	<table class="adminlist">
 		<thead>
 			<tr>
+				<td colspan="6" align="right">
+					<?= @helper('listbox.enabled_filter') ?>
+				</td>
+			</tr>
+			<tr>
 				<th width="5">#</th>
 				<th width="15"><?= @helper('grid.checkall') ?></th>
 				<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
-				
+
 				<th width="100"><?=@text('Joomla Account')?></th>
 				<th width="25">Enabled</th>
 				<th width="5"><?= @helper('grid.sort', array('column'=>'id')) ?></th>
 			</tr>
 		</thead>
-	
+
 		<tfoot>
 			<tr>
 				<td colspan="99" align="center">
@@ -24,7 +29,7 @@
 				</td>
 			</tr>
 		</tfoot>
-	
+
 		<tbody>
 			<? $i = 1;
 			foreach ($organizations as $organization): ?>
@@ -40,13 +45,13 @@
 			</tr>
 			<? $i++;
 			endforeach; ?>
-		
+
 			<?if (!count($organizations)):?>
 			<tr>
 				<td colspan="99" align="center"><?=@text('No organizations available.')?></td>
 			</tr>
 			<?endif;?>
 		</tbody>
-	
+
 	</table>
 </form>

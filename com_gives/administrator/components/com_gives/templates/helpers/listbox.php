@@ -1,7 +1,7 @@
 <?php
 
 class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
-	
+
 	public function provinces($config = array()) {
 		$config = new KConfig($config);
 		$config->append(array(
@@ -9,9 +9,9 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		))->append(array(
 			'selected' => $config->{$config->name}
 		));
-		
+
 		$options = array();
-		
+
 		$options[] = $this->option(array('text'=>'- '.JText::_('Select').' -', 'value'=>''));
 		$options[] = $this->option(array('text'=>JText::_('Ontario'), 'value'=>'Ontario'));
 		$options[] = $this->option(array('text'=>JText::_('Alberta'), 'value'=>'Alberta'));
@@ -26,11 +26,11 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		$options[] = $this->option(array('text'=>JText::_('Quebec'), 'value'=>'Quebec'));
 		$options[] = $this->option(array('text'=>JText::_('Saskatchewan'), 'value'=>'Saskatchewan'));
 		$options[] = $this->option(array('text'=>JText::_('Yukon'), 'value'=>'Yukon'));
-		
+
 		$config->options = $options;
 		return $this->optionlist($config);
 	}
-	
+
 	public function organizations($config = array())
 	{
 		$config = new KConfig($config);
@@ -41,10 +41,10 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 			'text'		=> 'title',
 			'prompt'	=> '- Select organization -',
 		));
-		
+
 		return $this->_listbox($config);
 	}
-	
+
 	public function volunteerTypes($config = array()) {
 		$config = new KConfig($config);
 		$config->append(array(
@@ -52,19 +52,19 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		))->append(array(
 			'selected' => $config->{$config->name}
 		));
-		
+
 		$options = array();
-		
+
 		$options[] = $this->option(array('text'=>'- '.JText::_('Select').' -', 'value'=>''));
 		$options[] = $this->option(array('text'=>JText::_('Youth'), 'value'=>'1'));
 		$options[] = $this->option(array('text'=>JText::_('Adult'), 'value'=>'2'));
 		$options[] = $this->option(array('text'=>JText::_('Retiree'), 'value'=>'3'));
 		$options[] = $this->option(array('text'=>JText::_('Newcomer'), 'value'=>'4'));
-		                                         
+
 		$config->options = $options;
 		return $this->optionlist($config);
 	}
-	
+
 	public function organizationTypes($config = array()) {
 		$config = new KConfig($config);
 		$config->append(array(
@@ -72,19 +72,19 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		))->append(array(
 			'selected' => $config->{$config->name}
 		));
-		
+
 		$options = array();
-		
+
 		$options[] = $this->option(array('text'=>'- '.JText::_('Select').' -', 'value'=>''));
 		$options[] = $this->option(array('text'=>JText::_('Not-for-Profit'), 'value'=>'1'));
 		$options[] = $this->option(array('text'=>JText::_('Private Sector'), 'value'=>'2'));
 		$options[] = $this->option(array('text'=>JText::_('Registered Charity'), 'value'=>'3'));
 		$options[] = $this->option(array('text'=>JText::_('Public Sector'), 'value'=>'4'));
-		                                         
+
 		$config->options = $options;
 		return $this->optionlist($config);
 	}
-	
+
 	public function yesNo($config = array()) {
 		$config = new KConfig($config);
 		$config->append(array(
@@ -92,13 +92,31 @@ class ComGivesTemplateHelperListbox extends KTemplateHelperListbox {
 		))->append(array(
 			'selected' => $config->{$config->name}
 		));
-		
+
 		$options = array();
-		
+
 		$options[] = $this->option(array('text'=>'- '.JText::_('Select').' -', 'value'=>''));
 		$options[] = $this->option(array('text'=>JText::_('Yes'), 'value'=>'1'));
 		$options[] = $this->option(array('text'=>JText::_('No'), 'value'=>'0'));
-		                                         
+
+		$config->options = $options;
+		return $this->optionlist($config);
+	}
+
+	public function enabled_filter($config = array()) {
+		$config = new KConfig($config);
+		$config->append(array(
+			'name' => 'enabled',
+		))->append(array(
+			'selected' => $config->{$config->name}
+		));
+
+		$options = array();
+
+		$options[] = $this->option(array('text'=>'- '.JText::_('Status Filter').' -', 'value'=>''));
+		$options[] = $this->option(array('text'=>JText::_('Enabled'), 'value'=>'1'));
+		$options[] = $this->option(array('text'=>JText::_('Disabled'), 'value'=>'0'));
+
 		$config->options = $options;
 		return $this->optionlist($config);
 	}

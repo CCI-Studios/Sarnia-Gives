@@ -12,9 +12,9 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		))->append(array(
 			'selected'	=> $config->{$config->name},
 		));
-		
+
 		$options = array();
-		
+
 		$options[] = new KConfig(array('text'=>"Animals/Animal Services", 'value'=>"Animals"));
 		$options[] = new KConfig(array('text'=>"Arts &amp; Culture", 'value'=>"Arts & Culture"));
 		$options[] = new KConfig(array('text'=>"Children &amp; Youth", 'value'=>"Children & Youth"));
@@ -24,12 +24,12 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$options[] = new KConfig(array('text'=>"Health &amp; Wellness", 'value'=>"Health & Wellness"));
 		$options[] = new KConfig(array('text'=>"Social Services &amp; Justice", 'value'=>"Social Services & Justice"));
 		$options[] = new KConfig(array('text'=>"Special Events", 'value'=>"Special Events"));
-		
+
 		$config->list = $options;
-		
+
 		return $this->checklist($config);
 	}
-	
+
 	public function locations($config = array())
 	{
 		$config = new KConfig($config);
@@ -40,9 +40,9 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		))->append(array(
 			'selected'	=> $config->{$config->name},
 		));
-		
+
 		$options = array();
-		
+
 		$options[] = new KConfig(array('text'=>"Location Flexible", 'value'=>"Location Flexible"));
 		$options[] = new KConfig(array('text'=>"Brooke-Alvinston", 'value'=>"Brooke-Alvinston"));
 		$options[] = new KConfig(array('text'=>"Dawn-Euphemia", 'value'=>"Dawn-Euphemia"));
@@ -55,12 +55,12 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$options[] = new KConfig(array('text'=>"Sarnia", 'value'=>"Sarnia"));
 		$options[] = new KConfig(array('text'=>"St. Clair", 'value'=>"St. Clair"));
 		$options[] = new KConfig(array('text'=>"Warwick Township", 'value'=>"Warwick Township"));
-		
+
 		$config->list = $options;
-		
+
 		return $this->checklist($config);
 	}
-	
+
 	public function skills($config = array())
 	{
 		$config = new KConfig($config);
@@ -71,9 +71,9 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		))->append(array(
 			'selected'	=> $config->{$config->name},
 		));
-		
+
 		$options = array();
-		
+
 		$options[] = new KConfig(array('text'=>"Accounting", 'value'=>"Accounting"));
 		$options[] = new KConfig(array('text'=>"Bilingual (Eng/Fr)", 'value'=>"Bilingual (Eng/Fr)"));
 		$options[] = new KConfig(array('text'=>"Board Work", 'value'=>"Board Work"));
@@ -94,12 +94,12 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$options[] = new KConfig(array('text'=>"Sports & Recreation", 'value'=>"Sports & Recreation"));
 		$options[] = new KConfig(array('text'=>"Translation", 'value'=>"Translation"));
 		$options[] = new KConfig(array('text'=>"Writing & Research", 'value'=>"Writing & Research"));
-		
+
 		$config->list = $options;
-		
+
 		return $this->checklist($config);
 	}
-	
+
 	public function checklist( $config = array())
 	{
 		$config = new KConfig($config);
@@ -111,7 +111,7 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 			'text'     		=> 'title',
 			'selected' 	=> null,
 			'translate'	=> false,
-			
+
 			'select_all'	=> false
 		));
 
@@ -126,13 +126,13 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		$ul .= ($config->select_all)? 'select_all':'';
 		$ul .= "'>\n";
 		$html[] = $ul;
-		
+
 		if ($config->select_all) {
 			$html[] = "<li class=\"selectall\" style=\"width: 100%;\">";
 			$html[] = "<input type=\"checkbox\" name=\"\" />";
 			$html[] = "<label>". JText::_('Select All') ."</label>";
 			$html[] = "</li>";
-			
+
 			$script  = "<script>";
 			$script .= "	window.addEvent('domready', function () {\n";
 			$script .= "		var ul, sa, lis;\n";
@@ -150,7 +150,7 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 			$script .= "	});\n";
 			$script .= "</script>";
 		}
-		
+
 		foreach($config->list as $row)
 		{
 			$key  = $row->{$config->key};
@@ -170,7 +170,7 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 						break;
 					}
 				}
-			} 
+			}
 			else $extra .= ($key == $config->selected) ? 'checked="checked"' : '';
 
 			$html[] = "<li>";
@@ -183,5 +183,5 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 
 		return implode(PHP_EOL, $html);
 	}
-	
+
 }
