@@ -7,8 +7,8 @@ class ComGivesControllerToolbarDashboard extends ComDefaultControllerToolbarDefa
 	{
 		$this->addModal(array(
 			'href'	=> 'index.php?option=com_config&view=component&component=com_gives&tmpl=component',
-			'icon'	=> 'icon-32-config',
-			'label'	=> 'Parameters',
+			'icon'	=> 'icon-32-options',
+			'label'	=> 'Config',
 		));
 
 		return parent::getCommands();
