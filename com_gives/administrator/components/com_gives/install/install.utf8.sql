@@ -68,7 +68,8 @@ CREATE TABLE IF NOT EXISTS `j25_gives_organizations` (
   `enabled` tinyint(1) NOT NULL default '0',
   `locked_by` int(11) NOT NULL,
   `locked_on` date NOT NULL,
-  `logo` varchar(250) NOT NULL
+  `logo` varchar(250) NOT NULL,
+  `expires` DATE NOT NULL DEFAULT '2013-02-01'
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 
@@ -101,3 +102,15 @@ CREATE TABLE IF NOT EXISTS `#__gives_opportunities` (
   `lng` varchar(10) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE IF NOT EXISTS `#__gives_transactions` (
+  `gives_transaction_id` SERIAL,
+
+  `completed` TINYINT(1) NOT NULL DEFAULT 0,
+  `gives_organization_id` BIGINT(20) NOT NULL,
+  `ipn_txn_id` VARCHAR(20) NOT NULL,
+  `ipn_error` TEXT NOT NULL,
+
+  `created_on` DATETIME,
+  `modified_on` DATETIME
+);

@@ -6,9 +6,18 @@
 			<option value="1">Yes</option>
 			<option value="0">No</option>
 		</field>
-
 		<field type="text" name="email_list" label="Email List" description="List of admin email address to send notifications to." />
 		<field type="usergroup" name="acl_volunteer" label="Volunteer Group" />
 		<field type="usergroup" name="acl_organization" label="Organization Group" />
+
+		<field type="spacer" />
+
+		<field type="text" name="paypal_account" label="Paypal Account" description="Paypal account to use for renewals." />
+		<field type="text" name="paypal_sandbox_account" label="Paypal Sandbox Account" description="Paypal account to use for sandbox." />
+		<field type="radio" name="paypal_sandbox" label="Use Paypal Sandbox" description="Use Paypal sandbox for testing">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+
 	</fieldset>
 </config>
