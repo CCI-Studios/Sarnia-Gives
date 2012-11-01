@@ -39,7 +39,7 @@
 				<td><a href="<?=@route('view=organization&id='.$organization->id)?>">
 					<?=$organization->title?>
 				</a></td>
-				<td align="center"><a href="index.php?option=com_users&amp;view=user&amp;task=edit&amp;cid[]=<?=$organization->user_id?>"><?=@text('Joomla Account')?></a></td>
+				<td align="center"><a href="index.php?option=com_users&amp;view=user&amp;task=user.edit&amp;id=<?=$organization->user_id?>"><?=@text('Joomla Account')?></a></td>
 				<td align="center"><?= @helper('grid.enable', array('row'=>$organization))?>
 				<td align="center"><?=$organization->id?></td>
 			</tr>
