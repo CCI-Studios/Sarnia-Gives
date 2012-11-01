@@ -55,7 +55,7 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		return true;
 	}
 
-	protected function _createUser($name, $email, &$password = null, $level = null)
+	protected function _createUser($name, $email, &$password = null)
 	{
 		jimport('joomla.user.helper');
 
@@ -64,11 +64,21 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		}
 
 		jimport('joomla.application.component.helper');
-		$config = JComponentHelper::getParams('com_users');
+		$user_config = JComponentHelper::getParams('com_users');
+		$defaultUserGroup = $user_config->get('new_usertype', 2);
+		$com_config = JComponentHelper::getParams('com_gives');
+		$type = $this->getMixer()->getIdentifier()->name;
 
-		// Default to Registered.
-		$defaultUserGroup = $config->get('new_usertype', 2);
-		$acl = JFactory::getACL();
+		switch ($type) {
+			case 'volunteer':
+				$groups = array($defaultUserGroup, $com_config->get('acl_volunteer'));
+				break;
+			case 'organization':
+				$groups = array($defaultUserGroup, $com_config->get('acl_organization'));
+				break;
+			default:
+				$groups = array($defaultUserGroup);
+		}
 
 		$instance = JUser::getInstance();
 		$instance->set('id', 0);
@@ -77,10 +87,10 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		$instance->set('password', md5($password));
 		$instance->set('email', $email);  // Result should contain an email (check)
 		$instance->set('usertype', 'deprecated');
-		$instance->set('groups', array($defaultUserGroup));
+		$instance->set('groups', $groups);
 
 		//If autoregister is set let's register the user
-		$autoregister = isset($options['autoregister']) ? $options['autoregister'] :  $config->get('autoregister', 1);
+		$autoregister = $user_config->get('autoregister', 1);
 
 		if ($autoregister) {
     		if (!$instance->save()) {
