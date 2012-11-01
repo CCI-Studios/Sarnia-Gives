@@ -114,3 +114,8 @@ CREATE TABLE IF NOT EXISTS `#__gives_transactions` (
   `created_on` DATETIME,
   `modified_on` DATETIME
 );
+
+CREATE OR REPLACE VIEW `#__gives_view_opportunities` AS
+  SELECT opp.*, org.expires as expires
+  FROM `#__gives_opportunities` as opp
+  LEFT JOIN `#__gives_organizations` AS org ON opp.gives_organization_id = org.gives_organization_id

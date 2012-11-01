@@ -39,15 +39,21 @@
 	<p><?=$organization->description?></p>
 
 	<h2>Opportunities</h2>
-	<?= $this->getService('com://site/gives.controller.opportunities')
-		->set('organization_id', $organization->id)
-		->set('enabled', '1')
-		->layout('search_results')
-		->display(); ?>
-
 	<? if ($edit): ?>
+		<?= $this->getService('com://site/gives.controller.opportunities')
+			->set('organization_id', $organization->id)
+			->set('enabled', '')
+			->layout('search_results')
+			->display(); ?>
+
 		<form action="<?= @route('view=opportunity&layout=form&org_id='.$organization->id) ?>" method="get">
 			<p><input type="submit" value="Create Opportunity" /></p>
 		</form>
+	<? else: ?>
+		<?= $this->getService('com://site/gives.controller.opportunities')
+			->set('organization_id', $organization->id)
+			->set('enabled', '1')
+			->layout('search_results')
+			->display(); ?>
 	<? endif; ?>
 </div>
