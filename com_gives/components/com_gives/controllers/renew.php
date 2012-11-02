@@ -51,20 +51,6 @@ class ComGivesControllerRenew extends ComDefaultControllerResource
 
 		if (strcmp($lines[0], "VERIFIED") == 0) {
 			$transaction->completed = 1;
-
-			$organization = $this->getService('com://site/gives.model.organizations')
-								->set('id', $_POST['custom'])
-								->getItem();
-			$expiry = $organization->expires;
-
-			if (strtotime($expiry) > time()) { // expire 1 year from current expiry date
-				$expiry = date("Y-m-d", strtotime(date("Y-m-d", strtotime($expiry)) . " + 365 day"));
-			} else { // expire 1 year from today
-				$expiry = date("Y-m-d", strtotime(date("Y-m-d", time()) . " + 365 day"));
-			}
-
-			$organization->expires = $expiry; // add 1 year
-			$organization->save();
 		} else if (strcmp($lines[0], "INVALID") == 0) {
 			$transaction->completed = 0;
 			$transaction->ipn_error = print_r($_POST, 1);
