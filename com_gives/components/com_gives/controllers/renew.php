@@ -47,6 +47,7 @@ class ComGivesControllerRenew extends ComDefaultControllerResource
 	    $transaction->gives_organization_id = $_POST['custom'];
 	    $transaction->created_on = date('Y-m-d H:m:s');
 	    $transaction->ipn_txn_id = $_POST['txn_id'];
+	    $transaction->txn_type = "PayPal";
 
 		if (strcmp($lines[0], "VERIFIED") == 0) {
 			$transaction->completed = 1;

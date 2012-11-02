@@ -108,6 +108,8 @@ CREATE TABLE IF NOT EXISTS `#__gives_transactions` (
 
   `completed` TINYINT(1) NOT NULL DEFAULT 0,
   `gives_organization_id` BIGINT(20) NOT NULL,
+  `notes` TEXT NOT NULL,
+  `txn_type` VARCHAR(20) NOT NULL,
   `ipn_txn_id` VARCHAR(20) NOT NULL,
   `ipn_error` TEXT NOT NULL,
 
