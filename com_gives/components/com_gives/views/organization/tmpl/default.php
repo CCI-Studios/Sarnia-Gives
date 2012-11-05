@@ -22,7 +22,7 @@
 		<h2>Account Status</h2>
 
 		<p>
-			<? if (strtotime($organization->expires) > time()): ?>
+			<? if (!$organization->isExpired()): ?>
 				Account expires: <?= date('F d, Y', strtotime($organization->expires)); ?>
 			<? else: ?>
 				Account expired: <?= date('F d, Y', strtotime($organization->expires)); ?>
@@ -39,7 +39,7 @@
 	<p><?=$organization->description?></p>
 
 	<h2>Opportunities</h2>
-	<? if ($edit): ?>
+	<? if ($edit && !$organization->isExpired()): ?>
 		<?= $this->getService('com://site/gives.controller.opportunities')
 			->set('organization_id', $organization->id)
 			->set('enabled', '')

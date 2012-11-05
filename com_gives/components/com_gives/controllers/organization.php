@@ -22,7 +22,11 @@ class ComGivesControllerOrganization extends ComDefaultControllerDefault
 
     public function getRequest()
     {
-    	$this->_request->enabled = 1;
+        if ($this->_request->view == 'organizations') {
+            $this->_request->expired = 0;
+        }
+
+        $this->_request->enabled = 1;
     	return parent::getRequest();
     }
 

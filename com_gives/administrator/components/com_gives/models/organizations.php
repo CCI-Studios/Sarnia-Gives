@@ -10,6 +10,7 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 
 		$this->_state
 			->insert('enabled', 'int')
+			->insert('expired', 'int')
 			->insert('letter_name', 'word')
 			->insert('user_id', 'int')
 			->remove('sort')
@@ -43,6 +44,14 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 			$query->where('tbl.enabled', '=', $state->enabled);
 		}
 
+		if (is_numeric($state->expired)) {
+			if (!$state->expired) {
+				$query->where('tbl.expires >= NOW()');
+			} else {
+				$query->where('tbl.expires <= NOW()');
+			}
+		}
+
 		if ($state->letter_name) {
 			$query->where('tbl.title', 'LIKE', $state->letter_name.'%');
 		}
@@ -52,7 +61,6 @@ class ComGivesModelOrganizations extends ComDefaultModelDefault
 		}
 
 		parent::_buildQueryWhere($query);
-
 	}
 
 	public function getMe()
