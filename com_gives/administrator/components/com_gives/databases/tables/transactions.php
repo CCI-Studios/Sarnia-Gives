@@ -55,7 +55,7 @@ class ComGivesDatabaseTableTransactions extends KDatabaseTableAbstract
 			'title'	=> $organization,
 		));
 
-		$this->_sendMail($email, "Sarnia Gives Organization Renewal", $view->render());
+		$this->_sendMail($email, "Thank you for renewing your membership with Sarnia Gives!", $view->render());
 	}
 
 	protected function _emailAdmin($name, $organization)
@@ -71,7 +71,7 @@ class ComGivesDatabaseTableTransactions extends KDatabaseTableAbstract
 			'title'	=> $organization,
 		));
 
-		$this->_sendMail($admins, "Sarnia Gives Organization Renewal", $view->render());
+		$this->_sendMail($admins, "Sarnia Gives Membership Renewal - $organization", $view->render());
 	}
 
 	protected function _sendMail($to, $subject, $body)

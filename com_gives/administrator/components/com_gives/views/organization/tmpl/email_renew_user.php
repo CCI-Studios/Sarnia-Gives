@@ -17,8 +17,12 @@
 	</div>
 
 	<div style="width: 650px; text-align: left; ">
-		<p><?= $title ?> USER EMAIL has been renewed on Sarnia Gives.</p>
-		<p>Please sign in to the website to activate their profile.</p>
+		<p>We are proud to help <?= $title ?> continue offering your great service to the Sarnia-Lambton community through the connection of volunteers to volunteer opportunities.</p>
+		<p>We look forward to continuing to work with you over the coming year.</p>
+		<p>
+			Best,<br/>
+			Sarnia Gives
+		</p>
 	</div>
 </center>
 

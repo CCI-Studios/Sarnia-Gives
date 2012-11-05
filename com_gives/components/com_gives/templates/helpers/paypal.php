@@ -39,7 +39,7 @@ class ComGivesTemplateHelperPaypal extends KTemplateHelperAbstract
 		foreach($params as $name=>$value) {
 			$html .= "\t<input type='hidden' name='$name' value='$value' />";
 		}
-		$html .= "\t<input type='submit' value='Extend your membership for 1 year' />\n";
+		$html .= "\t<input type='submit' value='Renew your account for one year' />\n";
 		$html .= "</form>";
 
 		return $html;

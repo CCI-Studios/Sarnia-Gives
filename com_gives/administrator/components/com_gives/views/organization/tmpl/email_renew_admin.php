@@ -17,8 +17,12 @@
 	</div>
 
 	<div style="width: 650px; text-align: left; ">
-		<p><?= $title ?> ADMIN EMAIL has been renewed on Sarnia Gives.</p>
-		<p>Please sign in to the website to activate their profile.</p>
+		<p><?= $title ?> has renewed its membership with Sarnia Gives!</p>
+		<p>A Thank You email has been automatically sent to <?= $title ?>, but please remember to contact them personally within the next 5 days.</p>
+		<p>
+			Thanks,<br/>
+			Sarnia Gives
+		</p>
 	</div>
 </center>
 
