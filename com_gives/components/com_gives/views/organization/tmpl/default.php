@@ -42,7 +42,7 @@
 	<? if ($edit && !$organization->isExpired()): ?>
 		<?= $this->getService('com://site/gives.controller.opportunities')
 			->set('organization_id', $organization->id)
-			->set('enabled', '')
+			->set('enabled', '1')
 			->layout('search_results')
 			->display(); ?>
 
