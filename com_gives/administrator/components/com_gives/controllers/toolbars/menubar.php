@@ -32,6 +32,11 @@ class ComGivesControllerToolbarMenubar extends ComDefaultControllerToolbarMenuba
 			'active'	=> ($name === 'transaction')
 		));
 
+		$this->addCommand('events', array(
+			'href'		=> 'index.php?option=com_gives&view=events',
+			'active'	=> ($name === 'event')
+		));
+
 		return parent::getCommands();
 	}
 }

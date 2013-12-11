@@ -120,4 +120,22 @@ CREATE TABLE IF NOT EXISTS `#__gives_transactions` (
 CREATE OR REPLACE VIEW `#__gives_view_opportunities` AS
   SELECT opp.*, org.expires as expires
   FROM `#__gives_opportunities` as opp
-  LEFT JOIN `#__gives_organizations` AS org ON opp.gives_organization_id = org.gives_organization_id
+  LEFT JOIN `#__gives_organizations` AS org ON opp.gives_organization_id = org.gives_organization_id;
+
+
+CREATE TABLE IF NOT EXISTS `#__gives_events` (
+  `gives_event_id` SERIAL,
+  `title` varchar(250) NOT NULL,
+  `event_date` date NOT NULL,
+  `time` varchar(250) NOT NULL,
+  `location` varchar(250) NOT NULL,
+  `max_capacity` INT NOT NULL DEFAULT '-1'
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS `#__gives_registrations` (
+  `gives_registration_id` SERIAL,
+  `gives_event_id` BIGINT(20) UNSIGNED NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
