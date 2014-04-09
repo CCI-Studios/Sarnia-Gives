@@ -13,7 +13,7 @@ $slug = KService::get('koowa:filter.slug');
 
 if (!isset($view))
 	$view = "";
-
+die('view='.$view);
 switch ($view) {
 	case 'organization':
 		$model	= KService::get('com://site/gives.model.organization');
@@ -100,12 +100,18 @@ switch ($view) {
 			} elseif($layout === 'browse') {
 				$title[] = 'browse';
 				shRemoveFromGETVarsList('layout');
+			} elseif($layout === 'lastminute') {
+				$title[] = 'last-minute';
+				shRemoveFromGETVarsList('layout');
 			}
 		} else {
 			// nothing else
 		}
 		break;
 	case 'profile':
+		$title[] = $view;
+		break;
+	case 'events':
 		$title[] = $view;
 		break;
 	case '':

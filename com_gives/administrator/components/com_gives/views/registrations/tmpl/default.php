@@ -1,3 +1,5 @@
+<? defined('KOOWA') or die; ?>
+<?= @helper('behavior.mootools'); ?>
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/admin.css" />
 

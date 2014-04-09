@@ -6,7 +6,8 @@ class ComGivesDispatcher extends ComDefaultDispatcher {
 	{
 		$config->append(array(
 			'controller_default'	=> 'dashboard',
-			'request'				=> array('enabled' => KRequest::get('get.enabled', 'boolean', false))
+			'request'				=> array('enabled' => KRequest::get('get.enabled', 'boolean', false)),
+			'request_persistent' 	=> true
 		));
 		
 		parent::_initialize($config);

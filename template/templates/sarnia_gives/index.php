@@ -68,7 +68,7 @@ $analytics = "UA-24737487-1";
 	<div id="wrapper">
 		<div id="top">
 		    <jdoc:include type="modules" name="top" style="xhtml" />
-
+		    <a class="menu-btn" href="#" onclick="jQuery('body').toggleClass('menu-open');return false;">Menu</a>
 		    <div class="clear"></div>
 		</div>
 
@@ -142,7 +142,7 @@ $analytics = "UA-24737487-1";
 		<div class="hr"></div>
 
 		<div id="copyright" style="position: relative;">
-		    <div style="position: absolute; top:3px; left:0">
+		    <div class="copyright">
 		        &copy; <?php echo date('Y') ?> Sarnia Gives. All Rights Reserved.
 		    </div>
 <div style="text-align:center;">
@@ -150,7 +150,7 @@ $analytics = "UA-24737487-1";
 <img src="/images/stories/Trillium_Logo_Small.png" />
 </a>
 </div>
-		    <div style="position: absolute; top: 3px; right:0;">
+		    <div class="site-by-cci">
 		        Site by <a href="http://www.ccistudios.com" target="_blank">CCI Studios</a>
 		    </div>
 

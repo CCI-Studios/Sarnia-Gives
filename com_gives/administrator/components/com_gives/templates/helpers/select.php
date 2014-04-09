@@ -61,6 +61,46 @@ class ComGivesTemplateHelperSelect extends KTemplateHelperSelect
 		return $this->checklist($config);
 	}
 
+	public function notification_email($config = array())
+	{
+		$config = new KConfig($config);
+		$config->append(array(
+			'name'		=> 'lastminute_email',
+			'text'		=> 'text',
+			'key' 		=> 'value',
+		))->append(array(
+			'selected'	=> $config->{$config->name},
+		));
+
+		$options = array();
+
+		$options[] = new KConfig(array('text'=>"Last Minute Opportunity Emails", 'value'=>"1"));
+
+		$config->list = $options;
+
+		return $this->checklist($config);
+	}
+
+	public function notification_sms($config = array())
+	{
+		$config = new KConfig($config);
+		$config->append(array(
+			'name'		=> 'lastminute_sms',
+			'text'		=> 'text',
+			'key' 		=> 'value',
+		))->append(array(
+			'selected'	=> $config->{$config->name},
+		));
+
+		$options = array();
+
+		$options[] = new KConfig(array('text'=>"Last Minute Opportunity SMS Messages", 'value'=>"1"));
+
+		$config->list = $options;
+
+		return $this->checklist($config);
+	}
+
 	public function skills($config = array())
 	{
 		$config = new KConfig($config);

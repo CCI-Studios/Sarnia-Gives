@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS `j25_gives_volunteers` (
   `assignment3` varchar(250) NOT NULL,
   `dates3` varchar(250) NOT NULL,
   `newsletter` tinyint(1) NOT NULL,
+  `lastminute_email` tinyint(1) NOT NULL,
+  `lastminute_sms` tinyint(1) NOT NULL,
   `search` tinyint(1) NOT NULL,
   `user_id` int(11) NOT NULL,
   `interests` text NOT NULL,
@@ -99,7 +101,8 @@ CREATE TABLE IF NOT EXISTS `#__gives_opportunities` (
   `skills` text NOT NULL,
   `description` text NOT NULL,
   `lat` varchar(10) NOT NULL,
-  `lng` varchar(10) NOT NULL
+  `lng` varchar(10) NOT NULL,
+  `notification_sent` tinyint(1) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 
@@ -138,4 +141,15 @@ CREATE TABLE IF NOT EXISTS `#__gives_registrations` (
   `gives_event_id` BIGINT(20) UNSIGNED NOT NULL,
   `name` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS `#__gives_ctwhours` (
+  `gives_ctwhours_id` SERIAL,
+  `name` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `school` varchar(250) NOT NULL,
+  `organization` varchar(250) NOT NULL,
+  `hours` INT NOT NULL,
+  `user_id` INT(11) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;

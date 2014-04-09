@@ -8,7 +8,17 @@
 
 <? if (isset($description)) {
 	echo $description;
-} ?>
+}
+
+if (isset($_GET['ctw']))
+{
+	$_SESSION['ctw'] = true;
+}
+else 
+{
+	unset($_SESSION['ctw']);
+}
+ ?>
 
 <p>Please note, your Email Address will be used for your Username.</p>
 

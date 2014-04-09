@@ -37,6 +37,11 @@ class ComGivesControllerToolbarMenubar extends ComDefaultControllerToolbarMenuba
 			'active'	=> ($name === 'event')
 		));
 
+		$this->addCommand('Change the World', array(
+			'href'		=> 'index.php?option=com_gives&view=ctwhours',
+			'active'	=> ($name === 'ctwhours')
+		));
+
 		return parent::getCommands();
 	}
 }

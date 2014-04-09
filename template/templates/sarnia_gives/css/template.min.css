@@ -371,6 +371,25 @@ input[type=password], select, textarea {
 #copyright {
   margin: 10px 0; }
 
+#copyright .site-by-cci
+{
+  position:absolute;
+  top:3px;
+  right:0;
+}
+
+#copyright .copyright
+{
+  position:absolute;
+  top:3px;
+  left:0;
+}
+
+#top .menu-btn
+{
+  display:none;
+}
+
 #text_sizer {
   float: right;
   line-height: 27px;
@@ -671,3 +690,180 @@ img.left {
   display: block;
   height: 1px;
   width: 100%; }
+
+@media screen and (max-width:980px)
+{
+  body 
+  {
+    padding:10px;
+  }
+
+  #wrapper
+  {
+    padding:0;
+    width:100%;
+  }
+
+  #top .login
+  {
+    right:0;
+    top:0;
+  }
+
+  #header img 
+  {
+    max-width:100%;
+    height:auto;
+  }
+
+  #component,
+  #body.wide #component
+  {
+    width:auto;
+  }
+
+  #scroll .arrow-left
+  {
+    left:-10px;
+  }
+  #scroll .arrow-right
+  {
+    left:auto;
+    right:-10px;
+  }
+
+  #bottom 
+  {
+    background:none;
+  }
+  #bottom .moduletable
+  {
+    float:none;
+    width:auto;
+    padding-bottom:30px;
+  }
+
+  .moduletable_hmenu > ul > li
+  {
+    margin:0 0 0 15px;
+  }
+}
+
+
+#globes
+{
+  position:relative;
+  height:131px;
+}
+#globes .text 
+{
+  text-align:right;
+  font-size:1.1em;
+}
+#globes .text strong
+{
+  color:#7f3f98;
+}
+#globes .globe1
+{
+  width:131px;
+  height:131px;
+  background:url(../images/globe-grey.png) no-repeat left top;
+  position:absolute;
+  left:0;
+  bottom:0;
+}
+#globes .globe2
+{
+  width:131px;
+  background:url(../images/globe-purple.png) no-repeat left bottom;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+form#ctwhour input
+{
+  border-color:#7f3f98;
+  border-radius:0;
+  width:218px;
+  margin-bottom:10px;
+}
+form#ctwhour input:invalid 
+{
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+form#ctwhour input#field_address1
+{
+  margin-bottom:5px;
+}
+form#ctwhour input#field_city,
+form#ctwhour input#field_postal_code,
+form#ctwhour input#field_hours
+{
+  margin-bottom:40px;
+  width:90px;
+}
+form#ctwhour label
+{
+  font-weight:300;
+  font-size:1.1em;
+}
+form#ctwhour .left
+{
+  display:inline-block;
+  vertical-align:top;
+  margin-right:25px;
+}
+form#ctwhour button 
+{
+  color:white;
+  text-transform:uppercase;
+  font-size:1.2em;
+  background:#7f3f98;
+  border:0;
+  padding:12px;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+
+@media screen and (max-width:768px), screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation:landscape)
+{
+  #top .menu-btn 
+  {
+      display:block;
+    position:absolute;
+    float:left;
+    background:#7f3f98;
+    color:white;
+    padding:8px 16px;
+    border-radius:20px;
+    right:0;
+    top:25px;
+    font-size:1.2em;
+  }
+
+  #top .moduletable_hmenu
+  {
+    display:none;
+  }
+}
+
+@media screen and (max-width:640px)
+{
+  #copyright .copyright
+  {
+    width:130px;
+  }
+}
+
+@media screen and (max-width:320px)
+{
+  #copyright .copyright
+  {
+    width:110px;
+  }
+}

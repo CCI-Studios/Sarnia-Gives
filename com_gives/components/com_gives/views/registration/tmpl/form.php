@@ -13,6 +13,7 @@
 	<input type="email" name="email" id="field_email" value="<?=$registration->email?>" /><br/>
 
 	<input type="hidden" name="gives_event_id" value="<?php print $_GET['event_id']; ?>" />
+	<input type="hidden" name="action" value="save" />
 
 	<input type="submit" value="Register" />
 </form>

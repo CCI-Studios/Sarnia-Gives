@@ -1,3 +1,5 @@
+<? defined('KOOWA') or die; ?>
+<?= @helper('behavior.mootools'); ?>
 <script src="media://lib_koowa/js/koowa.js" />
 <style src="media://com_default/css/admin.css" />
 
@@ -9,7 +11,6 @@
 				<th width="5" align="center"><?=@helper('grid.checkall');?> </th>
 				<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
 				<th>Registrations</th>
-				<th width="50"><?= @helper('grid.sort', array('column'=>'enabled')) ?></th>
 				<th width="5"><?=@text('id')?></th>
 			</tr>
 		</thead>
@@ -36,7 +37,6 @@
 					} ?>
 				</a></td>
 				<td align="center"><a href="?option=com_gives&amp;view=registrations&amp;event_id=<?=$event->id?>">View Registrations</a></td>
-				<td align="center"><?=@helper('grid.enable', array('row'=>$event)) ?></td>
 				<td align="center"><?=$event->id?></td>
 			</tr>
 			<? $i++;

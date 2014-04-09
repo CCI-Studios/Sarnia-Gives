@@ -29,6 +29,11 @@
 			<?= @helper('tabs.startPanel', array('title'=>'Locations')) ?>
 				<?= @helper('select.locations')?>
 			<?= @helper('tabs.endPanel') ?>
+
+			<?= @helper('tabs.startPanel', array('title'=>'Notifications')) ?>
+				<?= @helper('select.notification_email')?>
+				<?= @helper('select.notification_sms')?>
+			<?= @helper('tabs.endPanel') ?>
 			
 			<?= @helper('tabs.startPanel', array('title'=>'Password')) ?>
 				<?= @helper('form.password', array('name'=>'password', '_title'=>'Password')) ?>

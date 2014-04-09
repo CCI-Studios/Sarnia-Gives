@@ -50,6 +50,8 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 			return false;
 		}
 
+		$this->_login($post->{$this->_email}, $post->password);
+
 		$post->{$this->_column} = $user->id;
 
 		return true;
@@ -102,5 +104,18 @@ class ComGivesDatabaseBehaviorRegisterable extends KDatabaseBehaviorAbstract
 		}
 
 		return $instance;
+	}
+
+	protected function _login($username, $password)
+	{
+		$options = array();
+
+		$credentials = array();
+		$credentials['username'] = $username;
+		$credentials['password'] = $password;
+
+		$app = JFactory::getApplication();
+		$app->login($credentials, $options);
+		$app->setUserState('users.login.form.data', array());
 	}
 }

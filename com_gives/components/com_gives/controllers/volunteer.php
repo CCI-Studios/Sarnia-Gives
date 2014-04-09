@@ -54,7 +54,12 @@ class ComGivesControllerVolunteer extends ComDefaultControllerDefault
 
 	public function afterSave(KCommandContext $context)
 	{
-		if ($this->getRequest()->layout === 'form') {
+		if (isset($_SESSION['ctw']))
+		{
+			unset($_SESSION['ctw']);
+			$this->setRedirect('index.php?option=com_gives&view=ctwhour&layout=form');
+		}
+		else if ($this->getRequest()->layout === 'form') {
 			$this->setRedirect('index.php?option=com_users&view=login');
 		} else {
 			$this->setRedirect('index.php?option=com_gives&view=volunteer&id='. KRequest::get('get.id', 'int'));

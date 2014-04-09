@@ -24,6 +24,8 @@ class ComGivesControllerOpportunity extends ComDefaultControllerDefault
             $this->_request->sort = 'distance';
         } elseif ($this->_request->layout === 'browse') {
             $this->_request->limit = 10;
+        } elseif ($this->_request->layout === 'lastminute') {
+            $this->_request->limit = 10;
         }
 
         $this->_request->enabled = 1;
